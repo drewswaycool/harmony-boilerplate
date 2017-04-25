@@ -7,8 +7,8 @@ const config = {
     mongo: {
         dbUrl:'mongodb://127.0.0.1:27017/db'
     },
-    useMongo:true,
-    useSql: false,
+    useMongo:false,
+    useSql: true,
     JWT_SECRET:"OFIRISTHEBEST"
 }
 
