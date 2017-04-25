@@ -16,5 +16,5 @@
 
 ## Documentation
 
-- [**Client**](docs/client.md): An introduction how to develop your own application on client side.
-- [**Server**](docs/server.md): An introduction how to develop your own application on server side.
+- [**Client**](helperdocs/client.md): An introduction how to develop your own application on client side.
+- [**Server**](helperdocs/server.md): An introduction how to develop your own application on server side.
