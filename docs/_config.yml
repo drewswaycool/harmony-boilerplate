@@ -1,0 +1,15 @@
+
+# Setup
+title:        Harmony Boilerplate
+tagline:      
+baseurl:      ""
+paginate:     1
+
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown
+
