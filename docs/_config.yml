@@ -20,7 +20,7 @@ description: Harmony is Multi Model Layer Framework combined with Express and Re
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
+  About Us: "aboutus"
   Docs:
     - Client: "https://github.com/harmony-framework/harmony-boilerplate/tree/master/helperdocs/client.md"
     - Server: "https://github.com/harmony-framework/harmony-boilerplate/tree/master/helperdocs/server.md"
