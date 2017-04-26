@@ -10,5 +10,6 @@ export default function* () {
         takeLatest(ActionTypes.FETCH_POSTS, sagasPosts.fetchPosts, innorlate),
         takeLatest(ActionTypes.FETCH_POST, sagasPosts.fetchPost, innorlate),
         takeLatest(ActionTypes.CREATE_POST, sagasPosts.createPost, innorlate),
+        takeLatest(ActionTypes.DELETE_POST, sagasPosts.deletePost, innorlate),
     ]
 }

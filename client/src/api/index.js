@@ -40,6 +40,15 @@ export default (baseURL = REDUXBLOG_ROOT_URL) => {
                 data: data,
                 params: {key: API_KEY}
             });
+        },
+
+        deletePost: (id) => {
+            return request({
+                method: 'delete',
+                baseURL: baseURL,
+                url: '/posts/' + id,
+                params: {key: API_KEY}
+            });
         }
 
     }

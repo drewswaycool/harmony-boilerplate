@@ -8,13 +8,6 @@ import { Cor_Input, Cor_Textarea } from '../../components/core';
 
 class PostsNew extends Component {
 
-    componentDidUpdate() {
-        if(this.props.newPostCreated && this.props.submitting) {
-            this.props.initializePosts();
-            browserHistory.push(ROOT);
-        }
-    }
-
     render() {
 
         return (
@@ -32,6 +25,13 @@ class PostsNew extends Component {
             </form>
         );
 
+    }
+
+    componentDidUpdate() {
+        if(this.props.navigateTo && this.props.submitting) {
+            this.props.initializePosts();
+            browserHistory.push(this.props.navigateTo);
+        }
     }
 
     handleSubmit(props) {
@@ -63,7 +63,7 @@ function validate(values) {
 export default connectWithReduxForm(PostsNew,
     (state) => {
         return {
-            newPostCreated: state.posts.get('newPostCreated')
+            navigateTo: state.posts.get('navigateTo')
         }
     },
     {
