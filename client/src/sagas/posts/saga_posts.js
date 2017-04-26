@@ -33,3 +33,14 @@ export function* createPost(api, action) {
     }
 
 }
+
+export function* deletePost(api, action) {
+
+    try {
+        yield call(api.deletePost, action.payload);
+        yield put({type: ActionTypes.DELETE_POST_SUCCESS, null});
+    } catch (e) {
+        yield put({type: ActionTypes.DELETE_POST_ERROR, null});
+    }
+
+}

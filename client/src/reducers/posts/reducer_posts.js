@@ -1,10 +1,11 @@
 import { fromJS } from 'immutable';
 import * as ActionTypes from '../../actions';
+import { ROOT } from '../../routes';
 
 const INITIAL_STATE = fromJS({
     all: [],
     post: null,
-    newPostCreated: null
+    navigateTo: null
 });
 
 export default function (state = INITIAL_STATE, action) {
@@ -13,7 +14,7 @@ export default function (state = INITIAL_STATE, action) {
 
         case ActionTypes.INITIAL_POSTS:
             return INITIAL_STATE;
-            
+
         case ActionTypes.FETCH_POSTS_SUCCESS:
             return state.set('all', action.posts);
 
@@ -27,13 +28,20 @@ export default function (state = INITIAL_STATE, action) {
             return state.set('post', null);
 
         case ActionTypes.CREATE_POST_SUCCESS:
-            return state.set('newPostCreated', action.newPost);
+            return state.set('navigateTo', ROOT);
 
         case ActionTypes.CREATE_POST_ERROR:
             return state;
 
+        case ActionTypes.DELETE_POST_SUCCESS:
+            return state.set('navigateTo', ROOT);
+
+        case ActionTypes.DELETE_POST_ERROR:
+            return state;
+
+
         default:
             return state;
-            
+
     }
 }
