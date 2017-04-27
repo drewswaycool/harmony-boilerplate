@@ -5,9 +5,7 @@
 import request from './requests';
 
 
-export const REDUXBLOG_ROOT_URL = 'http://reduxblog.herokuapp.com/api';
-
-const API_KEY = 'refaelok';
+export const REDUXBLOG_ROOT_URL = 'http://localhost:8080/api';
 
 export default (baseURL = REDUXBLOG_ROOT_URL) => {
 
@@ -17,8 +15,7 @@ export default (baseURL = REDUXBLOG_ROOT_URL) => {
             return request({
                 method: 'get',
                 baseURL: baseURL,
-                url: '/posts',
-                params: {key: API_KEY}
+                url: '/posts'
             });
         },
 
@@ -27,8 +24,7 @@ export default (baseURL = REDUXBLOG_ROOT_URL) => {
             return request({
                 method: 'get',
                 baseURL: baseURL,
-                url: '/posts/' + id,
-                params: {key: API_KEY}
+                url: '/posts/' + id
             });
         },
 
@@ -37,8 +33,7 @@ export default (baseURL = REDUXBLOG_ROOT_URL) => {
                 method: 'post',
                 baseURL: baseURL,
                 url: '/posts',
-                data: data,
-                params: {key: API_KEY}
+                data: data
             });
         },
 
@@ -46,8 +41,7 @@ export default (baseURL = REDUXBLOG_ROOT_URL) => {
             return request({
                 method: 'delete',
                 baseURL: baseURL,
-                url: '/posts/' + id,
-                params: {key: API_KEY}
+                url: '/posts/' + id
             });
         }
 

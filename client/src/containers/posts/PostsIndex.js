@@ -15,13 +15,17 @@ class PostsIndex extends Component {
             return this.props.posts.map((post) => {
                 return (
                     <li className="list-group-item" key={post.id}>
-                        <Link to={POSTS_SHOW + post.id} >
+                        <Link to={POSTS_SHOW + post.id}>
                             <span className="pull-xs-right">{post.categories}</span>
                             <strong>{post.title}</strong>
                         </Link>
                     </li>
                 );
             });
+        }
+
+        else {
+            return <div></div>
         }
     }
 
