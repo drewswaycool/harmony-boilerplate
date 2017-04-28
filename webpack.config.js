@@ -27,10 +27,16 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
+
   plugins: [
 	new CopyWebpackPlugin([
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            }
+        }),
         { from: CLIENT_PATH+'/style/css/*.css', to: 'style/bundle.css' },
-		{ from: CLIENT_PATH+'/index.html', to: 'index.html' }
+		    { from: CLIENT_PATH+'/index.html', to: 'index.html' }
 	]),
 	new webpack.optimize.UglifyJsPlugin( {
         compress: {
@@ -51,4 +57,5 @@ module.exports = {
         sourceMap: true
     } )
   ]
+
 };

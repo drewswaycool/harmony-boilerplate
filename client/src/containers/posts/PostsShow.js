@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, browserHistory } from 'react-router';
 import * as actions from '../../actions/posts/actions_posts';
+import { ROOT } from '../../routes';
 
 class PostsShow extends Component {
 
@@ -21,7 +22,7 @@ class PostsShow extends Component {
 
         return (
             <div>
-                <Link to="/">Back To Index</Link>
+                <Link to={ROOT}>Back To Index</Link>
                 <button className="btn btn-danger pull-xs-right"
                         onClick={this.onDeleteClick.bind(this)}>
                     Delete Post
