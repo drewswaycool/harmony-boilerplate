@@ -3,11 +3,9 @@
  */
 
 import request from './requests';
+import { config } from '../config';
 
-
-export const REDUXBLOG_ROOT_URL = 'http://localhost:8080/api';
-
-export default (baseURL = REDUXBLOG_ROOT_URL) => {
+export default (baseURL = config.ROOT_SERVRE_URL) => {
 
     return {
 

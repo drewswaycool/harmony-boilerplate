@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = {
   entry: [
     './client/src/index.js'
@@ -24,5 +26,12 @@ module.exports = {
     port: 9000,
     historyApiFallback: true,
     contentBase: './client'
-  }
+  },
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            }
+        }),
+    ]
 };

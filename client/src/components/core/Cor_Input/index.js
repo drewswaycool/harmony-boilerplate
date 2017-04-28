@@ -9,7 +9,7 @@ const component = ({ meta: { touched, error, warning, invalid }, input, type, la
             <label>{label}</label>
             <div>
                 <input {...input} placeholder={label} type={type} className="form-control"/>
-                {touched && error}
+                <div style={{color:'#d9534f'}}>{touched && error}</div>
             </div>
         </div>
     );

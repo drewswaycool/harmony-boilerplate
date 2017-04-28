@@ -14,6 +14,7 @@ We recommended to be knowledge with the following libraries :
 
 The example application is a simple service which give you options to view create and delete posts.
 This documentation guide you how to develop with the basic tools for client side, like how to add new component, container etc...
+* [Config File](#config)
 * [Components](#component)
 * [Core Components](#coreComponent)
 * [Styled Components](#styledComponent)
@@ -25,6 +26,44 @@ This documentation guide you how to develop with the basic tools for client side
 * [Sagas](#sagas)
 * [Api](#api)
 * [Utiles](#utiles)
+
+<br/>
+
+## <a name="config"></a>`Config File`
+
+At `( /config.js )` you can define general defaults to your application according to NODE_ENV.
+
+### For Example - Define Root Server Url
+```JSX
+function initConfig() {
+
+    let config = { };
+
+    if (process.env.NODE_ENV === 'development') {
+
+        /* ---------- Config Development --------- */
+        config = {
+            ROOT_SERVRE_URL: 'http://localhost:8080/api'
+        };
+
+    }
+
+    else if (process.env.NODE_ENV === 'production') {
+
+        /* ---------- Config Production --------- */
+        config = {
+            ROOT_SERVRE_URL: 'http://localhost:8080/api'
+        };
+
+    }
+
+    return config;
+
+}
+
+export const config = initConfig();
+```
+
 
 <br/>
 
@@ -538,11 +577,7 @@ but with my experience i prefer all the roots apis to be in one place.
 import request from './requests';
 
 
-export const REDUXBLOG_ROOT_URL = 'http://reduxblog.herokuapp.com/api';
-
-const API_KEY = 'refaelok';
-
-export default (baseURL = REDUXBLOG_ROOT_URL) => {
+export default (baseURL = ROOT_URL) => {
 
     return {
 

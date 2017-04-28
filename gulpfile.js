@@ -13,10 +13,10 @@ const replace = require('gulp-replace');
 gulp.task('createContainer', () => {
     let name = getArg('name');
     let className = getArg('className');
-    let sotreName = getArg('store');
+    let storeName = getArg('storeName');
 
 
-    if(!validateName(name, '--name', false) && !validateName(sotreName, '--store', false) && !validateName(className, '--className', true)) return;
+    if(!validateName(name, '--name', false) && !validateName(storeName, '--storeName', false) && !validateName(className, '--className', true)) return;
 
     gulp.start('createContainerOnly');
     gulp.start('createActionFile');
@@ -28,10 +28,9 @@ gulp.task('createContainer', () => {
 gulp.task('createFormContainer', () => {
     let name = getArg('name');
     let className = getArg('className');
-    let sotreName = getArg('store');
+    let storeName = getArg('storeName');
 
-
-    if(!validateName(name, '--name', false) && !validateName(sotreName, '--store', false) && !validateName(className, '--className', true)) return;
+    if(!validateName(name, '--name', false) && !validateName(storeName, '--storeName', false) && !validateName(className, '--className', true)) return;
 
     gulp.start('createFormContainerOnly');
     gulp.start('createActionFile');
@@ -135,9 +134,9 @@ gulp.task('createSagaFile', () => {
 
 gulp.task('createReducer', () => {
     let reducerName = getArg('name');
-    let sotreName = getArg('store');
+    let storeName = getArg('storeName');
 
-    if(!validateName(reducerName, '--name', false) && !validateName(sotreName, '--store', false)) return;
+    if(!validateName(reducerName, '--name', false) && !validateName(storeName, '--storeName', false)) return;
 
     createTemplate(
         './generator/templates/client/reducer-template',
@@ -155,7 +154,7 @@ gulp.task('createReducer', () => {
             './client/src/reducers/index.js',
             './client/src/reducers/',
             "const rootReducer = combineReducers({",
-            '\n\t' + sotreName + ': ' + reducerName + ','
+            '\n\t' + storeName + ': ' + reducerName + ','
         );
     });
 });
