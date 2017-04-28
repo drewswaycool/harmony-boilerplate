@@ -12,9 +12,9 @@
 	  "sass":"gulp sass:watch",
     "startserver": "node server/server.js",
     "apidocs": "cd server && apidoc -i src/api -o docs",
-    "build:prod": "cross-env NODE_ENV=production && webpack --progress --colors --watch --config ./webpack.config.prod.js",
+    "build:prod": "cross-env NODE_ENV=production  webpack --progress --colors --watch --config ./webpack.config.prod.js",
     "start:prod": "npm-run-all --parallel build:prod startserver test:watch sass",
-    "build:dev": "cross-env NODE_ENV=development && webpack --progress --colors --watch --config ./webpack.config.js",
+    "build:dev": "cross-env NODE_ENV=development  webpack --progress --colors --watch --config ./webpack.config.js",
 	"start:dev": "npm-run-all --parallel build:dev startserver test:watch sass"
   },
   "author": "",
@@ -42,7 +42,8 @@
     "react-addons-test-utils": "^15.2.0",
     "rimraf": "^2.5.2",
     "webpack": "^2.3.3",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.2",
+	"npm-run-all":"latest"
   },
   "dependencies": {
     "axios": "^0.16.1",
@@ -70,6 +71,7 @@
     "redux-promise": "^0.5.3",
     "redux-saga": "^0.14.6",
     "sequelize": "^3.30.4",
-    "validator": "^7.0.0"
+    "validator": "^7.0.0",
+	"cross-env": "latest"
   }
 }

@@ -4,7 +4,7 @@ const path = require('path');
 
 const CLIENT_PATH = './client';
 const SERVER_PATH = './server';
-
+console.log(process.env.NODE_ENV);
 module.exports = {
   devtool: 'source-map',
   entry: [
