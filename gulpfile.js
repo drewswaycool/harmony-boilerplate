@@ -4,11 +4,24 @@ const footer = require('gulp-footer');
 const rename = require("gulp-rename");
 const inject = require('gulp-inject-string');
 const replace = require('gulp-replace');
+const sass    = require('gulp-sass');
 
+
+const CLIENT_PATH = './client/';
 
 
 /** ------------------- CLIENT ----------------------------- **/
 
+const CLIENT_SASS_FILES = 
+gulp.task('sass', function () {
+  return gulp.src(CLIENT_PATH+'/style/sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(CLIENT_PATH+'/style/css'));
+});
+ 
+gulp.task('sass:watch', function () {
+  gulp.watch(CLIENT_PATH+'/style/sass/**/*.scss', ['sass']);
+});
 
 gulp.task('createContainer', () => {
     let name = getArg('name');
