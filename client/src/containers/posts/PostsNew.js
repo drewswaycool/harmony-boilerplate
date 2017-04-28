@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connectWithReduxForm } from 'redux-form-field';
 import * as actions from '../../actions/posts/actions_posts';
 import { Link, browserHistory } from 'react-router';
-import { ROOT } from '../../routes';
+import { PORTAL } from '../../routes';
 
 import { Cor_Input, Cor_Textarea } from '../../components/core';
 
@@ -20,7 +20,7 @@ class PostsNew extends Component {
                 <Cor_Textarea name="content" label="Content" />
 
                 <button type="submit" className="btn btn-primary">Submit</button>
-                <Link to={ROOT} className="btn btn-danger">Cancel</Link>
+                <Link to={PORTAL} className="btn btn-danger">Cancel</Link>
 
             </form>
         );
@@ -35,9 +35,7 @@ class PostsNew extends Component {
     }
 
     handleSubmit(props) {
-        return new Promise(() => {
-            this.props.createPost(props);
-        });
+        this.props.createPost(props);
     }
 }
 

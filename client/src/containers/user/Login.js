@@ -27,9 +27,7 @@ class Login extends Component {
     }
 
     handleSubmit(props) {
-        return new Promise(() => {
-            this.props.login(props);
-        });
+        this.props.login(props);
     }
 }
 

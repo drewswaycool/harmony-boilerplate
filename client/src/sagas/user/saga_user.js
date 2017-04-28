@@ -8,8 +8,6 @@ export function* login(api, action) {
         const response = yield call(api.login, action.payload);
         yield put({type: ActionTypes.LOGIN_SUCCESS, details: response});
     } catch (e) {
-        console.log(e);
-
         yield put({type: ActionTypes.LOGIN_ERROR, response: e});
     }
 
@@ -21,7 +19,7 @@ export function* createUser(api, action) {
         yield call(api.createUser, action.payload);
         yield put({type: ActionTypes.NAVIGATE_TO, path: ROOT});
     } catch (e) {
-        yield put({type: ActionTypes.CREATE_USER_ERROR, response: e});
+        yield put({type: ActionTypes.CREATE_USER_ERROR, response: e.data.message});
     }
 
 }
