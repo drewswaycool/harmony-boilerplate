@@ -13,7 +13,7 @@ export default (baseURL = config.ROOT_SERVRE_URL) => {
             return request({
                 method: 'post',
                 baseURL: baseURL,
-                url: '/login',
+                url: 'users/login',
                 data: data
             });
         },
