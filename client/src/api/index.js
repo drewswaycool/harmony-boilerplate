@@ -9,6 +9,24 @@ export default (baseURL = config.ROOT_SERVRE_URL) => {
 
     return {
 
+        login: (data) => {
+            return request({
+                method: 'post',
+                baseURL: baseURL,
+                url: '/login',
+                data: data
+            });
+        },
+
+        createUser: (data) => {
+            return request({
+                method: 'post',
+                baseURL: baseURL,
+                url: '/users',
+                data: data
+            });
+        },
+
         fetchPosts: () => {
             return request({
                 method: 'get',

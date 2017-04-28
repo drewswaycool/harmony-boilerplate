@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connectWithReduxForm } from 'redux-form-field';
 import { Link } from 'react-router';
-import * as actions from '../../actions/register/actions_register';
+import * as actions from '../../actions/user/actions_user';
 
 import { ROOT } from '../../routes';
 import { Cor_Input } from '../../components/core';
@@ -18,8 +18,12 @@ class Register extends Component {
                 <Cor_Input name="password" type="password" label="Password" />
                 <Cor_Input name="repassword" type="password" label="Repeat Password" />
 
+                <br/>
+                <div>{this.props.registerError}</div>
+
                 <button type="submit" className="btn btn-success">Register</button>
                 <Link to={ROOT} style={{float:'right'}} className="btn btn-default">Back to Login</Link>
+
 
             </form>
         );
@@ -28,7 +32,7 @@ class Register extends Component {
 
     handleSubmit(props) {
         return new Promise(() => {
-            // handle submit here
+            this.props.createUser(props);
         });
     }
 }
@@ -64,11 +68,11 @@ function validate(values) {
 export default connectWithReduxForm(Register,
     (state) => {
         return {
-
+            registerError: state.user.get('registerError')
         }
     },
     {
-
+        createUser: actions.createUser
     },
     {
         form : 'RegisterForm',

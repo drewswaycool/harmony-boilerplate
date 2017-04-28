@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connectWithReduxForm } from 'redux-form-field';
 import { Link } from 'react-router';
-import * as actions from '../../actions/login/actions_login';
+import * as actions from '../../actions/user/actions_user';
 
 import { REGISTER } from '../../routes';
 import { Cor_Input } from '../../components/core';
@@ -15,8 +15,8 @@ class Login extends Component {
 
                 <h1>Login</h1>
 
-                <Cor_Input name="username" type="text" label="Username" />
-                <Cor_Input name="password" type="text" label="Password" />
+                <Cor_Input name="email" type="email" label="Email" />
+                <Cor_Input name="password" type="password" label="Password" />
 
                 <button type="submit" className="btn btn-success">Login</button>
                 <Link to={REGISTER} style={{float:'right'}} className="btn btn-default">Register</Link>
@@ -28,7 +28,7 @@ class Login extends Component {
 
     handleSubmit(props) {
         return new Promise(() => {
-            // handle submit here
+            this.props.login(props);
         });
     }
 }
@@ -36,8 +36,8 @@ class Login extends Component {
 function validate(values) {
     const errors = {};
 
-    if (!values.username) {
-        errors.username = 'Enter a username';
+    if (!values.email) {
+        errors.email = 'Enter a email';
     }
 
     if (!values.password) {
@@ -55,7 +55,7 @@ export default connectWithReduxForm(Login,
         }
     },
     {
-
+        login: actions.login
     },
     {
         form : 'LoginForm',

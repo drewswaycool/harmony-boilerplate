@@ -1,3 +1,17 @@
+/** Navigation **/
+export const NAVIGATE_TO = 'NAVIGATE_TO';
+export const RESET_NAVIGATE_TO = 'RESET_NAVIGATE_TO';
+
+/** Login **/
+export const LOGIN = 'LOGIN';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+
+/** Register **/
+export const CREATE_USER = 'CREATE_USER';
+export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+export const CREATE_USER_ERROR = 'CREATE_USER_ERROR';
+
 
 /** Posts **/
 export const INITIAL_POSTS = 'INITIAL_POSTS';
