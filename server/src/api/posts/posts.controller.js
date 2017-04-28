@@ -33,7 +33,7 @@ exports.create = function(req, res) {
 		ModelInstance.save().then((posts ) => {
 			let resultResponse = GLOBAL_RESPONSES.CREATE_SUCCESS;
 			resultResponse.resourceId = posts._id;
-			res.json({resultResponse});
+			res.json(resultResponse);
 		}).catch((e) => {
 			res.send(e);
 		});
@@ -46,7 +46,9 @@ exports.create = function(req, res) {
 exports.getAll = function (req, res) {
 	MODEL_SERVICE.find({},IGNORE_FIELDS).limit(40).exec(function(err, posts_result){
 		if(posts_result && posts_result.length == 0){
-			res.json(LOCAL_RESPONSES.POSTS_NOT_FOUND);
+			let resultResponse = LOCAL_RESPONSES.POSTS_NOT_FOUND;
+			resultResponse.posts = [];
+			res.json(resultResponse);
 			return;
 		}
 		res.json(posts_result);
