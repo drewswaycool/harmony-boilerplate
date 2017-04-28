@@ -3,9 +3,9 @@
 npm-debug.log
 /client/.DS_Store
 .DS_Store
-/server/client/bundle.js
-/server/client/bundle.js.map
+
 # IntelliJ
 *.iml
 /.idea
 server/client/bundle.js
+server/client/bundle.js.map
