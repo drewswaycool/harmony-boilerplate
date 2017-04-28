@@ -9,7 +9,6 @@ var morgan     = require('morgan');
 var routes     = require('./src/routes');
 var config     = require('./src/config');
 var path 	   = require('path');
-var fallback = require('express-history-api-fallback');
 // configure app
 app.use(morgan('dev')); // log requests to the console
 
