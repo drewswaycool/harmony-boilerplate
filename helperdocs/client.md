@@ -25,6 +25,7 @@ This documentation guide you how to develop with the basic tools for client side
 * [Reducers](#reducers)
 * [Sagas](#sagas)
 * [Api](#api)
+* [Navigation](#navigation)
 * [Utiles](#utiles)
 
 <br/>
@@ -607,9 +608,37 @@ export default (baseURL = ROOT_URL) => {
 
 <br/>
 
+## <a name="navigation"></a>`Navigation`
+
+Navigation is a container that maintain a navigation calls beetwens routes.
+Sometimes we want navigate right after success api call or after some action.
+So this container help you to do it.
+
+#### Example Code 
+```JSX
+export function* createUser(api, action) {
+
+    try {
+        yield call(api.createUser, action.payload);
+        yield put({type: ActionTypes.NAVIGATE_TO, path: ROOT});
+    } catch (e) {
+        yield put({type: ActionTypes.CREATE_USER_ERROR, response: e});
+    }
+
+}
+```
+
+At this example code you can see how to navigate to ROOT application
+right after create user in `saga`.
+
+<br/>
+
+
 ## <a name="utiles"></a>`Utiles`
 
 Simple to understand. just add here all your general functions that can serve you entire the application.
+
+
 
 
 

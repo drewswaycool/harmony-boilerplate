@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form';
-import register from './register/reducer_register';
-import login from './login/reducer_login';
-import PostReducer from './posts/reducer_posts';
+import { reducer as form } from 'redux-form';
+import navigation from './navigation/reducer_navigation';
+import user from './user/reducer_user';
+import posts from './posts/reducer_posts';
 
 const rootReducer = combineReducers({
-    register: register,
-    login: login,
-    posts: PostReducer,
-    form: formReducer
+    form: form,
+    navigation: navigation,
+    user: user,
+    posts: posts
 });
 
 export default rootReducer;
