@@ -30,13 +30,17 @@ if(config.useSql){
     var Sequelize = require('sequelize');
     var sequelize = new Sequelize(config.sql.db, config.sql.user, config.sql.pass);
 }
-console.log(path.join(__dirname, 'client'));
+
 
 // REGISTER OUR ROUTES -------------------------------
 require('./src/routes').default(app);
 
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, '..','client')));
 
+// API FALLBACK
+app.use(function(req, res, next) {
+    res.sendFile(path.join(__dirname ,'..','/client/index.html'));
+});
 // START THE SERVER
 // =============================================================================
 app.listen(port);

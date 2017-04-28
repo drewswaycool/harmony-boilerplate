@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 const CLIENT_PATH = './client';
+const CLIENT_DIST_PATH = './client/dist';
 const SERVER_PATH = './server';
 console.log(process.env.NODE_ENV);
 module.exports = {
@@ -11,7 +12,7 @@ module.exports = {
     CLIENT_PATH+'/src/index.js'
   ],
   output: {
-    path: __dirname+"/server/client",
+    path: __dirname+"/client/dist",
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -27,7 +28,12 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
-
+  devServer: {
+    host: "localhost",
+    port: 9000,
+    historyApiFallback: true,
+    contentBase: './client'
+  },
   plugins: [
 	new CopyWebpackPlugin([
         new webpack.DefinePlugin({

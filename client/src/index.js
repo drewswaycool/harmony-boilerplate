@@ -8,14 +8,14 @@ import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers';
 import routes from './routes';
 import rootSaga from './sagas';
-
+ 
 const sagaMiddleware = createSagaMiddleware();
 
 /* -------- create the store with middleware ---------- */
 const createStoreWithMiddleware = applyMiddleware(
     sagaMiddleware
 )(createStore);
-
+ 
 const store = createStoreWithMiddleware(reducers);
 
 /* -------- run root saga ---------- */

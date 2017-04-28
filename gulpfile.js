@@ -8,6 +8,7 @@ const sass    = require('gulp-sass');
 
 
 const CLIENT_PATH = './client/';
+const CLIENT_DIST_PATH = './client/dist';
 
 
 /** ------------------- CLIENT ----------------------------- **/
@@ -16,7 +17,7 @@ const CLIENT_SASS_FILES =
 gulp.task('sass', function () {
   return gulp.src(CLIENT_PATH+'/style/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest(CLIENT_PATH+'/style/css'));
+    .pipe(gulp.dest(CLIENT_DIST_PATH+'/style'));
 });
  
 gulp.task('sass:watch', function () {
