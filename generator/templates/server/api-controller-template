@@ -30,10 +30,7 @@ exports.create = function(req, res) {
 
 exports.getAll = function (req, res) {
 	MODEL_SERVICE.find((err,<%=name%>_result) => {
-        if(err){
-            res.json(err);
-        }
-		res.json(<%=name%>_result);
+        res.json(<%=name%>_result);
 	}).catch((e) => {
         res.json(e);
     });

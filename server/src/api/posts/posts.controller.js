@@ -23,6 +23,7 @@ exports.create = function(req, res) {
 		
 		if(post && post.length > 0){
 			res.json(LOCAL_RESPONSES.ALREADY_EXISTS);
+			return;
 		}
 		
 		ModelInstance.id = req.body.id;
@@ -44,15 +45,13 @@ exports.create = function(req, res) {
 
 exports.getAll = function (req, res) {
 	MODEL_SERVICE.find({},IGNORE_FIELDS).limit(40).exec(function(err, posts_result){
-		if(err){
-			res.json(err);
-		}
 		if(posts_result && posts_result.length == 0){
 			res.json(LOCAL_RESPONSES.POSTS_NOT_FOUND);
+			return;
 		}
 		res.json(posts_result);
 	}).catch((e) => {
-        res.json(e);
+        res.json(LOCAL_RESPONSES.POSTS_NOT_FOUND);
     });
 }
 
