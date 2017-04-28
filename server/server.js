@@ -45,3 +45,8 @@ app.use(function(req, res, next) {
 // =============================================================================
 app.listen(port);
 console.log('Magic happens on port ' + port);
+
+// uncaughtException
+process.on('uncaughtException', function (err) {
+  console.log(err);
+})
