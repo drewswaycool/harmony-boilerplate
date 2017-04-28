@@ -31,9 +31,7 @@ class Register extends Component {
     }
 
     handleSubmit(props) {
-        return new Promise(() => {
-            this.props.createUser(props);
-        });
+        this.props.createUser(props);
     }
 }
 

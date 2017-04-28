@@ -15,9 +15,7 @@ class <%= className %> extends Component {
     }
 
     handleSubmit(props) {
-        return new Promise(() => {
-            // handle submit here
-        });
+        // handle submit here
     }
 }
 
