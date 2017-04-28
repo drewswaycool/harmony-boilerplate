@@ -14,9 +14,9 @@
     "startserver": "node server/server.js",
     "apidocs": "cd server && apidoc -i src/api -o docs",
     "build:prod": "cross-env NODE_ENV=production  webpack --progress --colors --watch --config ./webpack.config.prod.js",
-    "start:prod": "npm run clear && npm-run-all --parallel build:prod startserver test:watch sass sass:watch",
+    "start:prod": "npm run clear && npm-run-all --parallel sass build:prod startserver test:watch  sass:watch",
     "build:dev": "npm run clear && cross-env NODE_ENV=development  webpack --progress --colors --watch --config ./webpack.config.dev.js",
-    "start:dev": "npm-run-all --parallel build:dev startserver test:watch sass sass:watch",
+    "start:dev": "npm-run-all --parallel sass build:dev startserver test:watch  sass:watch",
     "start": "npm run start:prod"
   },
   "author": "",
