@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 const CLIENT_PATH = './client';
+const CLIENT_DIST_PATH = './client/dist';
 const SERVER_PATH = './server';
 
 module.exports = {
@@ -11,7 +12,7 @@ module.exports = {
     CLIENT_PATH+'/src/index.js'
   ],
   output: {
-    path: __dirname+"/server/client",
+    path: __dirname+"/client/dist",
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -24,15 +25,17 @@ module.exports = {
       }
     }]
   },
+  devServer: {
+    host: "localhost",
+    port: 9000,
+    historyApiFallback: true,
+    contentBase: './client'
+  },
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
   plugins: [
-	new CopyWebpackPlugin([
-        { from: CLIENT_PATH+'/style/css/*.css', to: 'style/bundle.css' },
-		{ from: CLIENT_PATH+'/index.html', to: 'index.html' }
-	]),
-    new webpack.DefinePlugin({
+	new webpack.DefinePlugin({
       'process.env': {
         // This has effect on the react lib size
         'NODE_ENV': JSON.stringify('production'),
