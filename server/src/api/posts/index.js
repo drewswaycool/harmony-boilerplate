@@ -14,7 +14,7 @@ var router = new Router();
  *
  * @apiSuccess {Object} - contain message and resource id.
  */
-router.post('/', controller.create);
+router.post('/', authenticate,controller.create);
 
 /**
  * @api {get} /posts Get Posts
@@ -22,7 +22,7 @@ router.post('/', controller.create);
  * @apiGroup Posts
  * @apiSuccess {Object} - contain items from resource.
  */
-router.get('/',  controller.getAll);
+router.get('/', authenticate, controller.getAll);
 
 /**
  * @api {get} /posts/:id  Get Post
@@ -33,7 +33,7 @@ router.get('/',  controller.getAll);
  *
  * @apiSuccess {Object} - resource.
  */
-router.get('/:posts_id',  controller.getByID);
+router.get('/:posts_id', authenticate, controller.getByID);
 
 /**
  * @api {delete} /posts/:id  Delete Post
@@ -44,7 +44,7 @@ router.get('/:posts_id',  controller.getByID);
  *
  * @apiSuccess {Object} - contain message.
  */
-router.delete('/:posts_id',  controller.removeByID);
+router.delete('/:posts_id', authenticate, controller.removeByID);
 
 
 
