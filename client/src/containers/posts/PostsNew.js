@@ -27,13 +27,6 @@ class PostsNew extends Component {
 
     }
 
-    componentDidUpdate() {
-        if(this.props.navigateTo && this.props.submitting) {
-            this.props.initializePosts();
-            browserHistory.push(this.props.navigateTo);
-        }
-    }
-
     handleSubmit(props) {
         this.props.createPost(props);
     }
@@ -61,7 +54,7 @@ function validate(values) {
 export default connectWithReduxForm(PostsNew,
     (state) => {
         return {
-            navigateTo: state.posts.get('navigateTo')
+
         }
     },
     {

@@ -14,14 +14,17 @@ class PostsIndex extends Component {
         if(this.props.posts) {
             return this.props.posts.map((post) => {
                 return (
-                    <li className="list-group-item" key={post.id}>
-                        <Link to={POSTS_SHOW + post.id}>
+                    <li className="list-group-item" key={post._id}>
+                        <Link to={POSTS_SHOW + post._id}>
                             <span className="pull-xs-right">{post.categories}</span>
                             <strong>{post.title}</strong>
                         </Link>
                     </li>
                 );
             });
+        }
+        else if (this.props.message) {
+            return (<div>{this.props.message}</div>);
         }
 
         else {
@@ -49,7 +52,8 @@ class PostsIndex extends Component {
 export default connect(
     (state) => {
         return {
-            posts: state.posts.get('all')
+            posts: state.posts.get('all'),
+            message: state.posts.get('message')
         }
     },
     {

@@ -44,7 +44,7 @@ exports.create = function(req, res) {
 
 
 exports.getAll = function (req, res) {
-	MODEL_SERVICE.find({},IGNORE_FIELDS).limit(40).exec(function(err, posts_result){
+	MODEL_SERVICE.find({}).limit(40).exec(function(err, posts_result){
 		if(posts_result && posts_result.length == 0){
 			let resultResponse = LOCAL_RESPONSES.POSTS_NOT_FOUND;
 			resultResponse.posts = [];
@@ -61,7 +61,7 @@ exports.getAll = function (req, res) {
 exports.getByID = function (req, res) {
 	MODEL_SERVICE.find({
 			id: req.params.posts_id
-	},IGNORE_FIELDS).then((posts) =>  {
+	}).then((posts) =>  {
         if(!posts || (posts && posts.length == 0)){
             res.json(LOCAL_RESPONSES.POSTS_NOT_FOUND);
         }
