@@ -1,14 +1,21 @@
 import { call, put } from 'redux-saga/effects';
 import * as ActionTypes from '../../actions';
-import { ROOT } from '../../routes';
+import { ROOT, PORTAL } from '../../routes';
+import { setAuthToken } from '../../api/requests';
 
 export function* login(api, action) {
 
     try {
         const response = yield call(api.login, action.payload);
-        yield put({type: ActionTypes.LOGIN_SUCCESS, details: response});
+
+        let AUTH_TOKEN = response.headers["x-auth"];
+        response.data.Authorization = AUTH_TOKEN;
+        setAuthToken(AUTH_TOKEN);
+
+        yield put({type: ActionTypes.LOGIN_SUCCESS, details: response.data});
+        yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});
     } catch (e) {
-        yield put({type: ActionTypes.LOGIN_ERROR, response: e});
+        yield put({type: ActionTypes.LOGIN_ERROR, loginError: e});
     }
 
 }
