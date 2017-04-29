@@ -7,13 +7,20 @@ export function* login(api, action) {
 
     try {
         const response = yield call(api.login, action.payload);
-
         let AUTH_TOKEN = response.headers["x-auth"];
-        response.data.Authorization = AUTH_TOKEN;
-        setAuthToken(AUTH_TOKEN);
 
-        yield put({type: ActionTypes.LOGIN_SUCCESS, details: response.data});
-        yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});
+        if (AUTH_TOKEN) {
+            response.data.Authorization = AUTH_TOKEN;
+            setAuthToken(AUTH_TOKEN);
+
+            yield put({type: ActionTypes.LOGIN_SUCCESS, details: response.data});
+            yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});
+        }
+
+        else {
+            yield put({type: ActionTypes.LOGIN_ERROR, loginError: response.data.message});
+        }
+
     } catch (e) {
         yield put({type: ActionTypes.LOGIN_ERROR, loginError: e});
     }
