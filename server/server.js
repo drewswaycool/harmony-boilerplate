@@ -41,6 +41,7 @@ app.use(express.static(path.join(__dirname, '..','client')));
 app.use(function(req, res, next) {
     res.sendFile(path.join(__dirname ,'..','/client/index.html'));
 });
+app.set('etag', false);
 // START THE SERVER
 // =============================================================================
 app.listen(port);
