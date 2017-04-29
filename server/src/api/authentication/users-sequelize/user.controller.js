@@ -8,6 +8,7 @@
 
 const _ = require('lodash');
 const User = require('./user-model');
+const RESPONSES = require('../responses');
 
 
 
@@ -26,13 +27,11 @@ exports.create = function(req, res) {
         email : req.body.email,
         password : req.body.password
         }).then(() => {
-          console.log(user);
-		return user.generateAuthToken();
+			return user.generateAuthToken();
 	    }).then((token) => {
-          console.log("token "+token);
-        res.header('x-auth', token).send(user);
+			res.header('x-auth', token).send(user);
 	    }).catch((e) => {
-            res.status(400).send(e.errors);
+            res.status(403).json(RESPONSES.GENERAL_ERROR);
 	    });
      });
   });
@@ -54,7 +53,7 @@ exports.login = function(req, res) {
 		});
 	}).catch((e) => {
         
-		res.status(400).send();
+		res.status(403).send();
 	});
 
 };
@@ -65,6 +64,6 @@ exports.logout = function(req, res) {
         res.status(200).send();
 	}).catch((e) => {
         
-		res.status(400).send();
+		res.status(403).send();
 	});
 };

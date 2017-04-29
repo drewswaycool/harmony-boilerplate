@@ -22,7 +22,7 @@ exports.create = function(req, res) {
 	}).then((token) => {
         res.header('x-auth', token).send(user);
 	}).catch((e) => {
-        res.json(RESPONSES.GENERAL_ERROR);
+        res.status(403).json(RESPONSES.GENERAL_ERROR);
 	});
 };
 
@@ -40,7 +40,7 @@ exports.login = function(req, res) {
 			res.header('x-auth', token).send(user);
 		});
 	}).catch((e) => {
-        res.json(RESPONSES.LOGIN_ERROR);
+        res.status(403).json(RESPONSES.LOGIN_ERROR);
 	});
 
 };
@@ -50,6 +50,6 @@ exports.logout = function(req, res) {
 	req.user.removeToken(req.token).then(() => {
 		res.status(200).send();
 	}, () => {
-		res.json(RESPONSES.GENERAL_ERROR);
+		res.status(403).json(RESPONSES.GENERAL_ERROR);
 	});
 };
