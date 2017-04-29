@@ -9,6 +9,7 @@ var morgan     = require('morgan');
 var routes     = require('./src/routes');
 var config     = require('./src/config');
 var path 	   = require('path');
+var WebSocket  = require('ws');
 // configure app
 app.use(morgan('dev')); // log requests to the console
 
@@ -30,13 +31,30 @@ if(config.useSql){
     var Sequelize = require('sequelize');
     var sequelize = new Sequelize(config.sql.db, config.sql.user, config.sql.pass);
 }
+// WEBSOCKET SERVER
 
+ 
+const wss = new WebSocket.Server({ port: config.websocket.port });
+ 
+wss.broadcast = function broadcast(data) {
+  wss.clients.forEach(function each(client) {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(data);
+    }
+  });
+};
+ 
+wss.on('connection', function connection(ws) {
+  ws.on('message', function incoming(data) {
+    console.log("incoming message: "+data);
+  });
+});
 
+app.set('wss',wss);
 // REGISTER OUR ROUTES -------------------------------
 require('./src/routes').default(app);
 
 app.use(express.static(path.join(__dirname, '..','client')));
-
 // API FALLBACK
 app.use(function(req, res, next) {
     res.sendFile(path.join(__dirname ,'..','/client/index.html'));

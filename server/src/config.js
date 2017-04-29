@@ -9,7 +9,10 @@ const config = {
     },
     useMongo:true,
     useSql: false,
-    JWT_SECRET:"OFIRISTHEBEST"
+    JWT_SECRET:"OFIRISTHEBEST",
+	websocket:{
+		port:3030
+	}
 }
 
 module.exports = config;
