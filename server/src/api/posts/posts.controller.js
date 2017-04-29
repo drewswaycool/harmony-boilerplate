@@ -17,29 +17,18 @@ const IGNORE_FIELDS = { '_id': 0,'__v':0};
 
 exports.create = function(req, res) {
     let ModelInstance = new MODEL_SERVICE();
-	MODEL_SERVICE.find({
-			id: req.body.id
-	},IGNORE_FIELDS).then((post) =>  {
 		
-		if(post && post.length > 0){
-			res.json(LOCAL_RESPONSES.ALREADY_EXISTS);
-			return;
-		}
-		
-		ModelInstance.id = req.body.id;
-		ModelInstance.content = req.body.content; 
-		ModelInstance.categories = req.body.categories; 
-		ModelInstance.title = req.body.title; 	
-		ModelInstance.save().then((posts ) => {
-			let resultResponse = GLOBAL_RESPONSES.CREATE_SUCCESS;
-			resultResponse.resourceId = posts._id;
-			res.json(resultResponse);
-		}).catch((e) => {
-			res.send(e);
-		});
-	}).catch((err) => {
-        res.send(err);
+    ModelInstance.content = req.body.content;
+    ModelInstance.categories = req.body.categories;
+    ModelInstance.title = req.body.title;
+    ModelInstance.save().then((posts ) => {
+        let resultResponse = GLOBAL_RESPONSES.CREATE_SUCCESS;
+        resultResponse.resourceId = posts._id;
+        res.json(resultResponse);
+    }).catch((e) => {
+        res.send(e);
     });
+
 };
 
 
@@ -60,7 +49,7 @@ exports.getAll = function (req, res) {
 
 exports.getByID = function (req, res) {
 	MODEL_SERVICE.find({
-			id: req.params.posts_id
+			_id: req.params.posts_id
 	}).then((posts) =>  {
         if(!posts || (posts && posts.length == 0)){
             res.json(LOCAL_RESPONSES.POSTS_NOT_FOUND);
@@ -75,7 +64,7 @@ exports.getByID = function (req, res) {
 
 exports.removeByID = function (req, res) {
     MODEL_SERVICE.remove({
-			id: req.params.posts_id
+			_id: req.params.posts_id
 	}).then((result) => {
         res.json(GLOBAL_RESPONSES.DELETE_SUCCESS);
 	}).catch((err) => {

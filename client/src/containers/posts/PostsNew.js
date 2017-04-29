@@ -19,6 +19,9 @@ class PostsNew extends Component {
                 <Cor_Input name="categories" type="text" label="Categories" />
                 <Cor_Textarea name="content" label="Content" />
 
+                {this.props.message || ""}
+                <br/>
+
                 <button type="submit" className="btn btn-primary">Submit</button>
                 <Link to={PORTAL} className="btn btn-danger">Cancel</Link>
 
@@ -54,7 +57,7 @@ function validate(values) {
 export default connectWithReduxForm(PostsNew,
     (state) => {
         return {
-
+            message: state.posts.get('message')
         }
     },
     {

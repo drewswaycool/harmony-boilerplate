@@ -30,7 +30,7 @@ export default function (state = INITIAL_STATE, action) {
             return state.set('post', null);
 
         case ActionTypes.CREATE_POST_ERROR:
-            return state;
+            return state.set('message', action.message);
 
         case ActionTypes.DELETE_POST_ERROR:
             return state;
