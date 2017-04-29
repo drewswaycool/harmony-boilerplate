@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, browserHistory } from 'react-router';
 import * as actions from '../../actions/posts/actions_posts';
-import { ROOT } from '../../routes';
+import { PORTAL } from '../../routes';
 
 class PostsShow extends Component {
 
@@ -22,7 +22,7 @@ class PostsShow extends Component {
 
         return (
             <div>
-                <Link to={ROOT}>Back To Index</Link>
+                <Link to={PORTAL}>Back To Index</Link>
                 <button className="btn btn-danger pull-xs-right"
                         onClick={this.onDeleteClick.bind(this)}>
                     Delete Post
@@ -33,20 +33,12 @@ class PostsShow extends Component {
             </div>
         );
     }
-
-    componentDidUpdate() {
-        if(this.props.navigateTo) {
-            this.props.initializePosts();
-            browserHistory.push(this.props.navigateTo);
-        }
-    }
 }
 
 export default connect(
     (state) => {
         return {
-            post: state.posts.get('post'),
-            navigateTo: state.posts.get('navigateTo')
+            post: state.posts.get('post')
         }
     },
     {
