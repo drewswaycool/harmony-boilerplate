@@ -25,6 +25,10 @@ exports.create = function(req, res) {
         let resultResponse = GLOBAL_RESPONSES.CREATE_SUCCESS;
         resultResponse.resourceId = posts._id;
         res.json(resultResponse);
+		// broadcast to websocket
+		req.app.get('wss').broadcast(resultResponse);
+		
+		
     }).catch((e) => {
         res.send(e);
     });
