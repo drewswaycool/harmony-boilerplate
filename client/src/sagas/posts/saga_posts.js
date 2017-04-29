@@ -24,7 +24,7 @@ export function* fetchPost(api, action) {
 
     try {
         const response = yield call(api.fetchPost, action.payload);
-        yield put({type: ActionTypes.FETCH_POST_SUCCESS, post: response.data});
+        yield put({type: ActionTypes.FETCH_POST_SUCCESS, post: response.data[0]});
     } catch (e) {
         yield put({type: ActionTypes.FETCH_POST_ERROR, errorMessage: e});
     }
@@ -34,10 +34,15 @@ export function* fetchPost(api, action) {
 export function* createPost(api, action) {
 
     try {
-        yield call(api.createPost, action.payload);
-        yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});
+        const response = yield call(api.createPost, action.payload);
+        if (response.data.message === "Resource created") {
+            yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});
+        }
+        else {
+            yield put({type: ActionTypes.CREATE_POST_ERROR, message: response.data.message});
+        }
     } catch (e) {
-        yield put({type: ActionTypes.CREATE_POST_ERROR, errorMessage: e});
+        yield put({type: ActionTypes.CREATE_POST_ERROR, message: e});
     }
 
 }
