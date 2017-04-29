@@ -18,6 +18,9 @@ class Login extends Component {
                 <Cor_Input name="email" type="email" label="Email" />
                 <Cor_Input name="password" type="password" label="Password" />
 
+                {this.props.loginError || ""}
+                <br/>
+
                 <button type="submit" className="btn btn-success">Login</button>
                 <Link to={REGISTER} style={{float:'right'}} className="btn btn-default">Register</Link>
 
@@ -49,7 +52,7 @@ function validate(values) {
 export default connectWithReduxForm(Login,
     (state) => {
         return {
-
+            loginError: state.user.get('loginError')
         }
     },
     {

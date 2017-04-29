@@ -19,7 +19,8 @@ const createStoreWithMiddleware = applyMiddleware(
 const store = createStoreWithMiddleware(reducers);
 
 /* -------- run root saga ---------- */
-sagaMiddleware.run(rootSaga);     
+sagaMiddleware.run(rootSaga);
+
 
 /* -------- render application ---------- */
 ReactDOM.render(

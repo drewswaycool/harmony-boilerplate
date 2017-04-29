@@ -25,4 +25,10 @@ async function request(config) {
 
 }
 
+export function setAuthToken(AUTH_TOKEN) {
+    axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+}
+
 export default request;
+
+
