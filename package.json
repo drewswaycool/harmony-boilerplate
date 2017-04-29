@@ -11,7 +11,7 @@
     "clear":"rimraf ./client/dist",
 	"sass": "gulp sass",
     "sass:watch": "gulp sass:watch",
-    "startserver": "node server/server.js",
+    "startserver": "nodemon --watch server/server.js",
     "apidocs": "cd server && apidoc -i src/api -o docs",
     "build:prod": "cross-env NODE_ENV=production  webpack --progress --colors --watch --config ./webpack.config.prod.js",
     "start:prod": "npm run clear && npm-run-all --parallel sass build:prod startserver test:watch  sass:watch",
