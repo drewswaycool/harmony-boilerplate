@@ -10,7 +10,7 @@ const _ = require('lodash');
 const {ObjectID} = require('mongodb');
 
 const User = require('./user-model');
-const RESPONSES = require('./responses');
+const RESPONSES = require('../responses');
 
 exports.create = function(req, res) {
 
