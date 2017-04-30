@@ -3,7 +3,6 @@
 <div align="center">
 <img src="https://github.com/harmony-framework/harmony-boilerplate/blob/master/harmony-logo.png" alt="react boilerplate banner" align="center" />
 </div>
-<div align="center"><strong>MERN - MongoDB Express React NodeJS</strong></div>
 
 <br/>
 
