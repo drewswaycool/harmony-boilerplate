@@ -1,7 +1,7 @@
 import { call, put } from 'redux-saga/effects';
 import * as ActionTypes from '../../actions';
 import { ROOT, PORTAL } from '../../routes';
-import { setAuthToken } from '../../api/requests';
+import request from '../../api/requests';
 
 export function* login(api, action) {
 
@@ -11,7 +11,9 @@ export function* login(api, action) {
 
         if (AUTH_TOKEN) {
             response.data.Authorization = AUTH_TOKEN;
-            setAuthToken(AUTH_TOKEN);
+            request.setCommonHeader('Authorization', AUTH_TOKEN);
+
+            sessionStorage.setItem('user', JSON.stringify(response.data));
 
             yield put({type: ActionTypes.LOGIN_SUCCESS, details: response.data});
             yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});

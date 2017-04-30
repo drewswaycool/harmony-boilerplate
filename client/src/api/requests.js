@@ -1,33 +1,44 @@
 import axios from 'axios';
 
-async function request(config) {
+class Request {
 
-    return new Promise(async (resolve, reject) => {
+    constructor() {
+        let user = JSON.parse(sessionStorage.getItem('user'));
+        let AUTH_TOKEN = user ? user.Authorization : null;
 
-        let response = {};
+        this.setCommonHeader('Authorization', AUTH_TOKEN);
+    }
 
-        try {
-            response = await axios(config);
-            response.error = false;
+    setCommonHeader(key, value) {
+        axios.defaults.headers.common[key] = value;
+    }
 
-            resolve(response);
+    async call(config) {
+        return new Promise(async (resolve, reject) => {
 
-        }
-        catch(e) {
-            response = e.response;
-            response.error = true;
+            let response = {};
 
-            reject(response);
+            try {
+                response = await axios(config);
+                response.error = false;
 
-        }
+                resolve(response);
 
-    });
+            }
+            catch(e) {
+                response = e.response;
+                response.error = true;
+
+                reject(response);
+
+            }
+
+        });
+    }
 
 }
 
-export function setAuthToken(AUTH_TOKEN) {
-    axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-}
+let request = new Request();
 
 export default request;
 
