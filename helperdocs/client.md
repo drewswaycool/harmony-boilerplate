@@ -9,6 +9,7 @@ We recommended to be knowledge with the following libraries :
 * <a href="https://github.com/ReactTraining/react-router" target="_blank">react-router</a>
 * <a href="https://github.com/styled-components/styled-components" target="_blank">styled-components</a>
 * <a href="https://facebook.github.io/immutable-js/" target="_blank">immutableJS</a>
+* <a href="https://github.com/mehmetkose/react-websocket" target="_blank">react-websocket</a>
 
 ### Workflow
 
@@ -27,6 +28,7 @@ This documentation guide you how to develop with the basic tools for client side
 * [Api](#api)
 * [Navigation](#navigation)
 * [Utiles](#utiles)
+* [Websocket](#websocket)
 
 <br/>
 
@@ -44,7 +46,8 @@ function initConfig() {
 
         /* ---------- Config Development --------- */
         config = {
-            ROOT_SERVRE_URL: 'http://localhost:8080/api'
+            ROOT_SERVRE_URL: 'http://localhost:8080/api',
+            ROOT_WS_URL: 'ws://localhost:3030'
         };
 
     }
@@ -53,7 +56,8 @@ function initConfig() {
 
         /* ---------- Config Production --------- */
         config = {
-            ROOT_SERVRE_URL: 'http://localhost:8080/api'
+            ROOT_SERVRE_URL: 'http://localhost:8080/api',
+            ROOT_WS_URL: 'ws://localhost:3030'
         };
 
     }
@@ -638,7 +642,25 @@ right after create user in `saga`.
 
 Simple to understand. just add here all your general functions that can serve you entire the application.
 
+## <a name="websocket"></a>`Websocket`
 
+Our server support with Websocket.
+So you can simple to use Websocket from the client.
+#### Example Code 
+```JSX
+    handleWS(data) {
+        this.props.fetchPosts();
+    }
+
+    render () {
+        return (
+            <div>
+                <Websocket url={config.ROOT_WS_URL}
+                           onMessage={this.handleWS.bind(this)}/>
+            </div>
+        );
+    }
+```
 
 
 

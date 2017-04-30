@@ -71,7 +71,12 @@ exports.removeByID = function (req, res) {
     MODEL_SERVICE.remove({
 			_id: req.params.posts_id
 	}).then((result) => {
-        res.json(GLOBAL_RESPONSES.DELETE_SUCCESS);
+        resultResponse = GLOBAL_RESPONSES.DELETE_SUCCESS;
+        res.json();
+
+        // broadcast to websocket
+        req.app.get('wss').broadcast(resultResponse);
+        res.json(resultResponse);
 	}).catch((err) => {
         res.send(err);
     });
