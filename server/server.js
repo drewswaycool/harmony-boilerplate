@@ -36,17 +36,16 @@ if(config.useSql){
  
 const wss = new WebSocket.Server({ port: config.websocket.port });
 
-wss.broadcastAction = function(obj){
+wss.broadcastAction = function(action){
 
-    const action = obj.WS_ACTION;
-
-	if(!action || !action.type || !action.payload){
+	if(!action){
 		return;
 	}
 	wss.broadcast({
 		"WS_ACTION":true,
         "action": action
 	});
+
 };
 
 wss.broadcast = function broadcast(data) {

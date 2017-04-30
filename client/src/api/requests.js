@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { config } from '../config';
 
 class Request {
 
@@ -11,6 +12,21 @@ class Request {
 
     setCommonHeader(key, value) {
         axios.defaults.headers.common[key] = value;
+    }
+
+    broadcastAction(action) {
+
+        if(!action) return;
+
+        const callConfig = {
+                method: 'post',
+                baseURL: config.ROOT_SERVRE_URL,
+                url: '/users/broadcastAction',
+                data: action
+            };
+
+        return this.call(callConfig);
+
     }
 
     async call(config) {

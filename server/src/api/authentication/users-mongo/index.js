@@ -43,5 +43,17 @@ router.delete('/me/token', authenticate, controller.logout);
  * @apiSuccess {Object} - set header x-auth with generated token.
  */
 router.post('/login', controller.login);
+/**
+ * @api {post} /authentication/users/broadcastAction Broadcast Action
+ * @apiName BroadcastAction
+ * @apiGroup User
+
+ * @apiParam {Object} action with type and payload.
+
+ * @apiSuccess {Object} - broadcast to thethe action to all.
+ */
+router.post('/broadcastAction', controller.broadcastAction);
+
+
 
 module.exports = router;

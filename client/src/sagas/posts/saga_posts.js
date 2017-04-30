@@ -1,8 +1,9 @@
 import { call, put } from 'redux-saga/effects';
 import * as ActionTypes from '../../actions';
+import requests from '../../api/requests';
 import { PORTAL } from '../../routes';
 
-export function* fetchPosts(api) {
+export function* fetchPosts(api, action) {
 
     try {
         const response = yield call(api.fetchPosts);
@@ -34,10 +35,10 @@ export function* fetchPost(api, action) {
 export function* createPost(api, action) {
 
     try {
-        // const response = yield call(api.createPost, action.payload);
-        const response = yield call(api.createPostWithWS, action.payload);
+        const response = yield call(api.createPost, action.payload);
 
         if (response.data.message === "Resource created") {
+            requests.broadcastAction({type: ActionTypes.FETCH_POSTS, payload: null});
             yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});
         }
         else {

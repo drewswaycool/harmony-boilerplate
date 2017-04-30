@@ -1,9 +1,10 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * POST    /users              ->  create
- * GET     /users/me           ->  me
- * DELETE  /users/me/logout    ->  logout
- * POST    /users/login        ->  login
+ * POST    /users                   ->  create
+ * GET     /users/me                ->  me
+ * DELETE  /users/me/logout         ->  logout
+ * POST    /users/login             ->  login
+ * POST    /users/broadcastAction   ->  broadcastAction
  */
 
 const _ = require('lodash');
@@ -52,4 +53,15 @@ exports.logout = function(req, res) {
 	}, () => {
 		res.status(403).json(RESPONSES.GENERAL_ERROR);
 	});
+};
+
+
+exports.broadcastAction = function(req, res) {
+
+    // broadcast to websocket
+    console.log(req.body);
+    req.app.get('wss').broadcastAction(req.body);
+    res.status(200).send();
+
+
 };

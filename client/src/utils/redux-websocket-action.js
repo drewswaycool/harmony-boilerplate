@@ -11,13 +11,22 @@ class WSActions {
 		
     }
 	onMessage(msg,data) {
-        console.log(msg);
-        console.log(data);
 
-        if (data.WS_ACTION) {
-            console.log(this.store);
+        try {
+            const dispatchAction = JSON.parse(data);
+
+            if (dispatchAction.WS_ACTION && dispatchAction.action) {
+                this.store.dispatch(dispatchAction.action);
+            }
+        }
+
+        catch (e) {
+            if(process.env.NODE_ENV === 'development') {
+                console.log("dispatchAction faild: ", e);
+            }
         }
 	}
+
     start() {
         this._socket.start();
     }
