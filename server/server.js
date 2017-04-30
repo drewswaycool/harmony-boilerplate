@@ -35,7 +35,17 @@ if(config.useSql){
 
  
 const wss = new WebSocket.Server({ port: config.websocket.port });
- 
+
+wss.broadcastAction = function(type,payload){
+	if(!type || !payload){
+		return;
+	}
+	wss.broadcast({
+		"WS_ACTION":true,
+		"type":type,
+		"payload":payload
+	});
+}
 wss.broadcast = function broadcast(data) {
 
   wss.clients.forEach(function each(client) {
@@ -55,6 +65,8 @@ wss.on('connection', function connection(ws) {
 });
 
 app.set('wss',wss);
+
+
 // REGISTER OUR ROUTES -------------------------------
 require('./src/routes').default(app);
 
