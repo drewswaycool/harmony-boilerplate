@@ -52,19 +52,6 @@ export default (baseURL = config.ROOT_SERVRE_URL) => {
             });
         },
 
-        createPostWithWS: (data) => {
-
-                data.WS_ACTION = { type: 'FETCH_POSTS' , payload: null };
-
-                return request.call({
-                method: 'post',
-                baseURL: baseURL,
-                url: '/posts',
-                data: data
-
-            });
-        },
-
         deletePost: (id) => {
             return request.call({
                 method: 'delete',

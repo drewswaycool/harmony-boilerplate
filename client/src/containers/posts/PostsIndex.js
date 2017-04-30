@@ -38,13 +38,10 @@ class PostsIndex extends Component {
         this.props.fetchPosts();
     }
 
+
     render () {
         return (
             <div>
-                <Websocket url={config.ROOT_WS_URL}
-                           onMessage={this.handleWS.bind(this)}/>
-
-
                 <div className="text-xs-right">
                     <Link to={POSTS_NEW} className="btn btn-primary" >
                         Add a Post
