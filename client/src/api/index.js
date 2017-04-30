@@ -35,6 +35,15 @@ export default (baseURL = config.ROOT_SERVRE_URL) => {
             });
         },
 
+        fetchPostsWithWS: () => {
+            return request.call({
+                method: 'get',
+                baseURL: baseURL,
+                url: '/posts',
+                data: {WS_ACTION: { type: 'FETCH_POSTS' , payload: null }}
+            });
+        },
+
 
         fetchPost: (id) => {
             return request.call({

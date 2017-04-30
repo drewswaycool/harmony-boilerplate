@@ -11,7 +11,12 @@ class WSActions {
 		
     }
 	onMessage(msg,data) {
-		console.log(this.store);
+        console.log(msg);
+        console.log(data);
+
+        if (data.WS_ACTION) {
+            console.log(this.store);
+        }
 	}
     start() {
         this._socket.start();
