@@ -5,6 +5,7 @@ web:
    - db
   ports:
    - "8080:8080"
+   - "3030:3030"
   volumes:
    - .:/usr/src/app/
    - /usr/src/app/node_modules

@@ -65,6 +65,7 @@
     "mongoose": "~4.6.8",
     "morgan": "~1.0.0",
     "mysql": "^2.13.0",
+    "nodemon": "latest",
     "react": "^15.5.0",
     "react-dom": "^15.5.3",
     "react-redux": "^4.4.8",
@@ -80,6 +81,6 @@
     "sequelize": "^3.30.4",
     "validator": "^7.0.0",
     "ws": "^2.3.1",
-    "nodemon":"latest"
+    "ws-reconnect": "^1.0.4"
   }
 }
