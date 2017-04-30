@@ -1,27 +1,26 @@
-import wsReconnect from 'ws-reconnect';
+const wsReconnectClient = require('ws-reconnect-js');
 
 class WSActions {
 
     constructor(store, url, options) {
         this.store = store;
         this.url = url;
-        this.socket = new wsReconnect(url, options);
+        this._socket = new wsReconnectClient(url, options,{
+			onMessageHandler:this.onMessage.bind(this)
+		});
+		
     }
-
+	onMessage(msg,data) {
+		console.log(this.store);
+	}
     start() {
-        console.log(this.socket);
-        this.socket.start();
-        this.socket.on("message",this.onMessage.bind(this));
+        this._socket.start();
     }
 
     stop() {
-        this.socket.destroy();
+        this._socket.destroy();
     }
 
-    onMessage(message) {
-        console.log(message);
-        console.log(this.store);
-    }
 
 }
 

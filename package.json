@@ -81,6 +81,6 @@
     "sequelize": "^3.30.4",
     "validator": "^7.0.0",
     "ws": "^2.3.1",
-    "ws-reconnect": "^1.0.4"
+    "ws-reconnect-js": "^1.0.1"
   }
 }
