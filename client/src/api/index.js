@@ -57,7 +57,7 @@ export default (baseURL = config.ROOT_SERVRE_URL) => {
                 data.WS_ACTION = { type: 'FETCH_POSTS' , payload: null };
 
                 return request.call({
-                method: 'get',
+                method: 'post',
                 baseURL: baseURL,
                 url: '/posts',
                 data: data
