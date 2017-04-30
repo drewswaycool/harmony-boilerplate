@@ -44,7 +44,7 @@
     "npm-run-all": "latest",
     "react-addons-test-utils": "^15.2.0",
     "rimraf": "^2.5.2",
-    "webpack": "^2.3.3",
+    "webpack": "latest",
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
@@ -79,8 +79,9 @@
     "redux-saga": "^0.14.6",
     "rimraf": "^2.6.1",
     "sequelize": "^3.30.4",
+    "uglifyjs-webpack-plugin": "^0.4.3",
     "validator": "^7.0.0",
     "ws": "^2.3.1",
-    "ws-reconnect": "^1.0.4"
+    "ws-reconnect-js": "^1.0.1"
   }
 }

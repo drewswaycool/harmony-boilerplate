@@ -25,12 +25,6 @@ module.exports = {
       }
     }]
   },
-  devServer: {
-    host: "localhost",
-    port: 9000,
-    historyApiFallback: true,
-    contentBase: './client'
-  },
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
