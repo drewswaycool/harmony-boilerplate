@@ -24,7 +24,7 @@ export function* login(api, action) {
         }
 
     } catch (e) {
-        yield put({type: ActionTypes.LOGIN_ERROR, loginError: e});
+        yield put({type: ActionTypes.LOGIN_ERROR, loginError: e.data.message});
     }
 
 }
