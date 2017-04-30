@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Websocket from 'react-websocket';
 import { fetchPosts } from '../../actions/posts/actions_posts';
 import { Link } from 'react-router';
 import { POSTS_NEW, POSTS_SHOW } from '../../routes'
@@ -32,9 +33,17 @@ class PostsIndex extends Component {
         }
     }
 
+    handleData(data) {
+        console.log(data);
+    }
+
     render () {
         return (
             <div>
+                <Websocket url='ws://localhost:3030'
+                           onMessage={this.handleData.bind(this)}/>
+
+
                 <div className="text-xs-right">
                     <Link to={POSTS_NEW} className="btn btn-primary" >
                         Add a Post
