@@ -1,7 +1,7 @@
 <h1 align="center"><strong>harmony-boilerplate</strong></h1>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/harmony-framework/harmony-boilerplate/master/harmony%20logo-01.png" alt="react boilerplate banner" align="center" />
+<img src="https://github.com/harmony-framework/harmony-boilerplate/blob/master/harmony-logo.png" alt="react boilerplate banner" align="center" />
 </div>
 <div align="center"><strong>MERN - MongoDB Express React NodeJS</strong></div>
 
