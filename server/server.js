@@ -37,14 +37,18 @@ if(config.useSql){
 const wss = new WebSocket.Server({ port: config.websocket.port });
  
 wss.broadcast = function broadcast(data) {
+
   wss.clients.forEach(function each(client) {
+      
     if (client.readyState === WebSocket.OPEN) {
-      client.send(data);
+      client.send(JSON.stringify(data));
     }
   });
 };
  
 wss.on('connection', function connection(ws) {
+  console.log("new connection to websocket");
+  
   ws.on('message', function incoming(data) {
     console.log("incoming message: "+data);
   });

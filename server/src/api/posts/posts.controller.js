@@ -24,9 +24,10 @@ exports.create = function(req, res) {
     ModelInstance.save().then((posts ) => {
         let resultResponse = GLOBAL_RESPONSES.CREATE_SUCCESS;
         resultResponse.resourceId = posts._id;
-        res.json(resultResponse);
-		// broadcast to websocket
+        // broadcast to websocket
 		req.app.get('wss').broadcast(resultResponse);
+        res.json(resultResponse);
+		
 		
 		
     }).catch((e) => {
