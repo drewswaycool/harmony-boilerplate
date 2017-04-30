@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Websocket from 'react-websocket';
 import { fetchPosts } from '../../actions/posts/actions_posts';
 import { Link } from 'react-router';
-import { POSTS_NEW, POSTS_SHOW } from '../../routes'
+import { POSTS_NEW, POSTS_SHOW } from '../../routes';
+import { config } from '../../config';
 
 class PostsIndex extends Component {
 
@@ -33,15 +34,15 @@ class PostsIndex extends Component {
         }
     }
 
-    handleData(data) {
-        console.log(data);
+    handleWS(data) {
+        this.props.fetchPosts();
     }
 
     render () {
         return (
             <div>
-                <Websocket url='ws://localhost:3030'
-                           onMessage={this.handleData.bind(this)}/>
+                <Websocket url={config.ROOT_WS_URL}
+                           onMessage={this.handleWS.bind(this)}/>
 
 
                 <div className="text-xs-right">
