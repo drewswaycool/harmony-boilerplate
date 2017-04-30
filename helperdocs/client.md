@@ -377,7 +377,7 @@ For example, if you want to show loading spinner on any request, or show general
 
 #### Example Code
 ```JSX
-request({
+request.call({
     method: 'get',
     baseURL: baseURL,
     url: '/posts',

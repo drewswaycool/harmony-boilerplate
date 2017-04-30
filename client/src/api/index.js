@@ -10,7 +10,7 @@ export default (baseURL = config.ROOT_SERVRE_URL) => {
     return {
 
         login: (data) => {
-            return request({
+            return request.call({
                 method: 'post',
                 baseURL: baseURL,
                 url: 'users/login',
@@ -19,7 +19,7 @@ export default (baseURL = config.ROOT_SERVRE_URL) => {
         },
 
         createUser: (data) => {
-            return request({
+            return request.call({
                 method: 'post',
                 baseURL: baseURL,
                 url: '/users',
@@ -28,7 +28,7 @@ export default (baseURL = config.ROOT_SERVRE_URL) => {
         },
 
         fetchPosts: () => {
-            return request({
+            return request.call({
                 method: 'get',
                 baseURL: baseURL,
                 url: '/posts'
@@ -37,7 +37,7 @@ export default (baseURL = config.ROOT_SERVRE_URL) => {
 
 
         fetchPost: (id) => {
-            return request({
+            return request.call({
                 method: 'get',
                 baseURL: baseURL,
                 url: '/posts/' + id
@@ -45,7 +45,7 @@ export default (baseURL = config.ROOT_SERVRE_URL) => {
         },
 
         createPost: (data) => {
-            return request({
+            return request.call({
                 method: 'post',
                 baseURL: baseURL,
                 url: '/posts',
@@ -54,7 +54,7 @@ export default (baseURL = config.ROOT_SERVRE_URL) => {
         },
 
         deletePost: (id) => {
-            return request({
+            return request.call({
                 method: 'delete',
                 baseURL: baseURL,
                 url: '/posts/' + id
