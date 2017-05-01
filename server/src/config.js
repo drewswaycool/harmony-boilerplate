@@ -1,3 +1,6 @@
+console.log(process.env.MONGO_URL);
+
+
 const config = {
     sql : {
         db:'seq',
@@ -5,7 +8,7 @@ const config = {
         pass:''
     },
     mongo: {
-        dbUrl:'mongodb://127.0.0.1:27017/db'
+        dbUrl:  process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/db'
     },
     useMongo:true,
     useSql: false,
@@ -13,6 +16,6 @@ const config = {
 	websocket:{
 		port:3030
 	}
-}
+};
 
 module.exports = config;
