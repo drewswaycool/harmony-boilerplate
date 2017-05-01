@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connectWithReduxForm } from 'redux-form-field';
 import * as actions from '../../actions/posts/actions_posts';
-import { Link, browserHistory } from 'react-router';
+import { Link } from 'react-router';
 import { PORTAL } from '../../routes';
 
 import { Cor_Input, Cor_Textarea } from '../../components/core';

@@ -28,6 +28,7 @@ This documentation guide you how to develop with the basic tools for client side
 * [Navigation](#navigation)
 * [Utiles](#utiles)
 * [Websocket Actions](#websocketactions)
+* [i18n](#i18n)
 
 <br/>
 
@@ -614,6 +615,20 @@ Navigation is a container that maintain a navigation calls beetwens routes.
 Sometimes we want navigate right after success api call or after some action.
 So this container help you to do it.
 
+#### Define
+```JSX
+export default class App extends Component {
+    render() {
+        return (
+            <div>
+                {this.props.children}
+                <Navigation/>
+            </div>
+        );
+    }
+}
+```
+
 #### Example Code 
 ```JSX
 export function* createUser(api, action) {
@@ -666,6 +681,7 @@ export function* deletePost(api, action) {
 
 This example will call to action FETCH_POSTS for all the clients and update there posts list.
 
+<br/>
 
-
+## <a name="i18n"></a>`i18n`
 
