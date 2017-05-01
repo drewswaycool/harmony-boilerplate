@@ -5,11 +5,14 @@ import { fetchPosts } from '../../actions/posts/actions_posts';
 import { Link } from 'react-router';
 import { POSTS_NEW, POSTS_SHOW } from '../../routes';
 import { config } from '../../config';
-
+import {injectIntl} from 'react-intl';
+import translator from '../../utils/translator';
 class PostsIndex extends Component {
 
     componentWillMount() {
+		
         this.props.fetchPosts();
+		
     }
 
     renderPosts() {
@@ -44,10 +47,10 @@ class PostsIndex extends Component {
             <div>
                 <div className="text-xs-right">
                     <Link to={POSTS_NEW} className="btn btn-primary" >
-                        Add a Post
+                        {translator(this.props.intl,"addPost")}
                     </Link>
                 </div>
-                <h3>Posts</h3>
+                <h3>{translator(this.props.intl,"postsTitle")}</h3>
                 <ul className="list-group">
                     {this.renderPosts()}
                 </ul>
@@ -66,4 +69,4 @@ export default connect(
     {
         fetchPosts
     }
-)(PostsIndex);
+)(injectIntl(PostsIndex));

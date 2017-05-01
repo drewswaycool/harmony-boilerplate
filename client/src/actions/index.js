@@ -3,6 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+/** i18n **/
+var CHANGE_LOCALE = exports.CHANGE_LOCALE = 'CHANGE_LOCALE';
 
 /** Navigation **/
 var NAVIGATE_TO = exports.NAVIGATE_TO = 'NAVIGATE_TO';
@@ -29,3 +31,4 @@ var FETCH_POST_SUCCESS = exports.FETCH_POST_SUCCESS = 'FETCH_POST_SUCCESS';
 var FETCH_POST_ERROR = exports.FETCH_POST_ERROR = 'FETCH_POST_ERROR';
 var DELETE_POST = exports.DELETE_POST = 'DELETE_POST';
 var DELETE_POST_ERROR = exports.DELETE_POST_ERROR = 'DELETE_POST_ERROR';
+
