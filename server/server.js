@@ -10,6 +10,7 @@ var routes     = require('./src/routes');
 var config     = require('./src/config');
 var path 	   = require('path');
 var WebSocket  = require('ws');
+var _ = require ('lodash');
 // configure app
 app.use(morgan('dev')); // log requests to the console
 
@@ -38,13 +39,22 @@ const wss = new WebSocket.Server({ port: config.websocket.port });
 
 wss.broadcastAction = function(action){
 
-	if (!action) {
-		return;
-	}
-	wss.broadcast({
-		"WS_ACTION":true,
-        "action": action
-	});
+    try {
+        var result = _.find(config.allowedActions, function (o) {
+            return o === action.type
+        });
+
+        if (!result) {
+            return;
+        }
+        wss.broadcast({
+            "WS_ACTION": true,
+            "action": action
+        });
+    }
+    catch (e) {
+        console.log(e);
+    }
 
 };
 
