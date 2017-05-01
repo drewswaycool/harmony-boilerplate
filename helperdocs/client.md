@@ -7,7 +7,7 @@ We recommended to be knowledge with the following libraries :
 * <a href="http://redux-form.com/6.6.3/" target="_blank">redux-form</a>
 * <a href="https://www.npmjs.com/package/redux-form-field" target="_blank">redux-form-field</a>
 * <a href="https://github.com/ReactTraining/react-router" target="_blank">react-router</a>
-* <a href="https://github.com/styled-components/styled-components" target="_blank">styled-components</a>
+* <a href="https://www.npmjs.com/package/ws-reconnect" target="_blank">ws-reconnect</a>
 * <a href="https://facebook.github.io/immutable-js/" target="_blank">immutableJS</a>
 * <a href="https://github.com/mehmetkose/react-websocket" target="_blank">react-websocket</a>
 
@@ -18,7 +18,6 @@ This documentation guide you how to develop with the basic tools for client side
 * [Config File](#config)
 * [Components](#component)
 * [Core Components](#coreComponent)
-* [Styled Components](#styledComponent)
 * [Containers](#containers)
 * [Form Containers](#formContainers)
 * [requests](#requests)
@@ -153,12 +152,6 @@ export default createField(component, {
     label: PropTypes.string.isRequired
 });
 ```
-<br/>
-
-## <a name="styledComponent"></a>`Styled Components`
-
-Soon
-
 <br/>
 
 ## <a name="containers"></a>`Containers`
@@ -400,8 +393,11 @@ Create Actions files for each container is the best practice.
 
 Declare `actions types` under `( actions/index.js )`.
 ```JSX
-export const UPDATE_MYSTATE = 'UPDATE_MYSTATE';
+var UPDATE_MYSTATE = exports.UPDATE_MYSTATE = 'UPDATE_MYSTATE';
 ```
+
+> **actions type declaration** - Declaration for actions type must to be with es5.
+The reason is that the action types is shared with server for websocket actions system.
 
 Declare `actions types` under `( /actions_myActions.js )`.
 ```JSX

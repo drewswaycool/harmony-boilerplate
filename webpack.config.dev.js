@@ -39,9 +39,8 @@ module.exports = {
 		}
 	}),
 	new CopyWebpackPlugin([
-        
         { from: CLIENT_PATH+'/style/css/*.css', to: 'style/bundle.css' },
-		    { from: CLIENT_PATH+'/index.html', to: 'index.html' }
+        { from: CLIENT_PATH+'/index.html', to: 'index.html' }
 	])
   ]
 

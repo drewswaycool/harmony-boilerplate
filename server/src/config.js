@@ -1,5 +1,4 @@
-console.log(process.env.MONGO_URL);
-
+const actions = require('../../client/src/actions');
 
 const config = {
     sql : {
@@ -15,7 +14,13 @@ const config = {
     JWT_SECRET:"OFIRISTHEBEST",
 	websocket:{
 		port:3030
-	}
+	},
+
+    allowedActions: [
+        actions.FETCH_POSTS
+    ]
+
+
 };
 
 module.exports = config;
