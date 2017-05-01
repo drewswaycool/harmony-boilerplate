@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {injectIntl} from 'react-intl';
+import translator from '../../utils/translator';
 import * as actions from '../../actions/<%= name %>/actions_<%= name %>';
 
 class <%= className %> extends Component {
@@ -22,4 +24,4 @@ export default connect(
     {
 
     }
-)(<%= className %>);
+)(injectIntl(<%= className %>));
