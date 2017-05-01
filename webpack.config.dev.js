@@ -28,11 +28,9 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
-  devServer: {
-    host: "localhost",
-    port: 9000,
-    historyApiFallback: true,
-    contentBase: './client'
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000
   },
   plugins: [
 	new webpack.DefinePlugin({

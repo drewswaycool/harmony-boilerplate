@@ -59,7 +59,6 @@ exports.logout = function(req, res) {
 exports.broadcastAction = function(req, res) {
 
     // broadcast to websocket
-    console.log(req.body);
     req.app.get('wss').broadcastAction(req.body);
     res.status(200).send();
 
