@@ -7,7 +7,7 @@ We recommended to be knowledge with the following libraries :
 * <a href="http://redux-form.com/6.6.3/" target="_blank">redux-form</a>
 * <a href="https://www.npmjs.com/package/redux-form-field" target="_blank">redux-form-field</a>
 * <a href="https://github.com/ReactTraining/react-router" target="_blank">react-router</a>
-* <a href="https://www.npmjs.com/package/ws-reconnect" target="_blank">ws-reconnect</a>
+* <a href="https://www.npmjs.com/package/ws-reconnect-js" target="_blank">ws-reconnect-js</a>
 * <a href="https://facebook.github.io/immutable-js/" target="_blank">immutableJS</a>
 * <a href="https://github.com/mehmetkose/react-websocket" target="_blank">react-websocket</a>
 
@@ -27,7 +27,7 @@ This documentation guide you how to develop with the basic tools for client side
 * [Api](#api)
 * [Navigation](#navigation)
 * [Utiles](#utiles)
-* [Websocket](#websocket)
+* [Websocket Actions](#websocketactions)
 
 <br/>
 
@@ -638,25 +638,34 @@ right after create user in `saga`.
 
 Simple to understand. just add here all your general functions that can serve you entire the application.
 
-## <a name="websocket"></a>`Websocket`
+## <a name="websocketactions"></a>`Websocket Action`
 
-Our server support with Websocket.
-So you can simple to use Websocket from the client.
+You have 2 ways to execute specific action to all users via websocket.
+The first way is via Server ( see server documentation ).
+The second way is via Client using [requests](#requests) object.
+
+
+> **SECURE WARNING** - You must to declare your `allowed actions` in server config.
+If the action is not allowed on the server, the action will not be executed !
+See Server documentation.
+
 #### Example Code 
 ```JSX
-    handleWS(data) {
-        this.props.fetchPosts();
+export function* deletePost(api, action) {
+
+    try {
+        yield call(api.deletePost, action.payload);
+        requests.broadcastAction({type: ActionTypes.FETCH_POSTS, payload: null});
+        yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});
+    } catch (e) {
+        yield put({type: ActionTypes.DELETE_POST_ERROR, null});
     }
 
-    render () {
-        return (
-            <div>
-                <Websocket url={config.ROOT_WS_URL}
-                           onMessage={this.handleWS.bind(this)}/>
-            </div>
-        );
-    }
+}
 ```
+
+This example will call to action FETCH_POSTS for all the clients and update there posts list.
+
 
 
 
