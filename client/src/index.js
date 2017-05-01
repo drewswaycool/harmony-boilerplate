@@ -11,6 +11,8 @@ import rootSaga from './sagas';
 import WSAction from './utils/redux-websocket-action';
 import { config } from './config';
 
+import ConnectedIntlProvider from './i18n/IntlProvider';
+
 const sagaMiddleware = createSagaMiddleware();
 
 /* -------- create the store with middleware ---------- */
@@ -33,9 +35,11 @@ wsAction.start();
 
 /* -------- render application ---------- */
 ReactDOM.render(
-  <Provider store={store}>
-          <Router history={browserHistory} >
-              {routes}
-          </Router>
-  </Provider>
-  , document.querySelector('.container'));
+	<Provider store={store}>
+		<ConnectedIntlProvider>
+			<Router history={browserHistory} >
+				{routes}
+			</Router>
+		</ConnectedIntlProvider>
+	</Provider>
+, document.querySelector('.container'));
