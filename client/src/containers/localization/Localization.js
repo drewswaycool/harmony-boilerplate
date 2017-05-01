@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {injectIntl} from 'react-intl';
+import { injectIntl } from 'react-intl';
 import translator from '../../utils/translator';
+import { changeLocale } from '../../actions/i18n/actions_i18n';
 
 class Localization extends Component {
 
     render () {
         return (
-            <div className="dropdown">
-                <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">language
-                    <span className="caret"></span></button>
-                <ul className="dropdown-menu">
-                    <li><a href="#">en</a></li>
-                    <li><a href="#">fr</a></li>
-                </ul>
+            <div style={{width:'100%',padding:'10px',textAlign:'center'}}>
+                Language:&nbsp;&nbsp;
+                <select onChange={this.onSelect.bind(this)}>
+                    <option value="en">en</option>
+                    <option value="fr">fr</option>
+                </select>
             </div>
         );
+    }
+
+    onSelect(event) {
+        this.props.changeLocale(event.target.value);
     }
 }
 
@@ -26,6 +30,6 @@ export default connect(
         }
     },
     {
-
+        changeLocale: changeLocale
     }
 )(injectIntl(Localization));
