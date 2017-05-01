@@ -1,7 +1,7 @@
 <h1 align="center"><strong>harmony-boilerplate</strong></h1>
 
-<div align="center">
-<img src="https://github.com/harmony-framework/harmony-boilerplate/blob/master/harmony-logo.png" style="width:30%" alt="react boilerplate banner" align="center" />
+<div align="center" style="width:30%" >
+<img src="https://github.com/harmony-framework/harmony-boilerplate/blob/master/harmony-logo.png" alt="react boilerplate banner" align="center" />
 </div>
 
 <br/>
