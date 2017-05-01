@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Websocket from 'react-websocket';
 import { fetchPosts } from '../../actions/posts/actions_posts';
 import { Link } from 'react-router';
 import { POSTS_NEW, POSTS_SHOW } from '../../routes';
-import { config } from '../../config';
 import {injectIntl} from 'react-intl';
 import translator from '../../utils/translator';
 class PostsIndex extends Component {
