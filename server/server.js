@@ -38,7 +38,7 @@ const wss = new WebSocket.Server({ port: config.websocket.port });
 
 wss.broadcastAction = function(action){
 
-	if(!action){
+	if (!action) {
 		return;
 	}
 	wss.broadcast({
