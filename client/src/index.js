@@ -8,7 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers';
 import routes from './routes';
 import rootSaga from './sagas';
-import WSAction from './utils/redux-websocket-action';
+import WSAction from 'redux-websocket-action';
 import { config } from './config';
 
 const sagaMiddleware = createSagaMiddleware();
