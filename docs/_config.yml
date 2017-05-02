@@ -186,3 +186,5 @@ gems:
   - jekyll-paginate
 
 
+
+theme: jekyll-theme-minimal
