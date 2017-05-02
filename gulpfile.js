@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const template = require('gulp-template');
+var header = require('gulp-header');
 const footer = require('gulp-footer');
 const rename = require("gulp-rename");
 const inject = require('gulp-inject-string');
@@ -26,9 +27,65 @@ gulp.task('sass:watch', function () {
 
 gulp.task('localeCreator', () => {
 
+    let locale = getArg('locale');
+
+    if(!validateName(locale, '--locale', false)) return;
+
+    createTemplate(
+        './generator/templates/client/locale-template',
+        'client/src/base/features/i18n/locale/' + locale + '.js' ,
+        {
+            name: locale + 'Locale'
+        }
+    );
+
+    injectAppend(
+        './client/src/base/features/i18n/index.js',
+        './client/src/base/features/i18n/',
+        "import " + locale + "Locale" + " from " + "'./locale/" + locale + "';\n"
+    ).on('end', () => {
+        injectAfter(
+            './client/src/base/features/i18n/index.js',
+            './client/src/base/features/i18n/',
+            "en: enLocale,",
+            '\n\t' + locale + ': ' + locale + 'Locale,'
+        );
+    });
+
+
 });
 
 gulp.task('i18nCreator', () => {
+
+    let name = getArg('name');
+    let locale = getArg('locale');
+
+    if(!validateName(locale, '--locale', false) && !validateName(locale, '--locale', false)) return;
+
+    createTemplate(
+        './generator/templates/client/i18n-template',
+        'client/src/containers/' + name + '/i18n/' +  name + '.i18n.' + locale + '.js' ,
+        {}
+    );
+
+
+    injectAppend(
+        './client/src/base/features/i18n/locale/' + locale + '.js',
+        './client/src/base/features/i18n/locale/',
+        'import ' + name + 'Locale' + ' from ' + "'../../../../containers/" + name + "/i18n/" + name + ".i18n." + locale + "';\n"
+    ).on('end', () => {
+        injectAfter(
+            './client/src/base/features/i18n/locale/' + locale + '.js',
+            './client/src/base/features/i18n/locale/',
+            "// Gulp Inject Locales Here",
+            '\n\t' + '...' + name + 'Locale,'
+        );
+    });
+
+
+    gulp.src('./client/src/base/features/i18n/locale/' + locale + '.js')
+        .pipe(header('import ' + name + 'Locale' + ' from ' + "'../../../../containers/" + name + "/i18n/" + name + ".i18n." + locale + "';\n"))
+        .pipe(gulp.dest('./client/src/base/features/i18n/locale/'));
 
 });
 
@@ -254,9 +311,15 @@ function replaceText(src,dest,needle,text){
     .pipe(gulp.dest(dest));
 }
 
-function injectAfter(src, dest, injectAfter, iject) {
+function injectAfter(src, dest, injectAfter, injectValue) {
     return gulp.src(src)
-        .pipe(inject.after(injectAfter, iject))
+        .pipe(inject.after(injectAfter, injectValue))
+        .pipe(gulp.dest(dest));
+}
+
+function injectAppend(src, dest, inject) {
+    return gulp.src(src)
+        .pipe(header(inject))
         .pipe(gulp.dest(dest));
 }
 
