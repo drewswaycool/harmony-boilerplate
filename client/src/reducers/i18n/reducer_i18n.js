@@ -19,7 +19,7 @@ export default function (state = INITIAL_STATE, action) {
             return INITIAL_STATE;
 
         case ActionTypes.CHANGE_LOCALE:
-            return state.set('locale', action.payload.locale).set("messages", appMessages[action.payload.locale]);
+            return state.set('locale', action.payload).set("messages", appMessages[action.payload]);
         
         default:
             return state;
