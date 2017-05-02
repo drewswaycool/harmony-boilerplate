@@ -685,3 +685,81 @@ This example will call to action FETCH_POSTS for all the clients and update ther
 
 ## <a name="i18n"></a>`i18n`
 
+i18n give you easy way to support with languages and Encapsulate all you titles and static strings in your application 
+to one place and easily to rename or change it.
+
+If you are not familiar with `i18n` and you are not sure what is it please read :
+<a href="https://en.wikipedia.org/wiki/Internationalization_and_localization" target="_blank">i18n</a>.
+
+In Our boilerplate you can easly add and use i18n with scripts or manually.
+To use i18n you need to crate a new Locale (if it is not english) and new i18n folder and file to your
+desire container.
+
+In `posts.18n.en.js` (for example) file you can to define your strings for the container.
+
+The following code show the `posts.18n.en.js` inside the container, at `/i18n/`
+#### Example Code
+```JSX
+import { defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+    postsTitle: {
+        id: 'posts.title',
+        defaultMessage: 'Posts',
+        description: 'Posts page title',
+    },
+	addPost: {
+        id: 'posts.addPostHeader',
+        defaultMessage: 'Add a post',
+        description: 'add post button header',
+    }
+});
+
+export default messages;
+```
+
+The following code show you how to use the messages inside your container.
+#### Example Code
+```JSX
+render () {
+    return (
+        <div>
+            <div className="text-xs-right">
+                <Link to={POSTS_NEW} className="btn btn-primary" >
+                    {translator(this.props.intl,"addPost")}
+                </Link>
+            </div>
+            <h3>{translator(this.props.intl,"postsTitle")}</h3>
+            <ul className="list-group">
+                {this.renderPosts()}
+            </ul>
+        </div>
+    );
+}
+```
+
+
+The following example will add support with new language France,
+### Create Locale by cli
+```
+$ gulp localeCreator --locale fr
+```
+
+The following example will add a new i18n `js` file to desire container with to with language fr.
+### Create i18n by cli
+```
+$ gulp i18nCreator --name MyContainerName --locale fr
+```
+
+### create your Locale manually
+```markdown
+1) Go to `/base/i18n/locale` and add your new local `js` file.
+2) Go to `/base/i18n/locale/index.js` and import your locale and add it to the message object.
+```
+
+### create your i18n manually
+```markdown
+1) Go to your desire component and add new folder (if not exist) with the name `i18n`.
+2) Inside the folder of part 1, add new js file call : `MyContainer.18n.myLocale.js`.
+3) Go to `/base/i18n/locale` and import your new i18n file to your desire local.
+```
