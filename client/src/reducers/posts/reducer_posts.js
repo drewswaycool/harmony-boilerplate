@@ -1,6 +1,5 @@
 import { fromJS } from 'immutable';
 import * as ActionTypes from '../../actions';
-import { ROOT } from '../../routes';
 
 const INITIAL_STATE = fromJS({
     all: [],

@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 import * as ActionTypes from '../../actions';
-import requests from '../../api/requests';
+import requests from '../../base/api/requests';
 import { PORTAL } from '../../routes';
 
 export function* fetchPosts(api, action) {

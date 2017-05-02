@@ -1,16 +1,17 @@
 import { combineReducers } from 'redux';
 import { reducer as form } from 'redux-form';
-import navigation from './navigation/reducer_navigation';
-import user from './user/reducer_user';
+import navigation from '../base/features/navigation/reducers/reducer_navigation';
+import user from '../base/features/user/reducers/reducer_user';
 import posts from './posts/reducer_posts';
-import i18n from './i18n/reducer_i18n';
+import i18n from '../base/features/i18n/reducers/reducer_i18n';
 
 const rootReducer = combineReducers({
-    form		: form,
+    posts		: posts,
+
+    i18n		: i18n,
     navigation  : navigation,
     user		: user,
-    posts		: posts,
-	i18n		: i18n
+    form		: form,
 });
 
 export default rootReducer;

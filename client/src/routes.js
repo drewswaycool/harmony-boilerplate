@@ -6,8 +6,8 @@ import App from './components/app';
 import PostsIndex from './containers/posts/PostsIndex';
 import PostsNew from './containers/posts/PostsNew';
 import PostsShow from './containers/posts/PostsShow';
-import Login from './containers/user/Login';
-import Register from './containers/user/Register';
+import Login from './base/features/user/containers/Login';
+import Register from './base/features/user/containers/Register';
 
 /* -------------- Routes Paths --------------- */
 export const ROOT = "/";

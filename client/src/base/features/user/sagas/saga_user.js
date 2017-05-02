@@ -1,7 +1,7 @@
 import { call, put } from 'redux-saga/effects';
-import * as ActionTypes from '../../actions';
-import { ROOT, PORTAL } from '../../routes';
-import request from '../../api/requests';
+import * as ActionTypes from '../../../../actions';
+import { ROOT, PORTAL } from '../../../../routes';
+import request from '../../../api/requests';
 
 export function* login(api, action) {
 

@@ -24,6 +24,15 @@ gulp.task('sass:watch', function () {
   gulp.watch(CLIENT_PATH+'/style/sass/**/*.scss', ['sass']);
 });
 
+gulp.task('localeCreator', () => {
+
+});
+
+gulp.task('i18nCreator', () => {
+
+});
+
+
 gulp.task('createContainer', () => {
     let name = getArg('name');
     let className = getArg('className');

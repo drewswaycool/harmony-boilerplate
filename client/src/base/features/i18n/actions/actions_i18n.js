@@ -1,4 +1,4 @@
-import * as ActionTypes from '../';
+import * as ActionTypes from '../../../../actions';
 
 export function changeLocale(locale) {
     return {

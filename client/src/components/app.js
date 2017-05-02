@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import Navigation from '../containers/navigation/Navigation';
+import Navigation from '../base/features/navigation/containers/Navigation';
 import Localization from '../containers/localization/Localization';
 
 

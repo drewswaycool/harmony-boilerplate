@@ -1,6 +1,5 @@
 import { fromJS } from 'immutable';
-import * as ActionTypes from '../../actions';
-import { ROOT } from '../../routes';
+import * as ActionTypes from '../../../../actions';
 import appMessages from '../../i18n';
 
 const defaultLocale = 'en';

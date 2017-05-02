@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {injectIntl} from 'react-intl';
-import translator from '../../utils/translator';
+import translator from '../../base/utils/translator';
 import { fetchPosts } from '../../actions/posts/actions_posts';
 import { Link } from 'react-router';
 import { POSTS_NEW, POSTS_SHOW } from '../../routes';
@@ -35,11 +35,6 @@ class PostsIndex extends Component {
             return <div></div>
         }
     }
-
-    handleWS(data) {
-        this.props.fetchPosts();
-    }
-
 
     render () {
         return (

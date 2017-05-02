@@ -1,7 +1,7 @@
 import { takeLatest, takeEvery } from 'redux-saga/effects';
-import createApi from '../api';
+import createApi from '../requests';
 import * as ActionTypes from '../actions';
-import * as sagasUser from './user/saga_user';
+import * as sagasUser from '../base/features/user/sagas/saga_user';
 import * as sagasPosts from './posts/saga_posts';
 
 

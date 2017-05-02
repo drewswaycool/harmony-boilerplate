@@ -8,10 +8,11 @@ import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers';
 import routes from './routes';
 import rootSaga from './sagas';
-import WSAction from 'redux-websocket-action';
 import { config } from './config';
 
-import ConnectedIntlProvider from './i18n/IntlProvider';
+import WSAction from 'redux-websocket-action';
+import ConnectedIntlProvider from './base/features/i18n/IntlProvider';
+
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -40,6 +41,6 @@ ReactDOM.render(
 			<Router history={browserHistory} >
 				{routes}
 			</Router>
-		</ConnectedIntlProvider>
+        </ConnectedIntlProvider>
 	</Provider>
 , document.querySelector('.container'));
