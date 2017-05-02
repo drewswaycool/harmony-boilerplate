@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connectWithReduxForm } from 'redux-form-field';
 import {injectIntl} from 'react-intl';
-import translator from '../../utils/translator';
+import translator from '../../base/utils/translator';
 import * as actions from '../../actions/<%= name %>/actions_<%= name %>';
 
 
