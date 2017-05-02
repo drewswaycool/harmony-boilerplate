@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connectWithReduxForm } from 'redux-form-field';
+import {injectIntl} from 'react-intl';
+import translator from '../../utils/translator';
 import * as actions from '../../actions/<%= name %>/actions_<%= name %>';
 
 
@@ -15,9 +17,7 @@ class <%= className %> extends Component {
     }
 
     handleSubmit(props) {
-        return new Promise(() => {
-            // handle submit here
-        });
+        // handle submit here
     }
 }
 
@@ -34,7 +34,7 @@ function validate(values) {
 }
 
 
-export default connectWithReduxForm(<%= className %>,
+export default connectWithReduxForm(injectIntl(<%= className %>),
     (state) => {
         return {
 

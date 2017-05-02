@@ -28,3 +28,10 @@ export function fetchPost (id) {
     };
 }
 
+export function deletePost (id) {
+    return {
+        type: ActionTypes.DELETE_POST,
+        payload: id
+    };
+}
+

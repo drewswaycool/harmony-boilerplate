@@ -3,42 +3,60 @@
  */
 
 import request from './requests';
+import { config } from '../config';
 
-
-export const REDUXBLOG_ROOT_URL = 'http://reduxblog.herokuapp.com/api';
-
-const API_KEY = 'refaelok';
-
-export default (baseURL = REDUXBLOG_ROOT_URL) => {
+export default (baseURL = config.ROOT_SERVRE_URL) => {
 
     return {
 
-        fetchPosts: () => {
-            return request({
-                method: 'get',
+        login: (data) => {
+            return request.call({
+                method: 'post',
                 baseURL: baseURL,
-                url: '/posts',
-                params: {key: API_KEY}
+                url: 'users/login',
+                data: data
             });
         },
 
+        createUser: (data) => {
+            return request.call({
+                method: 'post',
+                baseURL: baseURL,
+                url: '/users',
+                data: data
+            });
+        },
 
-        fetchPost: (id) => {
-            return request({
+        fetchPosts: () => {
+            return request.call({
                 method: 'get',
                 baseURL: baseURL,
-                url: '/posts/' + id,
-                params: {key: API_KEY}
+                url: '/posts'
+            });
+        },
+
+        fetchPost: (id) => {
+            return request.call({
+                method: 'get',
+                baseURL: baseURL,
+                url: '/posts/' + id
             });
         },
 
         createPost: (data) => {
-            return request({
+            return request.call({
                 method: 'post',
                 baseURL: baseURL,
                 url: '/posts',
-                data: data,
-                params: {key: API_KEY}
+                data: data
+            });
+        },
+
+        deletePost: (id) => {
+            return request.call({
+                method: 'delete',
+                baseURL: baseURL,
+                url: '/posts/' + id
             });
         }
 

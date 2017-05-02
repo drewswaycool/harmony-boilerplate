@@ -1,16 +1,17 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * POST    /users              ->  create
- * GET     /users/me           ->  me
- * DELETE  /users/me/logout    ->  logout
- * POST    /users/login        ->  login
+ * POST    /users                   ->  create
+ * GET     /users/me                ->  me
+ * DELETE  /users/me/logout         ->  logout
+ * POST    /users/login             ->  login
+ * POST    /users/broadcastAction   ->  broadcastAction
  */
 
 const _ = require('lodash');
 const {ObjectID} = require('mongodb');
 
 const User = require('./user-model');
-
+const RESPONSES = require('../responses');
 
 exports.create = function(req, res) {
 
@@ -22,7 +23,7 @@ exports.create = function(req, res) {
 	}).then((token) => {
         res.header('x-auth', token).send(user);
 	}).catch((e) => {
-        res.status(400).send(e);
+        res.status(403).json(RESPONSES.GENERAL_ERROR);
 	});
 };
 
@@ -40,7 +41,7 @@ exports.login = function(req, res) {
 			res.header('x-auth', token).send(user);
 		});
 	}).catch((e) => {
-		res.status(400).send();
+        res.status(403).json(RESPONSES.LOGIN_ERROR);
 	});
 
 };
@@ -50,6 +51,16 @@ exports.logout = function(req, res) {
 	req.user.removeToken(req.token).then(() => {
 		res.status(200).send();
 	}, () => {
-		res.status(400).send();
+		res.status(403).json(RESPONSES.GENERAL_ERROR);
 	});
+};
+
+
+exports.broadcastAction = function(req, res) {
+
+    // broadcast to websocket
+    req.app.get('wss').broadcastAction(req.body);
+    res.status(200).send();
+
+
 };

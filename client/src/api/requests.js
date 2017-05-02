@@ -1,28 +1,61 @@
 import axios from 'axios';
+import { config } from '../config';
 
-async function request(config) {
+class Request {
 
-    return new Promise(async (resolve, reject) => {
+    constructor() {
+        let user = JSON.parse(sessionStorage.getItem('user'));
+        let AUTH_TOKEN = user ? user.Authorization : null;
 
-        let response = {};
+        this.setCommonHeader('Authorization', AUTH_TOKEN);
+    }
 
-        try {
-            response = await axios(config);
-            response.error = false;
+    setCommonHeader(key, value) {
+        axios.defaults.headers.common[key] = value;
+    }
 
-            resolve(response);
+    broadcastAction(action) {
 
-        }
-        catch(e) {
-            response = e.response;
-            response.error = true;
+        if(!action) return;
 
-            reject(response);
+        const callConfig = {
+                method: 'post',
+                baseURL: config.ROOT_SERVRE_URL,
+                url: '/users/broadcastAction',
+                data: action
+            };
 
-        }
+        return this.call(callConfig);
 
-    });
+    }
+
+    async call(config) {
+        return new Promise(async (resolve, reject) => {
+
+            let response = {};
+
+            try {
+                response = await axios(config);
+                response.error = false;
+
+                resolve(response);
+
+            }
+            catch(e) {
+                response = e.response;
+                response.error = true;
+
+                reject(response);
+
+            }
+
+        });
+    }
 
 }
 
+let request = new Request();
+
 export default request;
+
+

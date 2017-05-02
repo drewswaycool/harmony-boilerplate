@@ -7,16 +7,17 @@ We recommended to be knowledge with the following libraries :
 * <a href="http://redux-form.com/6.6.3/" target="_blank">redux-form</a>
 * <a href="https://www.npmjs.com/package/redux-form-field" target="_blank">redux-form-field</a>
 * <a href="https://github.com/ReactTraining/react-router" target="_blank">react-router</a>
-* <a href="https://github.com/styled-components/styled-components" target="_blank">styled-components</a>
+* <a href="https://www.npmjs.com/package/ws-reconnect-js" target="_blank">ws-reconnect-js</a>
 * <a href="https://facebook.github.io/immutable-js/" target="_blank">immutableJS</a>
+* <a href="https://github.com/mehmetkose/react-websocket" target="_blank">react-websocket</a>
 
 ### Workflow
 
 The example application is a simple service which give you options to view create and delete posts.
 This documentation guide you how to develop with the basic tools for client side, like how to add new component, container etc...
+* [Config File](#config)
 * [Components](#component)
 * [Core Components](#coreComponent)
-* [Styled Components](#styledComponent)
 * [Containers](#containers)
 * [Form Containers](#formContainers)
 * [requests](#requests)
@@ -24,7 +25,50 @@ This documentation guide you how to develop with the basic tools for client side
 * [Reducers](#reducers)
 * [Sagas](#sagas)
 * [Api](#api)
+* [Navigation](#navigation)
 * [Utiles](#utiles)
+* [Websocket Actions](#websocketactions)
+* [i18n](#i18n)
+
+<br/>
+
+## <a name="config"></a>`Config File`
+
+At `( /config.js )` you can define general defaults to your application according to NODE_ENV.
+
+### For Example - Define Root Server Url
+```JSX
+function initConfig() {
+
+    let config = { };
+
+    if (process.env.NODE_ENV === 'development') {
+
+        /* ---------- Config Development --------- */
+        config = {
+            ROOT_SERVRE_URL: 'http://localhost:8080/api',
+            ROOT_WS_URL: 'ws://localhost:3030'
+        };
+
+    }
+
+    else if (process.env.NODE_ENV === 'production') {
+
+        /* ---------- Config Production --------- */
+        config = {
+            ROOT_SERVRE_URL: 'http://localhost:8080/api',
+            ROOT_WS_URL: 'ws://localhost:3030'
+        };
+
+    }
+
+    return config;
+
+}
+
+export const config = initConfig();
+```
+
 
 <br/>
 
@@ -109,12 +153,6 @@ export default createField(component, {
     label: PropTypes.string.isRequired
 });
 ```
-<br/>
-
-## <a name="styledComponent"></a>`Styled Components`
-
-Soon
-
 <br/>
 
 ## <a name="containers"></a>`Containers`
@@ -337,7 +375,7 @@ For example, if you want to show loading spinner on any request, or show general
 
 #### Example Code
 ```JSX
-request({
+request.call({
     method: 'get',
     baseURL: baseURL,
     url: '/posts',
@@ -356,8 +394,11 @@ Create Actions files for each container is the best practice.
 
 Declare `actions types` under `( actions/index.js )`.
 ```JSX
-export const UPDATE_MYSTATE = 'UPDATE_MYSTATE';
+var UPDATE_MYSTATE = exports.UPDATE_MYSTATE = 'UPDATE_MYSTATE';
 ```
+
+> **actions type declaration** - Declaration for actions type must to be with es5.
+The reason is that the action types is shared with server for websocket actions system.
 
 Declare `actions types` under `( /actions_myActions.js )`.
 ```JSX
@@ -538,11 +579,7 @@ but with my experience i prefer all the roots apis to be in one place.
 import request from './requests';
 
 
-export const REDUXBLOG_ROOT_URL = 'http://reduxblog.herokuapp.com/api';
-
-const API_KEY = 'refaelok';
-
-export default (baseURL = REDUXBLOG_ROOT_URL) => {
+export default (baseURL = ROOT_URL) => {
 
     return {
 
@@ -572,9 +609,79 @@ export default (baseURL = REDUXBLOG_ROOT_URL) => {
 
 <br/>
 
+## <a name="navigation"></a>`Navigation`
+
+Navigation is a container that maintain a navigation calls beetwens routes.
+Sometimes we want navigate right after success api call or after some action.
+So this container help you to do it.
+
+#### Define
+```JSX
+export default class App extends Component {
+    render() {
+        return (
+            <div>
+                {this.props.children}
+                <Navigation/>
+            </div>
+        );
+    }
+}
+```
+
+#### Example Code 
+```JSX
+export function* createUser(api, action) {
+
+    try {
+        yield call(api.createUser, action.payload);
+        yield put({type: ActionTypes.NAVIGATE_TO, path: ROOT});
+    } catch (e) {
+        yield put({type: ActionTypes.CREATE_USER_ERROR, response: e});
+    }
+
+}
+```
+
+At this example code you can see how to navigate to ROOT application
+right after create user in `saga`.
+
+<br/>
+
+
 ## <a name="utiles"></a>`Utiles`
 
 Simple to understand. just add here all your general functions that can serve you entire the application.
 
+## <a name="websocketactions"></a>`Websocket Action`
 
+You have 2 ways to execute specific action to all users via websocket.
+The first way is via Server ( see server documentation ).
+The second way is via Client using [requests](#requests) object.
+
+
+> **SECURE WARNING** - You must to declare your `allowed actions` in server config.
+If the action is not allowed on the server, the action will not be executed !
+See Server documentation.
+
+#### Example Code 
+```JSX
+export function* deletePost(api, action) {
+
+    try {
+        yield call(api.deletePost, action.payload);
+        requests.broadcastAction({type: ActionTypes.FETCH_POSTS, payload: null});
+        yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});
+    } catch (e) {
+        yield put({type: ActionTypes.DELETE_POST_ERROR, null});
+    }
+
+}
+```
+
+This example will call to action FETCH_POSTS for all the clients and update there posts list.
+
+<br/>
+
+## <a name="i18n"></a>`i18n`
 
