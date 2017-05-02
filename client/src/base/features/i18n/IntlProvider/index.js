@@ -9,8 +9,9 @@ addLocaleData([...enLocaleData]);
 // When the state of the redux store changes, this function will be called, if the props that come out of
 // this function are different, then the component that is wrapped is re-rendered.
 function mapStateToProps(state) {
+  const locale = state.i18n.get('locale');
   const m = typeof(state.i18n.get('messages')) == "object" && typeof(state.i18n.get('messages').get) == "undefined" ? state.i18n.get('messages') : state.i18n.get('messages').toJS();
-  return { locale: state.i18n.get('locale'), messages:m };
+  return { defaultLocale:locale, locale: locale, messages:m };
 }
 
 export default connect(mapStateToProps)(IntlProvider);
