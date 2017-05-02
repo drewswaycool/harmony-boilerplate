@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../actions/navigation/actions_navigation';
+import * as actions from '../actions/actions_navigation';
 import { browserHistory } from 'react-router';
 
 class Navigation extends Component {

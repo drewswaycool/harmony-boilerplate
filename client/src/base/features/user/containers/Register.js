@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connectWithReduxForm } from 'redux-form-field';
 import { Link } from 'react-router';
-import * as actions from '../../actions/user/actions_user';
+import * as actions from '../actions/actions_user';
 
-import { ROOT } from '../../routes';
-import { Cor_Input } from '../../components/core';
+import { ROOT } from '../../../../routes';
+import { Cor_Input } from '../../../../components/core';
 
 class Register extends Component {
     render() {
