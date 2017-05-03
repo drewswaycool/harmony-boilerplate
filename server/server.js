@@ -37,11 +37,11 @@ if(config.useSql){
  
 const wss = new WebSocket.Server({ port: config.websocket.port });
 
-wss.broadcastAction = function(action){
+wss.broadcastAction = function(request){
 
     try {
         var result = _.find(config.allowedActions, function (o) {
-            return o === action.type
+            return o === request.action.type
         });
 
         if (!result) {
@@ -49,7 +49,8 @@ wss.broadcastAction = function(action){
         }
         wss.broadcast({
             "WS_ACTION": true,
-            "action": action
+            "token": request.token || null,
+            "action": request.action
         });
     }
     catch (e) {
