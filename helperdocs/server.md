@@ -13,24 +13,34 @@ We recommended to be knowledge with the following libraries :
 This documentation guide you how to develop with the basic tools for server side, like how to add new api, generate api docs for your server, etc..
 * [CONFIG](#config)
 * [API](#api)
-
+* [Websocket Actions](#websocket)
 <br/>
 <a name="config"></a>
 
 Database Configruation located on server/src/config.js
 ```
-config = {
-    sql:{
+const config = {
+    sql : {
         db:'seq',
         user:'root',
         pass:''
     },
     mongo: {
-        dbUrl:''
+        dbUrl:  process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/db'
     },
-    useMongo:false,
-    useSql: true
-}
+    useMongo:true,
+    useSql: false,
+    JWT_SECRET:"OFIRISTHEBEST",
+	websocket:{
+		port:3030
+	},
+
+    allowedActions: [
+        actions.FETCH_POSTS
+    ]
+
+
+};
 
 ```
 change it according to your needs.
@@ -138,3 +148,33 @@ gulp.task('createApi', () => {
     
 });
 ```
+<a name="websocket"></a>
+## Websocket Actions
+
+> **SECURE WARNING** - You must to declare your `allowed actions` in server config.
+If the action is not allowed on the server, the action will not be executed !
+
+- To add allowed actions for broadcasting go to [config](#config) and edit allowedActions 
+```
+ allowedActions: [
+        actions.FETCH_POSTS,
+        ...
+    ]
+```
+there is reference in the configuration file to the client actions.
+```
+const actions = require('../../client/src/actions');
+```
+
+harmony let the client to invoke actions on each client on the system by using the websocket instance on the server.
+for example: lets say User A delete item from the database and want that all the users will FETCH the items again.
+
+by invoking the following API - ``` POST    /users/broadcastAction   ->  broadcastAction ```
+with the this payload : 
+```
+{type: ActionTypes.FETCH_POSTS, payload: null}
+```
+the websocket instance will broadcast to all users this action.
+In addition, there is option to invoke the broadcasting service from each API.
+> For more information go to: [Client](https://github.com/harmony-framework/harmony-boilerplate/blob/master/helperdocs/client.md#websocketactions)
+
