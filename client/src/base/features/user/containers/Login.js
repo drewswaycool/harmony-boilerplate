@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connectWithReduxForm } from 'redux-form-field';
+import {injectIntl} from 'react-intl';
+import translator from '../../../utils/translator';
 import { Link } from 'react-router';
 import * as actions from '../actions/actions_user';
 
@@ -13,7 +15,7 @@ class Login extends Component {
         return (
             <form onSubmit={this.props.handleSubmit(this.handleSubmit.bind(this))} >
 
-                <h1>Login</h1>
+                <h1>{translator(this.props.intl,"userLoginHeader")}</h1>
 
                 <Cor_Input name="email" type="email" label="Email" />
                 <Cor_Input name="password" type="password" label="Password" />
@@ -49,7 +51,7 @@ function validate(values) {
 }
 
 
-export default connectWithReduxForm(Login,
+export default connectWithReduxForm(injectIntl(Login),
     (state) => {
         return {
             loginError: state.user.get('loginError')

@@ -59,6 +59,7 @@
     "cross-env": "latest",
     "crypto-js": "^3.1.8",
     "express": "^4.8.0",
+    "guid": "0.0.12",
     "gulp-sass": "^3.1.0",
     "immutable": "^3.8.1",
     "jsonwebtoken": "^7.3.0",

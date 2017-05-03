@@ -10,7 +10,8 @@ import routes from './routes';
 import rootSaga from './sagas';
 import { config } from './config';
 
-import WSAction from 'redux-websocket-action';
+/* -------- Harmony Features --------- */
+import WSAction from './base/features/ws-actions';
 import ConnectedIntlProvider from './base/features/i18n/IntlProvider';
 
 

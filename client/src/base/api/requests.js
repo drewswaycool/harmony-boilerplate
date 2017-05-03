@@ -22,7 +22,7 @@ class Request {
                 method: 'post',
                 baseURL: config.ROOT_SERVRE_URL,
                 url: '/users/broadcastAction',
-                data: action
+                data: { action: action, token: sessionStorage.getItem('wsa_token') }
             };
 
         return this.call(callConfig);
