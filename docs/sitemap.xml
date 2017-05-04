@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//getting-started/</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//base/</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//extensions/server/server/</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//extensions/server/generate_new_api/</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//extensions/client/client/</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//extensions/client/generate_new_component/</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//extensions/client/generate_new_container/</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//customization/</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//release-notes/</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//contributing/</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//license/</loc>
+     <lastmod>2017-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>

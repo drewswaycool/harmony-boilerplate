@@ -1,0 +1,279 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Harmony documentation\n\n\nHarmony Boilerplate is based on Multi Model Layer, MongoDB, Express, React and NodeJS \n\n\n\n\n\n\n\nQuick start\n\n\nInstall the last version of \nYeoman\n\n\nnpm install yo -g\n\n\n\n\n\nInstall the last version of our smashing generator \ngenerator-harmony-boilerplate\n\n\nnpm install generator-harmony-boilerplate -g\n\n\n\n\n\nGenerate your project\n\nyo generator-harmony-boilerplate", 
+            "title": "Harmony"
+        }, 
+        {
+            "location": "/#harmony-documentation", 
+            "text": "Harmony Boilerplate is based on Multi Model Layer, MongoDB, Express, React and NodeJS", 
+            "title": "Harmony documentation"
+        }, 
+        {
+            "location": "/#quick-start", 
+            "text": "Install the last version of  Yeoman  npm install yo -g  Install the last version of our smashing generator  generator-harmony-boilerplate  npm install generator-harmony-boilerplate -g  Generate your project yo generator-harmony-boilerplate", 
+            "title": "Quick start"
+        }, 
+        {
+            "location": "/getting-started/", 
+            "text": "Getting started\n\n\nInstallation\n\n\n\n\nSet up Material using Docker\n\n\nThe official \nDocker image\n for Material comes with all dependencies\npre-installed and ready-to-use with the latest version published on PyPI,\npackaged in a very small image (28MB compressed).\n\n\n\n\nInstalling MkDocs\n\n\nBefore installing \nMkDocs\n, you need to make sure you have Python and \npip\n\n\u2013 the Python package manager \u2013 up and running. You can verify if you're already\ngood to go with the following commands:\n\n\npython --version\n\n# Python 2.7.13\n\npip --version\n\n# pip 9.0.1\n\n\n\n\n\n\nInstalling and verifying MkDocs is as simple as:\n\n\npip install mkdocs \n mkdocs --version\n\n# mkdocs, version 0.16.0\n\n\n\n\n\n\n\n\nMkDocs version requirements\n\n\nMaterial requires MkDocs \n= 0.16.\n\n\n\n\nFurthermore, it is highly recommended to install \nPygments\n and the\n\nPyMdown Extensions\n to get the most out of the Material theme:\n\n\npip install pygments\npip install pymdown-extensions\n\n\n\n\n\nInstalling Material\n\n\nusing pip\n\n\nMaterial can be installed with \npip\n:\n\n\npip install mkdocs-material\n\n\n\n\n\nusing choco\n\n\nIf you're on Windows you can use \nChocolatey\n to install \nMaterial\n:\n\n\nchoco install mkdocs-material\n\n\n\n\n\nThis will also install all required dependencies like \nPython\n and\n\nMkDocs\n.\n\n\ncloning from GitHub\n\n\nMaterial can also be used without a system-wide installation by cloning the\nrepository into a subfolder of your project's root directory:\n\n\ngit clone https://github.com/squidfunk/mkdocs-material.git\n\n\n\n\n\nThis is especially useful if you want to extend the theme and override some\nparts of the theme. The theme will reside in the folder\n\nmkdocs-material/material\n.\n\n\nTroubleshooting\n\n\n\n\nInstallation on macOS\n\n\nWhen you're running the pre-installed version of Python on macOS, \npip\n\ntries to install packages in a folder for which your user might not have\nthe adequate permissions. There are two possible solutions for this:\n\n\n\n\n\n\nInstalling in user space\n (recommended): Provide the \n--user\n flag\n  to the install command and \npip\n will install the package in a user-site\n  location. This is the recommended way.\n\n\n\n\n\n\nSwitching to a homebrewed Python\n: Upgrade your Python installation\n  to a self-contained solution by installing Python with Homebrew. This\n  should eliminate a lot of problems you may be having with \npip\n.\n\n\n\n\n\n\n\n\n\n\nError: unrecognized theme 'material'\n\n\nIf you run into this error, the most common reason is that you installed\nMkDocs through some package manager (e.g. Homebrew or \napt-get\n) and the\nMaterial theme through \npip\n, so both packages end up in different\nlocations. MkDocs only checks it's install location for themes.\n\n\n\n\nUsage\n\n\nIn order to enable the Material theme just add one of the following lines to\nyour \nmkdocs.yml\n. If you installed Material using pip:\n\n\ntheme\n:\n \nmaterial\n\n\n\n\n\n\nIf you cloned Material from GitHub:\n\n\ntheme_dir\n:\n \nmkdocs-material/material\n\n\n\n\n\n\nMkDocs includes a development server, so you can review your changes as you go.\nThe development server can be started with the following command:\n\n\nmkdocs serve\n\n\n\n\n\nNow you can point your browser to \nlocalhost:8000\n and the Material theme\nshould be visible. From here on, you can start writing your documentation, or\nread on and customize the theme through some options.\n\n\nOptions\n\n\nThe Material theme adds some extra variables for configuration via your\nproject's \nmkdocs.yml\n. See the following sections for all available options.\n\n\nChanging the color palette\n\n\nMaterial defines a default hue for every primary and accent color on Google's\nMaterial Design \ncolor palette\n. This makes it very easy to change the\noverall look of the theme. Just set the primary and accent colors using the\nfollowing variables in your \nmkdocs.yml\n:\n\n\nextra\n:\n\n  \npalette\n:\n\n    \nprimary\n:\n \nindigo\n\n    \naccent\n:\n \nlight\n \nblue\n\n\n\n\n\n\nColor names are case-insensitive, but must match the names of the Material\nDesign color palette. Valid values are: \nred\n, \npink\n, \npurple\n, \ndeep purple\n,\n\nindigo\n, \nblue\n, \nlight blue\n, \ncyan\n, \nteal\n, \ngreen\n, \nlight green\n, \nlime\n,\n\nyellow\n, \namber\n, \norange\n, \ndeep orange\n, \nbrown\n, \ngrey\n and \nblue grey\n.\nThe last three colors can only be used as a primary color.\n\n\nIf the color is set via this configuration, an additional CSS file that\ndefines the color palette is included. If you want to keep things lean, clone\nthe repository and recompile the theme with your custom colors set. See the\nguide on \ncustomization\n for more information.\n\n\nPrimary colors\n\n\nClick on a tile to change the primary color of the theme:\n\n\nRed\n\n\nPink\n\n\nPurple\n\n\nDeep Purple\n\n\nIndigo\n\n\nBlue\n\n\nLight Blue\n\n\nCyan\n\n\nTeal\n\n\nGreen\n\n\nLight Green\n\n\nLime\n\n\nYellow\n\n\nAmber\n\n\nOrange\n\n\nDeep Orange\n\n\nBrown\n\n\nGrey\n\n\nBlue Grey\n\n\n\n  var buttons = document.querySelectorAll(\"button[data-md-color-primary]\");\n  Array.prototype.forEach.call(buttons, function(button) {\n    button.addEventListener(\"click\", function() {\n      document.body.dataset.mdColorPrimary = this.dataset.mdColorPrimary;\n    })\n  })\n\n\n\n\nAccent colors\n\n\nClick on a tile to change the accent color of the theme:\n\n\nRed\n\n\nPink\n\n\nPurple\n\n\nDeep Purple\n\n\nIndigo\n\n\nBlue\n\n\nLight Blue\n\n\nCyan\n\n\nTeal\n\n\nGreen\n\n\nLight Green\n\n\nLime\n\n\nYellow\n\n\nAmber\n\n\nOrange\n\n\nDeep Orange\n\n\n\n  var buttons = document.querySelectorAll(\"button[data-md-color-accent]\");\n  Array.prototype.forEach.call(buttons, function(button) {\n    button.addEventListener(\"click\", function() {\n      document.body.dataset.mdColorAccent = this.dataset.mdColorAccent;\n    })\n  })\n\n\n\n\nChanging the font family\n\n\nMaterial uses the \nRoboto font family\n by default, specifically the regular\nsans-serif type for text and the \nmonospaced\n type for code. Both fonts are\nloaded from \nGoogle Fonts\n and can easily be changed to other fonts, like\nfor example the \nUbuntu font family\n:\n\n\nextra\n:\n\n  \nfont\n:\n\n    \ntext\n:\n \nUbuntu\n\n    \ncode\n:\n \nUbuntu\n \nMono\n\n\n\n\n\n\nThe text font will be loaded in font-weights 400 and \n700\n, the \nmonospaced\n\nfont in regular weight. If you want to load fonts from other destinations or\ndon't want to use the Google Fonts loading magic, just set \nfont\n to \nfalse\n:\n\n\nextra\n:\n\n  \nfont\n:\n \nfalse\n\n\n\n\n\n\nAdding a source repository\n\n\nTo include a link to the repository of your project within your documentation,\nset the following variables via your project's \nmkdocs.yml\n:\n\n\nrepo_name\n:\n \nmy-github-handle/my-project\n\n\nrepo_url\n:\n \nhttps://github.com/my-github-handle/my-project\n\n\n\n\n\n\nMaterial will render the name of the repository next to the search bar on\nbig screens and as part of the main navigation drawer on smaller screen sizes.\nFurthermore, if \nrepo_url\n points to a GitHub, BitBucket or GitLab repository,\nthe respective service logo will be shown next to the name of the repository.\nAdditionally, for GitHub, the number of stars and forks is shown.\n\n\n\n\nWhy is there an edit button at the top of every article?\n\n\nIf the \nrepo_url\n is set to a GitHub or BitBucket repository, and the\n\nrepo_name\n is set to \nGitHub\n or \nBitBucket\n (implied by default), an\nedit button will appear at the top of every article. This is the automatic\nbehavior that MkDocs implements. See the \nMkDocs documentation\n on more\nguidance regarding the \nedit_uri\n attribute, which defines whether the edit\nbutton is shown or not.\n\n\n\n\nAdding a logo\n\n\nMaterial makes it easy to add your logo. Your logo should have rectangular\nshape with a minimum resolution of 128x128, leave some room towards the edges\nand be composed of high contrast areas on a transparent ground, as it will be\nplaced on the colored header bar and drawer. Simply create the folder\n\ndocs/images\n, add your logo and embed it with:\n\n\nextra\n:\n\n  \nlogo\n:\n \nimages/logo.svg\n\n\n\n\n\n\nAdding social links\n\n\nIf you want to link your social accounts, the Material theme provides an easy\nway for doing this in the footer of the documentation using the automatically\nincluded \nFontAwesome\n webfont. The syntax is simple \u2013 the \ntype\n must\ndenote the name of the social service, e.g. \ngithub\n, \ntwitter\n or \nlinkedin\n\nand the \nlink\n must contain the URL you want to link to:\n\n\nextra\n:\n\n  \nsocial\n:\n\n    \n-\n \ntype\n:\n \ngithub\n\n      \nlink\n:\n \nhttps://github.com/squidfunk\n\n    \n-\n \ntype\n:\n \ntwitter\n\n      \nlink\n:\n \nhttps://twitter.com/squidfunk\n\n    \n-\n \ntype\n:\n \nlinkedin\n\n      \nlink\n:\n \nhttps://de.linkedin.com/in/martin-donath-20a95039\n\n\n\n\n\n\nThe links are generated in order and the \ntype\n of the links must match the\nname of the FontAwesome glyph. The \nfa\n is automatically added, so \ngithub\n\nwill result in \nfa fa-github\n.\n\n\nGoogle Analytics integration\n\n\nMkDocs makes it easy to integrate site tracking with Google Analytics.\nBesides basic tracking, clicks on all outgoing links can be tracked as well as\nhow site search is used. Tracking can be activated in your project's\n\nmkdocs.yml\n:\n\n\ngoogle_analytics\n:\n\n  \n-\n \nUA-XXXXXXXX-X\n\n  \n-\n \nauto\n\n\n\n\n\n\nDisqus integation\n\n\nMaterial for MkDocs is integrated with \nDisqus\n, so if you want to add a\ncomments section to your documentation set the shortname of your Disqus project\nin your \nmkdocs.yml\n:\n\n\nextra\n:\n\n  \ndisqus\n:\n \nyour-disqus-shortname\n\n\n\n\n\n\nA new entry at the bottom of the table of contents is generated that is linking\nto the comments section. The necessary JavaScript is automatically included.\n\n\nLocalization\n\n\nMaterial for MkDocs supports internationalization (i18n). In order to translate\nthe labels (e.g. \nPrevious\n and \nNext\n in the footer), you can override the\nfile \npartials/language.html\n and provide your own translations inside the\nmacro \nt\n:\n\n\n{%\n \nmacro\n \nt\n(\nkey\n)\n \n%}{{\n \n{\n\n  \nlanguage\n:\n \nen\n,\n\n  \nedit.link.title\n:\n \nEdit this page\n,\n\n  \nfooter.previous\n:\n \nPrevious\n,\n\n  \nfooter.next\n:\n \nNext\n,\n\n  \nmeta.comments\n:\n \nComments\n,\n\n  \nmeta.source\n:\n \nSource\n,\n\n  \nsearch.placeholder\n:\n \nSearch\n,\n\n  \nsearch.result.placeholder\n:\n \nType to start searching\n,\n\n  \nsearch.result.none\n:\n \nNo matching documents\n,\n\n  \nsearch.result.one\n:\n \n1 matching document\n,\n\n  \nsearch.result.other\n:\n \n# matching documents\n,\n\n  \nsource.link.title\n:\n \nGo to repository\n,\n\n  \ntoc.title\n:\n \nTable of contents\n\n\n}[\nkey\n]\n \n}}{%\n \nendmacro\n \n%}\n\n\n\n\n\n\nJust copy the file from the original theme and make your adjustments. See the\nsection on \noverriding partials\n and the general guide on\n\ntheme extension\n in the customization guide.\n\n\nTabs\n\n\nFrom version 1.1.0 on, Material supports another layer on top of the main\nnavigation for larger screens in the form of tabs. This is especially useful\nfor larger documentation projects with a few top-level sections. Tabs can be\nenabled by setting the respective feature flag to true:\n\n\nextra\n:\n\n  \nfeature\n:\n\n    \ntabs\n:\n \ntrue\n\n\n\n\n\n\nMore advanced customization\n\n\nIf you want to change the general appearance of the Material theme, see\n\nthis article\n for more information on advanced customization.\n\n\nExtensions\n\n\nMkDocs supports several \nMarkdown extensions\n. The following extensions\nare not enabled by default (see the link for which are enabled by default)\nbut highly recommended, so they should be switched on at all times:\n\n\nmarkdown_extensions\n:\n\n  \n-\n \nadmonition\n\n  \n-\n \ncodehilite(guess_lang=false)\n\n  \n-\n \ntoc(permalink=true)\n\n\n\n\n\n\nFor more information, see the following list of extensions supported by the\nMaterial theme including more information regarding installation and usage:\n\n\n\n\nAdmonition\n\n\nCodehilite\n\n\nFootnotes\n\n\nMetadata\n\n\nPermalinks\n\n\nPyMdown Extensions\n\n\n\n\nFull example\n\n\nBelow is a full example configuration for a \nmkdocs.yml\n:\n\n\n# Project information\n\n\nsite_name\n:\n \nMy\n \nProject\n\n\nsite_description\n:\n \nA\n \nshort\n \ndescription\n \nof\n \nmy\n \nproject\n\n\nsite_author\n:\n \nJohn\n \nDoe\n\n\nsite_url\n:\n \nhttps://my-github-handle.github.io/my-project\n\n\n\n# Repository\n\n\nrepo_name\n:\n \nmy-github-handle/my-project\n\n\nrepo_url\n:\n \nhttps://github.com/my-github-handle/my-project\n\n\n\n# Copyright\n\n\ncopyright\n:\n \nCopyright\n \ncopy;\n \n2016\n \n-\n \n2017\n \nJohn\n \nDoe\n\n\n\n# Documentation and theme\n\n\ntheme\n:\n \nmaterial\n\n\n\n# Options\n\n\nextra\n:\n\n  \nlogo\n:\n \nimages/logo.svg\n\n  \npalette\n:\n\n    \nprimary\n:\n \nindigo\n\n    \naccent\n:\n \nindigo\n\n  \nfont\n:\n\n    \ntext\n:\n \nRoboto\n\n    \ncode\n:\n \nRoboto\n \nMono\n\n  \nsocial\n:\n\n    \n-\n \ntype\n:\n \ngithub\n\n      \nlink\n:\n \nhttps://github.com/john-doe\n\n    \n-\n \ntype\n:\n \ntwitter\n\n      \nlink\n:\n \nhttps://twitter.com/jonh-doe\n\n    \n-\n \ntype\n:\n \nlinkedin\n\n      \nlink\n:\n \nhttps://de.linkedin.com/in/john-doe\n\n\n\n# Google Analytics\n\n\ngoogle_analytics\n:\n\n  \n-\n \nUA-XXXXXXXX-X\n\n  \n-\n \nauto\n\n\n\n# Extensions\n\n\nmarkdown_extensions\n:\n\n  \n-\n \nadmonition\n\n  \n-\n \ncodehilite(guess_lang=false)\n\n  \n-\n \ntoc(permalink=true)", 
+            "title": "Getting started"
+        }, 
+        {
+            "location": "/getting-started/#getting-started", 
+            "text": "", 
+            "title": "Getting started"
+        }, 
+        {
+            "location": "/getting-started/#installation", 
+            "text": "Set up Material using Docker  The official  Docker image  for Material comes with all dependencies\npre-installed and ready-to-use with the latest version published on PyPI,\npackaged in a very small image (28MB compressed).", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/getting-started/#installing-mkdocs", 
+            "text": "Before installing  MkDocs , you need to make sure you have Python and  pip \n\u2013 the Python package manager \u2013 up and running. You can verify if you're already\ngood to go with the following commands:  python --version # Python 2.7.13 \npip --version # pip 9.0.1   Installing and verifying MkDocs is as simple as:  pip install mkdocs   mkdocs --version # mkdocs, version 0.16.0    MkDocs version requirements  Material requires MkDocs  = 0.16.   Furthermore, it is highly recommended to install  Pygments  and the PyMdown Extensions  to get the most out of the Material theme:  pip install pygments\npip install pymdown-extensions", 
+            "title": "Installing MkDocs"
+        }, 
+        {
+            "location": "/getting-started/#installing-material", 
+            "text": "", 
+            "title": "Installing Material"
+        }, 
+        {
+            "location": "/getting-started/#using-pip", 
+            "text": "Material can be installed with  pip :  pip install mkdocs-material", 
+            "title": "using pip"
+        }, 
+        {
+            "location": "/getting-started/#using-choco", 
+            "text": "If you're on Windows you can use  Chocolatey  to install  Material :  choco install mkdocs-material  This will also install all required dependencies like  Python  and MkDocs .", 
+            "title": "using choco"
+        }, 
+        {
+            "location": "/getting-started/#cloning-from-github", 
+            "text": "Material can also be used without a system-wide installation by cloning the\nrepository into a subfolder of your project's root directory:  git clone https://github.com/squidfunk/mkdocs-material.git  This is especially useful if you want to extend the theme and override some\nparts of the theme. The theme will reside in the folder mkdocs-material/material .", 
+            "title": "cloning from GitHub"
+        }, 
+        {
+            "location": "/getting-started/#troubleshooting", 
+            "text": "Installation on macOS  When you're running the pre-installed version of Python on macOS,  pip \ntries to install packages in a folder for which your user might not have\nthe adequate permissions. There are two possible solutions for this:    Installing in user space  (recommended): Provide the  --user  flag\n  to the install command and  pip  will install the package in a user-site\n  location. This is the recommended way.    Switching to a homebrewed Python : Upgrade your Python installation\n  to a self-contained solution by installing Python with Homebrew. This\n  should eliminate a lot of problems you may be having with  pip .      Error: unrecognized theme 'material'  If you run into this error, the most common reason is that you installed\nMkDocs through some package manager (e.g. Homebrew or  apt-get ) and the\nMaterial theme through  pip , so both packages end up in different\nlocations. MkDocs only checks it's install location for themes.", 
+            "title": "Troubleshooting"
+        }, 
+        {
+            "location": "/getting-started/#usage", 
+            "text": "In order to enable the Material theme just add one of the following lines to\nyour  mkdocs.yml . If you installed Material using pip:  theme :   material   If you cloned Material from GitHub:  theme_dir :   mkdocs-material/material   MkDocs includes a development server, so you can review your changes as you go.\nThe development server can be started with the following command:  mkdocs serve  Now you can point your browser to  localhost:8000  and the Material theme\nshould be visible. From here on, you can start writing your documentation, or\nread on and customize the theme through some options.", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/getting-started/#options", 
+            "text": "The Material theme adds some extra variables for configuration via your\nproject's  mkdocs.yml . See the following sections for all available options.", 
+            "title": "Options"
+        }, 
+        {
+            "location": "/getting-started/#changing-the-color-palette", 
+            "text": "Material defines a default hue for every primary and accent color on Google's\nMaterial Design  color palette . This makes it very easy to change the\noverall look of the theme. Just set the primary and accent colors using the\nfollowing variables in your  mkdocs.yml :  extra : \n   palette : \n     primary :   indigo \n     accent :   light   blue   Color names are case-insensitive, but must match the names of the Material\nDesign color palette. Valid values are:  red ,  pink ,  purple ,  deep purple , indigo ,  blue ,  light blue ,  cyan ,  teal ,  green ,  light green ,  lime , yellow ,  amber ,  orange ,  deep orange ,  brown ,  grey  and  blue grey .\nThe last three colors can only be used as a primary color.  If the color is set via this configuration, an additional CSS file that\ndefines the color palette is included. If you want to keep things lean, clone\nthe repository and recompile the theme with your custom colors set. See the\nguide on  customization  for more information.", 
+            "title": "Changing the color palette"
+        }, 
+        {
+            "location": "/getting-started/#primary-colors", 
+            "text": "Click on a tile to change the primary color of the theme:  Red  Pink  Purple  Deep Purple  Indigo  Blue  Light Blue  Cyan  Teal  Green  Light Green  Lime  Yellow  Amber  Orange  Deep Orange  Brown  Grey  Blue Grey  \n  var buttons = document.querySelectorAll(\"button[data-md-color-primary]\");\n  Array.prototype.forEach.call(buttons, function(button) {\n    button.addEventListener(\"click\", function() {\n      document.body.dataset.mdColorPrimary = this.dataset.mdColorPrimary;\n    })\n  })", 
+            "title": "Primary colors"
+        }, 
+        {
+            "location": "/getting-started/#accent-colors", 
+            "text": "Click on a tile to change the accent color of the theme:  Red  Pink  Purple  Deep Purple  Indigo  Blue  Light Blue  Cyan  Teal  Green  Light Green  Lime  Yellow  Amber  Orange  Deep Orange  \n  var buttons = document.querySelectorAll(\"button[data-md-color-accent]\");\n  Array.prototype.forEach.call(buttons, function(button) {\n    button.addEventListener(\"click\", function() {\n      document.body.dataset.mdColorAccent = this.dataset.mdColorAccent;\n    })\n  })", 
+            "title": "Accent colors"
+        }, 
+        {
+            "location": "/getting-started/#changing-the-font-family", 
+            "text": "Material uses the  Roboto font family  by default, specifically the regular\nsans-serif type for text and the  monospaced  type for code. Both fonts are\nloaded from  Google Fonts  and can easily be changed to other fonts, like\nfor example the  Ubuntu font family :  extra : \n   font : \n     text :   Ubuntu \n     code :   Ubuntu   Mono   The text font will be loaded in font-weights 400 and  700 , the  monospaced \nfont in regular weight. If you want to load fonts from other destinations or\ndon't want to use the Google Fonts loading magic, just set  font  to  false :  extra : \n   font :   false", 
+            "title": "Changing the font family"
+        }, 
+        {
+            "location": "/getting-started/#adding-a-source-repository", 
+            "text": "To include a link to the repository of your project within your documentation,\nset the following variables via your project's  mkdocs.yml :  repo_name :   my-github-handle/my-project  repo_url :   https://github.com/my-github-handle/my-project   Material will render the name of the repository next to the search bar on\nbig screens and as part of the main navigation drawer on smaller screen sizes.\nFurthermore, if  repo_url  points to a GitHub, BitBucket or GitLab repository,\nthe respective service logo will be shown next to the name of the repository.\nAdditionally, for GitHub, the number of stars and forks is shown.   Why is there an edit button at the top of every article?  If the  repo_url  is set to a GitHub or BitBucket repository, and the repo_name  is set to  GitHub  or  BitBucket  (implied by default), an\nedit button will appear at the top of every article. This is the automatic\nbehavior that MkDocs implements. See the  MkDocs documentation  on more\nguidance regarding the  edit_uri  attribute, which defines whether the edit\nbutton is shown or not.", 
+            "title": "Adding a source repository"
+        }, 
+        {
+            "location": "/getting-started/#adding-a-logo", 
+            "text": "Material makes it easy to add your logo. Your logo should have rectangular\nshape with a minimum resolution of 128x128, leave some room towards the edges\nand be composed of high contrast areas on a transparent ground, as it will be\nplaced on the colored header bar and drawer. Simply create the folder docs/images , add your logo and embed it with:  extra : \n   logo :   images/logo.svg", 
+            "title": "Adding a logo"
+        }, 
+        {
+            "location": "/getting-started/#adding-social-links", 
+            "text": "If you want to link your social accounts, the Material theme provides an easy\nway for doing this in the footer of the documentation using the automatically\nincluded  FontAwesome  webfont. The syntax is simple \u2013 the  type  must\ndenote the name of the social service, e.g.  github ,  twitter  or  linkedin \nand the  link  must contain the URL you want to link to:  extra : \n   social : \n     -   type :   github \n       link :   https://github.com/squidfunk \n     -   type :   twitter \n       link :   https://twitter.com/squidfunk \n     -   type :   linkedin \n       link :   https://de.linkedin.com/in/martin-donath-20a95039   The links are generated in order and the  type  of the links must match the\nname of the FontAwesome glyph. The  fa  is automatically added, so  github \nwill result in  fa fa-github .", 
+            "title": "Adding social links"
+        }, 
+        {
+            "location": "/getting-started/#google-analytics-integration", 
+            "text": "MkDocs makes it easy to integrate site tracking with Google Analytics.\nBesides basic tracking, clicks on all outgoing links can be tracked as well as\nhow site search is used. Tracking can be activated in your project's mkdocs.yml :  google_analytics : \n   -   UA-XXXXXXXX-X \n   -   auto", 
+            "title": "Google Analytics integration"
+        }, 
+        {
+            "location": "/getting-started/#disqus-integation", 
+            "text": "Material for MkDocs is integrated with  Disqus , so if you want to add a\ncomments section to your documentation set the shortname of your Disqus project\nin your  mkdocs.yml :  extra : \n   disqus :   your-disqus-shortname   A new entry at the bottom of the table of contents is generated that is linking\nto the comments section. The necessary JavaScript is automatically included.", 
+            "title": "Disqus integation"
+        }, 
+        {
+            "location": "/getting-started/#localization", 
+            "text": "Material for MkDocs supports internationalization (i18n). In order to translate\nthe labels (e.g.  Previous  and  Next  in the footer), you can override the\nfile  partials/language.html  and provide your own translations inside the\nmacro  t :  {%   macro   t ( key )   %}{{   { \n   language :   en , \n   edit.link.title :   Edit this page , \n   footer.previous :   Previous , \n   footer.next :   Next , \n   meta.comments :   Comments , \n   meta.source :   Source , \n   search.placeholder :   Search , \n   search.result.placeholder :   Type to start searching , \n   search.result.none :   No matching documents , \n   search.result.one :   1 matching document , \n   search.result.other :   # matching documents , \n   source.link.title :   Go to repository , \n   toc.title :   Table of contents  }[ key ]   }}{%   endmacro   %}   Just copy the file from the original theme and make your adjustments. See the\nsection on  overriding partials  and the general guide on theme extension  in the customization guide.", 
+            "title": "Localization"
+        }, 
+        {
+            "location": "/getting-started/#tabs", 
+            "text": "From version 1.1.0 on, Material supports another layer on top of the main\nnavigation for larger screens in the form of tabs. This is especially useful\nfor larger documentation projects with a few top-level sections. Tabs can be\nenabled by setting the respective feature flag to true:  extra : \n   feature : \n     tabs :   true", 
+            "title": "Tabs"
+        }, 
+        {
+            "location": "/getting-started/#more-advanced-customization", 
+            "text": "If you want to change the general appearance of the Material theme, see this article  for more information on advanced customization.", 
+            "title": "More advanced customization"
+        }, 
+        {
+            "location": "/getting-started/#extensions", 
+            "text": "MkDocs supports several  Markdown extensions . The following extensions\nare not enabled by default (see the link for which are enabled by default)\nbut highly recommended, so they should be switched on at all times:  markdown_extensions : \n   -   admonition \n   -   codehilite(guess_lang=false) \n   -   toc(permalink=true)   For more information, see the following list of extensions supported by the\nMaterial theme including more information regarding installation and usage:   Admonition  Codehilite  Footnotes  Metadata  Permalinks  PyMdown Extensions", 
+            "title": "Extensions"
+        }, 
+        {
+            "location": "/getting-started/#full-example", 
+            "text": "Below is a full example configuration for a  mkdocs.yml :  # Project information  site_name :   My   Project  site_description :   A   short   description   of   my   project  site_author :   John   Doe  site_url :   https://my-github-handle.github.io/my-project  # Repository  repo_name :   my-github-handle/my-project  repo_url :   https://github.com/my-github-handle/my-project  # Copyright  copyright :   Copyright   copy;   2016   -   2017   John   Doe  # Documentation and theme  theme :   material  # Options  extra : \n   logo :   images/logo.svg \n   palette : \n     primary :   indigo \n     accent :   indigo \n   font : \n     text :   Roboto \n     code :   Roboto   Mono \n   social : \n     -   type :   github \n       link :   https://github.com/john-doe \n     -   type :   twitter \n       link :   https://twitter.com/jonh-doe \n     -   type :   linkedin \n       link :   https://de.linkedin.com/in/john-doe  # Google Analytics  google_analytics : \n   -   UA-XXXXXXXX-X \n   -   auto  # Extensions  markdown_extensions : \n   -   admonition \n   -   codehilite(guess_lang=false) \n   -   toc(permalink=true)", 
+            "title": "Full example"
+        }, 
+        {
+            "location": "/base/", 
+            "text": "Base", 
+            "title": "Base"
+        }, 
+        {
+            "location": "/base/#base", 
+            "text": "", 
+            "title": "Base"
+        }, 
+        {
+            "location": "/extensions/server/server/", 
+            "text": "Server", 
+            "title": "Server"
+        }, 
+        {
+            "location": "/extensions/server/server/#server", 
+            "text": "", 
+            "title": "Server"
+        }, 
+        {
+            "location": "/extensions/server/generate_new_api/", 
+            "text": "Generate New API", 
+            "title": "Generate New API"
+        }, 
+        {
+            "location": "/extensions/server/generate_new_api/#generate-new-api", 
+            "text": "", 
+            "title": "Generate New API"
+        }, 
+        {
+            "location": "/extensions/client/client/", 
+            "text": "Client", 
+            "title": "Client"
+        }, 
+        {
+            "location": "/extensions/client/client/#client", 
+            "text": "", 
+            "title": "Client"
+        }, 
+        {
+            "location": "/extensions/client/generate_new_component/", 
+            "text": "Generate New Component", 
+            "title": "Generate Component"
+        }, 
+        {
+            "location": "/extensions/client/generate_new_component/#generate-new-component", 
+            "text": "", 
+            "title": "Generate New Component"
+        }, 
+        {
+            "location": "/extensions/client/generate_new_container/", 
+            "text": "Generate New Container", 
+            "title": "Generate Container"
+        }, 
+        {
+            "location": "/extensions/client/generate_new_container/#generate-new-container", 
+            "text": "", 
+            "title": "Generate New Container"
+        }, 
+        {
+            "location": "/customization/", 
+            "text": "Customization", 
+            "title": "Customization"
+        }, 
+        {
+            "location": "/customization/#customization", 
+            "text": "", 
+            "title": "Customization"
+        }, 
+        {
+            "location": "/release-notes/", 
+            "text": "Release notes\n\n\nUpgrading\n\n\nTo upgrade harmony-boilerplate to the latest version, use npm:\n\n\nnpm update generator-harmony-boilerplate -g", 
+            "title": "Release notes"
+        }, 
+        {
+            "location": "/release-notes/#release-notes", 
+            "text": "", 
+            "title": "Release notes"
+        }, 
+        {
+            "location": "/release-notes/#upgrading", 
+            "text": "To upgrade harmony-boilerplate to the latest version, use npm:  npm update generator-harmony-boilerplate -g", 
+            "title": "Upgrading"
+        }, 
+        {
+            "location": "/contributing/", 
+            "text": "Contributing\n\n\nInterested in contributing to the harmony boilerplate? Want to report a bug? Before\nyou do, please read the following guidelines.\n\n\nSubmission context\n\n\nFound a bug?\n\n\nIf you found a bug in the source code, you can help us by submitting an issue\nto the \nissue tracker\n in our GitHub repository. Even better, you can submit\na Pull Request with a fix. However, before doing so, please read the\n\nsubmission guidelines\n.\n\n\nMissing a feature?\n\n\nYou can request a new feature by submitting an issue to our GitHub Repository.\nIf you would like to implement a new feature, please submit an issue with a\nproposal for your work first, to be sure that it is of use for everyone, as\nthe Material theme is highly opinionated. Please consider what kind of change\nit is:\n\n\n\n\n\n\nFor a \nmajor feature\n, first open an issue and outline your proposal so\n  that it can be discussed. This will also allow us to better coordinate our\n  efforts, prevent duplication of work, and help you to craft the change so\n  that it is successfully accepted into the project.\n\n\n\n\n\n\nSmall features and bugs\n can be crafted and directly submitted as a Pull\n  Request. However, there is no guarantee that your feature will make it into\n  the master, as it's always a matter of opinion whether if benefits the\n  overall functionality of the theme.\n\n\n\n\n\n\nSubmission guidelines\n\n\nSubmitting an issue\n\n\nBefore you submit an issue, please search the issue tracker, maybe an issue for\nyour problem already exists and the discussion might inform you of workarounds\nreadily available.\n\n\nWe want to fix all the issues as soon as possible, but before fixing a bug we\nneed to reproduce and confirm it. In order to reproduce bugs we will\nsystematically ask you to provide a minimal reproduction scenario using the\ncustom issue template. Please stick to the issue template.\n\n\nUnfortunately we are not able to investigate / fix bugs without a minimal\nreproduction scenario, so if we don't hear back from you we may close the issue.\n\n\nSubmitting a Pull Request (PR)\n\n\nSearch GitHub for an open or closed PR that relates to your submission. You\ndon't want to duplicate effort. If you do not find a related issue or PR,\ngo ahead.\n\n\n\n\n\n\nDevelopment\n: Fork the project, set up development environment,\n  make your changes in a separate git branch and add descriptive messages to\n  your commits.\n\n\n\n\n\n\nBuild\n: Before submitting a pull requests, build the boilerplate ( dev and prod ). This is a\n  mandatory requirement for your PR to get accepted, as the boilerplate should at\n  all times be installable through GitHub.\n\n\n\n\n\n\nPull Request\n: After building the boilerplate, commit the changes, push\n  your branch to GitHub and send a PR to \nharmony-boilerplate:master\n. If we\n  suggest changes, make the required updates, rebase your branch and push the\n  changes to your GitHub repository, which will automatically update your PR.\n\n\n\n\n\n\nAfter your PR is merged, you can safely delete your branch and pull the changes\nfrom the main (upstream) repository.", 
+            "title": "Contributing"
+        }, 
+        {
+            "location": "/contributing/#contributing", 
+            "text": "Interested in contributing to the harmony boilerplate? Want to report a bug? Before\nyou do, please read the following guidelines.", 
+            "title": "Contributing"
+        }, 
+        {
+            "location": "/contributing/#submission-context", 
+            "text": "", 
+            "title": "Submission context"
+        }, 
+        {
+            "location": "/contributing/#found-a-bug", 
+            "text": "If you found a bug in the source code, you can help us by submitting an issue\nto the  issue tracker  in our GitHub repository. Even better, you can submit\na Pull Request with a fix. However, before doing so, please read the submission guidelines .", 
+            "title": "Found a bug?"
+        }, 
+        {
+            "location": "/contributing/#missing-a-feature", 
+            "text": "You can request a new feature by submitting an issue to our GitHub Repository.\nIf you would like to implement a new feature, please submit an issue with a\nproposal for your work first, to be sure that it is of use for everyone, as\nthe Material theme is highly opinionated. Please consider what kind of change\nit is:    For a  major feature , first open an issue and outline your proposal so\n  that it can be discussed. This will also allow us to better coordinate our\n  efforts, prevent duplication of work, and help you to craft the change so\n  that it is successfully accepted into the project.    Small features and bugs  can be crafted and directly submitted as a Pull\n  Request. However, there is no guarantee that your feature will make it into\n  the master, as it's always a matter of opinion whether if benefits the\n  overall functionality of the theme.", 
+            "title": "Missing a feature?"
+        }, 
+        {
+            "location": "/contributing/#submission-guidelines", 
+            "text": "", 
+            "title": "Submission guidelines"
+        }, 
+        {
+            "location": "/contributing/#submitting-an-issue", 
+            "text": "Before you submit an issue, please search the issue tracker, maybe an issue for\nyour problem already exists and the discussion might inform you of workarounds\nreadily available.  We want to fix all the issues as soon as possible, but before fixing a bug we\nneed to reproduce and confirm it. In order to reproduce bugs we will\nsystematically ask you to provide a minimal reproduction scenario using the\ncustom issue template. Please stick to the issue template.  Unfortunately we are not able to investigate / fix bugs without a minimal\nreproduction scenario, so if we don't hear back from you we may close the issue.", 
+            "title": "Submitting an issue"
+        }, 
+        {
+            "location": "/contributing/#submitting-a-pull-request-pr", 
+            "text": "Search GitHub for an open or closed PR that relates to your submission. You\ndon't want to duplicate effort. If you do not find a related issue or PR,\ngo ahead.    Development : Fork the project, set up development environment,\n  make your changes in a separate git branch and add descriptive messages to\n  your commits.    Build : Before submitting a pull requests, build the boilerplate ( dev and prod ). This is a\n  mandatory requirement for your PR to get accepted, as the boilerplate should at\n  all times be installable through GitHub.    Pull Request : After building the boilerplate, commit the changes, push\n  your branch to GitHub and send a PR to  harmony-boilerplate:master . If we\n  suggest changes, make the required updates, rebase your branch and push the\n  changes to your GitHub repository, which will automatically update your PR.    After your PR is merged, you can safely delete your branch and pull the changes\nfrom the main (upstream) repository.", 
+            "title": "Submitting a Pull Request (PR)"
+        }, 
+        {
+            "location": "/license/", 
+            "text": "License\n\n\nMIT License\n\n\nCopyright \n 2017 - 2018 Harmony Framework\n\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to\ndeal in the Software without restriction, including without limitation the\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or\nsell copies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS\nIN THE SOFTWARE.\n\n\n\n\nNote - the copy right thing is only if there is copy right comment block in the code, there is no need to mention us or give any attribution.", 
+            "title": "License"
+        }, 
+        {
+            "location": "/license/#license", 
+            "text": "MIT License  Copyright   2017 - 2018 Harmony Framework  Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to\ndeal in the Software without restriction, including without limitation the\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or\nsell copies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS\nIN THE SOFTWARE.   Note - the copy right thing is only if there is copy right comment block in the code, there is no need to mention us or give any attribution.", 
+            "title": "License"
+        }
+    ]
+}
