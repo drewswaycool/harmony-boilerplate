@@ -2,6 +2,7 @@ import { call, put } from 'redux-saga/effects';
 import * as ActionTypes from '../../actions';
 import requests from '../../base/api/requests';
 import { PORTAL } from '../../routes';
+import { browserHistory } from 'react-router';
 
 export function* fetchPosts(api, action) {
 
@@ -39,7 +40,7 @@ export function* createPost(api, action) {
 
         if (response.data.message === "Resource created") {
             requests.broadcastAction({type: ActionTypes.FETCH_POSTS, payload: null});
-            yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});
+            browserHistory.push(PORTAL);
         }
         else {
             yield put({type: ActionTypes.CREATE_POST_ERROR, message: response.data.message});
@@ -55,7 +56,7 @@ export function* deletePost(api, action) {
     try {
         yield call(api.deletePost, action.payload);
         requests.broadcastAction({type: ActionTypes.FETCH_POSTS, payload: null});
-        yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});
+        browserHistory.push(PORTAL);
     } catch (e) {
         yield put({type: ActionTypes.DELETE_POST_ERROR, null});
     }
