@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connectWithReduxForm } from '../../harmony-redux-form-field';
-import translator from '../../../utils/translator';
+import translator, { xxx } from '../../../utils/translator';
 import { Link } from 'react-router';
 import * as actions from '../actions/actions_user';
 
@@ -50,7 +50,7 @@ function validate(values) {
 }
 
 
-export default connectWithReduxForm(Login,
+export default connectWithReduxForm(xxx(Login),
     (state) => {
         return {
             loginError: state.user.get('loginError')
