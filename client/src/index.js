@@ -12,7 +12,7 @@ import { config } from './config';
 
 /* -------- Harmony Features --------- */
 import WSAction from './base/features/harmony-redux-websocket-actions';
-import ConnectedIntlProvider from './base/features/i18n/IntlProvider';
+import ConnectedIntlProvider from './base/features/harmony-i18n/IntlProvider';
 
 
 const sagaMiddleware = createSagaMiddleware();
