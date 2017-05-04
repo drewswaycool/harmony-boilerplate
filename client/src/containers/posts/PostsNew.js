@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { connectWithReduxForm } from '../../base/features/harmony-redux-form-field';
+import { harmonyConnectForm } from '../../base/features/harmony-redux-react-connect';
 import * as actions from '../../actions/posts/actions_posts';
+
 import { Link } from 'react-router';
 import { PORTAL } from '../../routes';
 
@@ -54,7 +55,7 @@ function validate(values) {
 }
 
 
-export default connectWithReduxForm(PostsNew,
+export default harmonyConnectForm(PostsNew,
     (state) => {
         return {
             message: state.posts.get('message')

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import {injectIntl} from 'react-intl';
-import translator from '../../base/utils/translator';
+import { harmonyConnect } from '../../base/features/harmony-redux-react-connect';
 import * as actions from '../../actions/<%= name %>/actions_<%= name %>';
 
 class <%= className %> extends Component {
@@ -15,7 +13,7 @@ class <%= className %> extends Component {
     }
 }
 
-export default connect(
+export default connect(<%= className %>,
     (state) => {
         return {
 
@@ -24,4 +22,4 @@ export default connect(
     {
 
     }
-)(injectIntl(<%= className %>));
+);

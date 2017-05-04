@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connectWithReduxForm } from '../../base/features/harmony-redux-form-field';
-import {injectIntl} from 'react-intl';
-import translator from '../../base/utils/translator';
+import { harmonyConnectForm } from '../../base/features/harmony-redux-react-connect';
 import * as actions from '../../actions/<%= name %>/actions_<%= name %>';
 
 
@@ -34,7 +32,7 @@ function validate(values) {
 }
 
 
-export default connectWithReduxForm(injectIntl(<%= className %>),
+export default harmonyConnectForm(<%= className %>,
     (state) => {
         return {
 

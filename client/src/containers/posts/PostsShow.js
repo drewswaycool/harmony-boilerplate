@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import { harmonyConnect } from '../../base/features/harmony-redux-react-connect';
 import * as actions from '../../actions/posts/actions_posts';
+
+import { Link } from 'react-router';
 import { PORTAL } from '../../routes';
 
 class PostsShow extends Component {
@@ -35,7 +36,7 @@ class PostsShow extends Component {
     }
 }
 
-export default connect(
+export default harmonyConnect(PostsShow,
     (state) => {
         return {
             post: state.posts.get('post')
@@ -46,4 +47,4 @@ export default connect(
         fetchPost: actions.fetchPost,
         deletePost: actions.deletePost
     }
-)(PostsShow);
+);

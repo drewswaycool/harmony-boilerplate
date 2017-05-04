@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import {injectIntl} from 'react-intl';
-import translator from '../../base/utils/translator';
+import { harmonyConnect } from '../../base/features/harmony-redux-react-connect';
 import { fetchPosts } from '../../actions/posts/actions_posts';
 import { Link } from 'react-router';
 import { POSTS_NEW, POSTS_SHOW } from '../../routes';
@@ -41,10 +39,10 @@ class PostsIndex extends Component {
             <div>
                 <div className="text-xs-right">
                     <Link to={POSTS_NEW} className="btn btn-primary" >
-                        {translator(this.props.intl,"addPost")}
+                        {this.T("addPost")}
                     </Link>
                 </div>
-                <h3>{translator(this.props.intl,"postsTitle")}</h3>
+                <h3>{this.T("postsTitle")}</h3>
                 <ul className="list-group">
                     {this.renderPosts()}
                 </ul>
@@ -53,7 +51,7 @@ class PostsIndex extends Component {
     }
 }
 
-export default connect(
+export default harmonyConnect(PostsIndex,
     (state) => {
         return {
             posts: state.posts.get('all'),
@@ -63,4 +61,4 @@ export default connect(
     {
         fetchPosts
     }
-)(injectIntl(PostsIndex));
+);
