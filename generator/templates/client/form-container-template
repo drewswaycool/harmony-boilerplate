@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connectWithReduxForm } from 'redux-form-field';
+import { connectWithReduxForm } from '../../base/features/harmony-redux-form-field';
 import {injectIntl} from 'react-intl';
 import translator from '../../base/utils/translator';
 import * as actions from '../../actions/<%= name %>/actions_<%= name %>';

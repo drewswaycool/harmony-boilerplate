@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import Navigation from '../base/features/navigation/containers/Navigation';
+import Navigation from '../base/features/harmony-navigation/containers/Navigation';
 import Localization from '../containers/localization/Localization';
 
 

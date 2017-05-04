@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { createField } from 'redux-form-field';
+import { createField } from '../../../base/features/harmony-redux-form-field';
 
 const component = ({ meta: { touched, error, warning, invalid }, input, type, label }) => {
 

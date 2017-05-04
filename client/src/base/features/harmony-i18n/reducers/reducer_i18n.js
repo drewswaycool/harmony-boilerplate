@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 import * as ActionTypes from '../../../../actions';
-import appMessages from '../../i18n';
+import appMessages from '../../harmony-i18n';
 
 const defaultLocale = 'en';
 

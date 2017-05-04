@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { injectIntl } from 'react-intl';
-import { changeLocale } from '../../base/features/i18n/actions/actions_i18n';
+import { changeLocale } from '../../base/features/harmony-i18n/actions/actions_i18n';
 
 class Localization extends Component {
 

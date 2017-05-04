@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connectWithReduxForm } from 'redux-form-field';
+import { connectWithReduxForm } from '../../base/features/harmony-redux-form-field';
 import * as actions from '../../actions/posts/actions_posts';
 import { Link } from 'react-router';
 import { PORTAL } from '../../routes';

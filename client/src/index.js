@@ -11,7 +11,7 @@ import rootSaga from './sagas';
 import { config } from './config';
 
 /* -------- Harmony Features --------- */
-import WSAction from './base/features/ws-actions';
+import WSAction from './base/features/harmony-redux-websocket-actions';
 import ConnectedIntlProvider from './base/features/i18n/IntlProvider';
 
 

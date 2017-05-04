@@ -31,7 +31,7 @@ class WSActions {
     }
 
     start() {
-        sessionStorage.setItem('wsa_token', guid.create())
+        sessionStorage.setItem('wsa_token', guid.create());
         this._socket.start();
     }
 
