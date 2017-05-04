@@ -41,7 +41,7 @@ ReactDOM.render(
 		<ConnectedIntlProvider>
 			<Router history={browserHistory} >
 				{routes}
-			</Router>
+            </Router>
         </ConnectedIntlProvider>
 	</Provider>
 , document.querySelector('.container'));

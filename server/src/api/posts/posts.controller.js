@@ -21,7 +21,7 @@ exports.create = function(req, res) {
     ModelInstance.content = req.body.content;
     ModelInstance.categories = req.body.categories;
     ModelInstance.title = req.body.title;
-    ModelInstance.save().then((posts ) => {
+    ModelInstance.save().then((posts) => {
         let resultResponse = GLOBAL_RESPONSES.CREATE_SUCCESS;
         resultResponse.resourceId = posts._id;
         res.json(resultResponse);
@@ -47,7 +47,7 @@ exports.getAll = function (req, res) {
 	}).catch((e) => {
         res.json(LOCAL_RESPONSES.POSTS_NOT_FOUND);
     });
-}
+};
 
 
 exports.getByID = function (req, res) {
@@ -62,22 +62,18 @@ exports.getByID = function (req, res) {
 	}).catch((err) => {
         res.send(err);
     });
-}
+};
 
 
 exports.removeByID = function (req, res) {
     MODEL_SERVICE.remove({
 			_id: req.params.posts_id
 	}).then((result) => {
-        resultResponse = GLOBAL_RESPONSES.DELETE_SUCCESS;
-        res.json();
-
-        // broadcast to websocket
-        req.app.get('wss').broadcast(resultResponse);
+        let resultResponse = GLOBAL_RESPONSES.DELETE_SUCCESS;
         res.json(resultResponse);
 	}).catch((err) => {
         res.send(err);
     });
-}
+};
 
 
