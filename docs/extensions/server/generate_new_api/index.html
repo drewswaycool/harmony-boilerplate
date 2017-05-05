@@ -52,7 +52,7 @@
   
   
   
-    <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body data-md-color-primary="cyan" data-md-color-accent="cyan">
   
     <svg class="md-svg">
       <defs>
@@ -84,7 +84,7 @@
             
               
                 <span class="md-header-nav__parent">
-                  Scripts
+                  API
                 </span>
               
             
@@ -237,11 +237,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      Scripts
+      API
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Scripts
+        API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -262,6 +262,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -272,10 +284,70 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Generate New API
+      </label>
+    
     <a href="./" title="Generate New API" class="md-nav__link md-nav__link--active">
       Generate New API
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-api" title="Creating API" class="md-nav__link">
+    Creating API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result" title="Result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templating" title="Templating" class="md-nav__link">
+    Templating
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../websocket/" title="Websocket" class="md-nav__link">
+      Websocket
+    </a>
   </li>
 
         
@@ -385,6 +457,41 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-api" title="Creating API" class="md-nav__link">
+    Creating API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result" title="Result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templating" title="Templating" class="md-nav__link">
+    Templating
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -397,6 +504,98 @@
                 
                 
                 <h1 id="generate-new-api">Generate New API<a class="headerlink" href="#generate-new-api" title="Permanent link">&para;</a></h1>
+<p>A proper API consist the following:</p>
+<ul>
+<li>Model ( Using Mongoose )</li>
+<li>Controller ( Holding the main functions like create, update, delete, get, etc..)</li>
+<li>Responses ( JS file that contain responses relate to the current API )</li>
+<li>routes ( Mapping the routes to the Controller )</li>
+</ul>
+<h3 id="creating-api">Creating API<a class="headerlink" href="#creating-api" title="Permanent link">&para;</a></h3>
+<p>Inorder to create your API, We suggest to use our CLI script<br/></p>
+<p><code>gulp createApi --name &quot;YOUR_API_NAME&quot;</code></p>
+<p>Note - 
+If you are going to use MySQL  SQL  PostgreSQL  MSSQL you should add this:
+<code>--apiType sql</code> 
+otherwise it will use mongodb</p>
+<p>It will generate under <code>server/src/api</code> folder with the files of your api :</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p><code>gulp createApi --name post</code></p>
+<h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>.
+├── post         
+|     ├── post.controller.js                    
+|     ├── index.js   
+|     ├── model   
+|           ├── post.js 
+|     ├── responses
+|           ├── index.js
+</pre></div>
+
+
+<h2 id="templating">Templating<a class="headerlink" href="#templating" title="Permanent link">&para;</a></h2>
+<p>If you want to create your own templates you will need to add the template file under <code>generator/templates/server</code>
+and under <code>createApi</code> task in the <code>gulpfile.js</code> on the root folder do the following :</p>
+<div class="codehilite"><pre><span></span>gulp.task(&#39;createApi&#39;, () =&gt; {
+    let apiName = getArg(&#39;name&#39;);
+    if(!validateName(apiName, &#39;--name&#39;, false)) return;
+    var UPPERCASE_MODEL_NAME = apiName.toString().toUpperCase();
+    var CapitalLetterModelName = capitalize(apiName);
+    createTemplate(
+        &#39;./generator/templates/server/api-controller-template&#39;,
+        &#39;server/src/api/&#39;+apiName+&#39;/&#39;+apiName+&#39;.controller.js&#39;,
+        {
+         name: apiName,
+         upperCaseModelName : UPPERCASE_MODEL_NAME,
+         capitalLetterModelName: CapitalLetterModelName
+        }
+    );
+
+    createTemplate(
+        &#39;./generator/templates/server/model-template&#39;,
+        &#39;server/src/api/&#39;+apiName+&#39;/model/&#39;+apiName+&#39;.js&#39;,
+        {
+            capitalLetterModelName: CapitalLetterModelName
+        }
+    );
+
+    createTemplate(
+        &#39;./generator/templates/server/responses-template&#39;,
+        &#39;server/src/api/&#39;+apiName+&#39;/responses/index.js&#39;,
+        {
+         capitalLetterModelName: CapitalLetterModelName,
+         upperCaseModelName : UPPERCASE_MODEL_NAME
+        }
+    );
+
+    createTemplate(
+        &#39;./generator/templates/server/index-template&#39;,
+        &#39;server/src/api/&#39;+apiName+&#39;/index.js&#39;,
+        {
+         name: apiName,
+         capitalLetterModelName: CapitalLetterModelName
+        }
+    );
+
+    /***** YOUR ADDITIONS *****/
+    createTemplate(
+        &#39;./generator/templates/server/YOUR_TEMPLATE_FILE_NAME&#39;,
+        &#39;server/src/api/&#39;+apiName+&#39;/DESTINATION_FILE_NAME&#39;,
+        {
+         name: apiName,
+         capitalLetterModelName: CapitalLetterModelName
+        }
+    );
+
+    replaceText(
+        &#39;./server/src/routes/index.js&#39;,
+        &#39;./server/src/routes/&#39;,
+        &quot;// LASTLINE&quot;,
+        &quot;app.use(&#39;/&quot;+apiName+&quot;&#39;, require(&#39;../api/&quot;+apiName+&quot;&#39;));\r\n// LASTLINE&quot;
+    );
+
+});
+</pre></div>
                 
                   
                 
@@ -415,7 +614,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../server/" title="Server" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../config/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -424,19 +623,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Server
+                Configuration
               </span>
             </div>
           </a>
         
         
-          <a href="../../client/client/" title="Client" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../websocket/" title="Websocket" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Client
+                Websocket
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

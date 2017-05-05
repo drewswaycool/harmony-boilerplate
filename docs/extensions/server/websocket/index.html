@@ -9,7 +9,7 @@
         <meta name="description" content="Branding new web architecture.">
       
       
-        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/generate_new_container/">
+        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/server/websocket/">
       
       
         <meta name="author" content="Harmony Framework Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Generate Container - Harmony Boilerplate</title>
+        <title>Websocket - Harmony Boilerplate</title>
       
     
     
@@ -88,7 +88,7 @@
                 </span>
               
             
-            Generate Container
+            Websocket
           
         </span>
       </div>
@@ -252,7 +252,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../server/server/" title="Server" class="md-nav__link">
+    <a href="../server/" title="Server" class="md-nav__link">
       Server
     </a>
   </li>
@@ -264,7 +264,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../server/config/" title="Configuration" class="md-nav__link">
+    <a href="../config/" title="Configuration" class="md-nav__link">
       Configuration
     </a>
   </li>
@@ -276,44 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../server/generate_new_api/" title="Generate New API" class="md-nav__link">
+    <a href="../generate_new_api/" title="Generate New API" class="md-nav__link">
       Generate New API
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../server/websocket/" title="Websocket" class="md-nav__link">
-      Websocket
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../client/" title="Client" class="md-nav__link">
-      Client
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../generate_new_component/" title="Generate Component" class="md-nav__link">
-      Generate Component
     </a>
   </li>
 
@@ -332,10 +296,73 @@
       
     
     
-    <a href="./" title="Generate Container" class="md-nav__link md-nav__link--active">
-      Generate Container
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Websocket
+      </label>
+    
+    <a href="./" title="Websocket" class="md-nav__link md-nav__link--active">
+      Websocket
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-actions" title="Websocket Actions" class="md-nav__link">
+    Websocket Actions
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/client/" title="Client" class="md-nav__link">
+      Client
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/generate_new_component/" title="Generate Component" class="md-nav__link">
+      Generate Component
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/generate_new_container/" title="Generate Container" class="md-nav__link">
+      Generate Container
+    </a>
   </li>
 
         
@@ -409,6 +436,20 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-actions" title="Websocket Actions" class="md-nav__link">
+    Websocket Actions
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -420,7 +461,37 @@
               
                 
                 
-                <h1 id="generate-new-container">Generate New Container<a class="headerlink" href="#generate-new-container" title="Permanent link">&para;</a></h1>
+                <h1 id="websocket">Websocket<a class="headerlink" href="#websocket" title="Permanent link">&para;</a></h1>
+<h2 id="websocket-actions">Websocket Actions<a class="headerlink" href="#websocket-actions" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title"><strong>SECURE WARNING</strong> - You must to declare your <code>allowed actions</code> in server config.</p>
+<p>If the action is not allowed on the server, the action will not be executed !</p>
+</div>
+<ul>
+<li>To add allowed actions for broadcasting go to <a href="#config">config</a> and edit allowedActions 
+<div class="codehilite"><pre><span></span> allowedActions: [
+        actions.FETCH_POSTS,
+        ...
+    ]
+</pre></div>
+
+there is reference in the configuration file to the client actions.
+<div class="codehilite"><pre><span></span>const actions = require(&#39;../../client/src/actions&#39;);
+</pre></div>
+</li>
+</ul>
+<p>harmony let the client to invoke actions on each client on the system by using the websocket instance on the server.
+for example: lets say User A delete item from the database and want that all the users will FETCH the items again.</p>
+<p>by invoking the following API - <code>POST    /users/broadcastAction   -&gt;  broadcastAction</code>
+with the this payload : 
+<div class="codehilite"><pre><span></span>{type: ActionTypes.FETCH_POSTS, payload: null}
+</pre></div>
+
+the websocket instance will broadcast to all users this action.
+In addition, there is option to invoke the broadcasting service from each API.</p>
+<div class="admonition tip">
+<p class="admonition-title">For more information check how you deal with the websocket from the client side</p>
+</div>
                 
                   
                 
@@ -439,7 +510,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../generate_new_component/" title="Generate Component" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../generate_new_api/" title="Generate New API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -448,19 +519,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Generate Component
+                Generate New API
               </span>
             </div>
           </a>
         
         
-          <a href="../../../customization/" title="Customization" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../client/client/" title="Client" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Customization
+                Client
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -152,7 +152,7 @@
         }, 
         {
             "location": "/extensions/server/server/", 
-            "text": "Server", 
+            "text": "Server\n\n\nBased Libraries\n\n\nWe recommended to be knowledge with the following libraries : \n\n    1. \nExpressJS\n \n \n    2. \nAPIDoc\n \n \n    3. \nMongo-Express", 
             "title": "Server"
         }, 
         {
@@ -161,14 +161,64 @@
             "title": "Server"
         }, 
         {
+            "location": "/extensions/server/server/#based-libraries", 
+            "text": "We recommended to be knowledge with the following libraries :  \n    1.  ExpressJS    \n    2.  APIDoc    \n    3.  Mongo-Express", 
+            "title": "Based Libraries"
+        }, 
+        {
+            "location": "/extensions/server/config/", 
+            "text": "Config\n\n\nServer configuration located on \nserver/src/config.js\n\n\nconst\n \nconfig\n \n=\n \n{\n\n    \nsql\n \n:\n \n{\n\n        \ndb\n:\nseq\n,\n\n        \nuser\n:\nroot\n,\n\n        \npass\n:\n\n    \n},\n\n    \nmongo\n:\n \n{\n\n        \ndbUrl\n:\n  \nprocess\n.\nenv\n.\nMONGO_URL\n \n||\n \nmongodb://127.0.0.1:27017/db\n\n    \n},\n\n    \nuseMongo\n:\ntrue\n,\n\n    \nuseSql\n:\n \nfalse\n,\n\n    \nJWT_SECRET\n:\nYOUR_SMASHING_JWT_SECRET\n,\n\n    \nwebsocket\n:\n{\n\n        \nport\n:\n3030\n\n    \n},\n\n\n    \nallowedActions\n:\n \n[\n\n        \nactions\n.\nFETCH_POSTS\n\n    \n]\n\n\n\n\n};\n\n\n\n\n\n\n\n\nYou can choose whether to use Relational DB or Non Relational such as MongoDB, change \nuseMongo\n  \nuseSql\n according to your decisions.\n\n\nJWT_SECRET\n used for Authorization Token generation.\n\n\nwebsocket\n contain your websocket server configuration, we are using it for broadcasting actions on client side. amazing no?\n\n\nallowedActions\n comes with the websocket, its contain what are the actions that the websocket is allowed to broadcast to the client.", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/extensions/server/config/#config", 
+            "text": "Server configuration located on  server/src/config.js  const   config   =   { \n     sql   :   { \n         db : seq , \n         user : root , \n         pass : \n     }, \n     mongo :   { \n         dbUrl :    process . env . MONGO_URL   ||   mongodb://127.0.0.1:27017/db \n     }, \n     useMongo : true , \n     useSql :   false , \n     JWT_SECRET : YOUR_SMASHING_JWT_SECRET , \n     websocket : { \n         port : 3030 \n     }, \n\n     allowedActions :   [ \n         actions . FETCH_POSTS \n     ]  };    You can choose whether to use Relational DB or Non Relational such as MongoDB, change  useMongo    useSql  according to your decisions.  JWT_SECRET  used for Authorization Token generation.  websocket  contain your websocket server configuration, we are using it for broadcasting actions on client side. amazing no?  allowedActions  comes with the websocket, its contain what are the actions that the websocket is allowed to broadcast to the client.", 
+            "title": "Config"
+        }, 
+        {
             "location": "/extensions/server/generate_new_api/", 
-            "text": "Generate New API", 
+            "text": "Generate New API\n\n\nA proper API consist the following:\n\n\n\n\nModel ( Using Mongoose )\n\n\nController ( Holding the main functions like create, update, delete, get, etc..)\n\n\nResponses ( JS file that contain responses relate to the current API )\n\n\nroutes ( Mapping the routes to the Controller )\n\n\n\n\nCreating API\n\n\nInorder to create your API, We suggest to use our CLI script\n\n\ngulp createApi --name \nYOUR_API_NAME\n\n\nNote - \nIf you are going to use MySQL  SQL  PostgreSQL  MSSQL you should add this:\n\n--apiType sql\n \notherwise it will use mongodb\n\n\nIt will generate under \nserver/src/api\n folder with the files of your api :\n\n\nUsage\n\n\ngulp createApi --name post\n\n\nResult\n\n\n.\n\u251c\u2500\u2500 post         \n|     \u251c\u2500\u2500 post.controller.js                    \n|     \u251c\u2500\u2500 index.js   \n|     \u251c\u2500\u2500 model   \n|           \u251c\u2500\u2500 post.js \n|     \u251c\u2500\u2500 responses\n|           \u251c\u2500\u2500 index.js\n\n\n\n\n\nTemplating\n\n\nIf you want to create your own templates you will need to add the template file under \ngenerator/templates/server\n\nand under \ncreateApi\n task in the \ngulpfile.js\n on the root folder do the following :\n\n\ngulp.task(\ncreateApi\n, () =\n {\n    let apiName = getArg(\nname\n);\n    if(!validateName(apiName, \n--name\n, false)) return;\n    var UPPERCASE_MODEL_NAME = apiName.toString().toUpperCase();\n    var CapitalLetterModelName = capitalize(apiName);\n    createTemplate(\n        \n./generator/templates/server/api-controller-template\n,\n        \nserver/src/api/\n+apiName+\n/\n+apiName+\n.controller.js\n,\n        {\n         name: apiName,\n         upperCaseModelName : UPPERCASE_MODEL_NAME,\n         capitalLetterModelName: CapitalLetterModelName\n        }\n    );\n\n    createTemplate(\n        \n./generator/templates/server/model-template\n,\n        \nserver/src/api/\n+apiName+\n/model/\n+apiName+\n.js\n,\n        {\n            capitalLetterModelName: CapitalLetterModelName\n        }\n    );\n\n    createTemplate(\n        \n./generator/templates/server/responses-template\n,\n        \nserver/src/api/\n+apiName+\n/responses/index.js\n,\n        {\n         capitalLetterModelName: CapitalLetterModelName,\n         upperCaseModelName : UPPERCASE_MODEL_NAME\n        }\n    );\n\n    createTemplate(\n        \n./generator/templates/server/index-template\n,\n        \nserver/src/api/\n+apiName+\n/index.js\n,\n        {\n         name: apiName,\n         capitalLetterModelName: CapitalLetterModelName\n        }\n    );\n\n    /***** YOUR ADDITIONS *****/\n    createTemplate(\n        \n./generator/templates/server/YOUR_TEMPLATE_FILE_NAME\n,\n        \nserver/src/api/\n+apiName+\n/DESTINATION_FILE_NAME\n,\n        {\n         name: apiName,\n         capitalLetterModelName: CapitalLetterModelName\n        }\n    );\n\n    replaceText(\n        \n./server/src/routes/index.js\n,\n        \n./server/src/routes/\n,\n        \n// LASTLINE\n,\n        \napp.use(\n/\n+apiName+\n, require(\n../api/\n+apiName+\n));\\r\\n// LASTLINE\n\n    );\n\n});", 
             "title": "Generate New API"
         }, 
         {
             "location": "/extensions/server/generate_new_api/#generate-new-api", 
-            "text": "", 
+            "text": "A proper API consist the following:   Model ( Using Mongoose )  Controller ( Holding the main functions like create, update, delete, get, etc..)  Responses ( JS file that contain responses relate to the current API )  routes ( Mapping the routes to the Controller )", 
             "title": "Generate New API"
+        }, 
+        {
+            "location": "/extensions/server/generate_new_api/#creating-api", 
+            "text": "Inorder to create your API, We suggest to use our CLI script  gulp createApi --name  YOUR_API_NAME  Note - \nIf you are going to use MySQL  SQL  PostgreSQL  MSSQL you should add this: --apiType sql  \notherwise it will use mongodb  It will generate under  server/src/api  folder with the files of your api :", 
+            "title": "Creating API"
+        }, 
+        {
+            "location": "/extensions/server/generate_new_api/#usage", 
+            "text": "gulp createApi --name post", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/extensions/server/generate_new_api/#result", 
+            "text": ".\n\u251c\u2500\u2500 post         \n|     \u251c\u2500\u2500 post.controller.js                    \n|     \u251c\u2500\u2500 index.js   \n|     \u251c\u2500\u2500 model   \n|           \u251c\u2500\u2500 post.js \n|     \u251c\u2500\u2500 responses\n|           \u251c\u2500\u2500 index.js", 
+            "title": "Result"
+        }, 
+        {
+            "location": "/extensions/server/generate_new_api/#templating", 
+            "text": "If you want to create your own templates you will need to add the template file under  generator/templates/server \nand under  createApi  task in the  gulpfile.js  on the root folder do the following :  gulp.task( createApi , () =  {\n    let apiName = getArg( name );\n    if(!validateName(apiName,  --name , false)) return;\n    var UPPERCASE_MODEL_NAME = apiName.toString().toUpperCase();\n    var CapitalLetterModelName = capitalize(apiName);\n    createTemplate(\n         ./generator/templates/server/api-controller-template ,\n         server/src/api/ +apiName+ / +apiName+ .controller.js ,\n        {\n         name: apiName,\n         upperCaseModelName : UPPERCASE_MODEL_NAME,\n         capitalLetterModelName: CapitalLetterModelName\n        }\n    );\n\n    createTemplate(\n         ./generator/templates/server/model-template ,\n         server/src/api/ +apiName+ /model/ +apiName+ .js ,\n        {\n            capitalLetterModelName: CapitalLetterModelName\n        }\n    );\n\n    createTemplate(\n         ./generator/templates/server/responses-template ,\n         server/src/api/ +apiName+ /responses/index.js ,\n        {\n         capitalLetterModelName: CapitalLetterModelName,\n         upperCaseModelName : UPPERCASE_MODEL_NAME\n        }\n    );\n\n    createTemplate(\n         ./generator/templates/server/index-template ,\n         server/src/api/ +apiName+ /index.js ,\n        {\n         name: apiName,\n         capitalLetterModelName: CapitalLetterModelName\n        }\n    );\n\n    /***** YOUR ADDITIONS *****/\n    createTemplate(\n         ./generator/templates/server/YOUR_TEMPLATE_FILE_NAME ,\n         server/src/api/ +apiName+ /DESTINATION_FILE_NAME ,\n        {\n         name: apiName,\n         capitalLetterModelName: CapitalLetterModelName\n        }\n    );\n\n    replaceText(\n         ./server/src/routes/index.js ,\n         ./server/src/routes/ ,\n         // LASTLINE ,\n         app.use( / +apiName+ , require( ../api/ +apiName+ ));\\r\\n// LASTLINE \n    );\n\n});", 
+            "title": "Templating"
+        }, 
+        {
+            "location": "/extensions/server/websocket/", 
+            "text": "Websocket\n\n\nWebsocket Actions\n\n\n\n\nSECURE WARNING\n - You must to declare your \nallowed actions\n in server config.\n\n\nIf the action is not allowed on the server, the action will not be executed !\n\n\n\n\n\n\nTo add allowed actions for broadcasting go to \nconfig\n and edit allowedActions \n\n allowedActions: [\n        actions.FETCH_POSTS,\n        ...\n    ]\n\n\n\nthere is reference in the configuration file to the client actions.\n\nconst actions = require(\n../../client/src/actions\n);\n\n\n\n\n\n\n\nharmony let the client to invoke actions on each client on the system by using the websocket instance on the server.\nfor example: lets say User A delete item from the database and want that all the users will FETCH the items again.\n\n\nby invoking the following API - \nPOST    /users/broadcastAction   -\n  broadcastAction\n\nwith the this payload : \n\n{type: ActionTypes.FETCH_POSTS, payload: null}\n\n\n\nthe websocket instance will broadcast to all users this action.\nIn addition, there is option to invoke the broadcasting service from each API.\n\n\n\n\nFor more information check how you deal with the websocket from the client side", 
+            "title": "Websocket"
+        }, 
+        {
+            "location": "/extensions/server/websocket/#websocket", 
+            "text": "", 
+            "title": "Websocket"
+        }, 
+        {
+            "location": "/extensions/server/websocket/#websocket-actions", 
+            "text": "SECURE WARNING  - You must to declare your  allowed actions  in server config.  If the action is not allowed on the server, the action will not be executed !    To add allowed actions for broadcasting go to  config  and edit allowedActions   allowedActions: [\n        actions.FETCH_POSTS,\n        ...\n    ] \n\nthere is reference in the configuration file to the client actions. const actions = require( ../../client/src/actions );    harmony let the client to invoke actions on each client on the system by using the websocket instance on the server.\nfor example: lets say User A delete item from the database and want that all the users will FETCH the items again.  by invoking the following API -  POST    /users/broadcastAction   -   broadcastAction \nwith the this payload :  {type: ActionTypes.FETCH_POSTS, payload: null} \n\nthe websocket instance will broadcast to all users this action.\nIn addition, there is option to invoke the broadcasting service from each API.   For more information check how you deal with the websocket from the client side", 
+            "title": "Websocket Actions"
         }, 
         {
             "location": "/extensions/client/client/", 
