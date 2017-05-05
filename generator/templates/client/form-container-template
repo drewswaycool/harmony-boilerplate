@@ -17,18 +17,18 @@ class <%= className %> extends Component {
     handleSubmit(props) {
         // handle submit here
     }
-}
 
-function validate(values) {
-    const errors = {};
+    validate(values) {
+        const errors = {};
 
-    /* EXAMPLE CODE
-    if (!values.title) {
-        errors.title = 'Enter a title';
+        /* EXAMPLE CODE
+        if (!values.title) {
+            errors.title = 'someTitle';
+        }
+        */
+
+        return errors;
     }
-    */
-
-    return errors;
 }
 
 
@@ -43,7 +43,6 @@ export default harmonyConnectForm(<%= className %>,
     },
     {
         form : '<%= className %>Form',
-        fields: [],
-        validate
+        fields: []
     }
 );

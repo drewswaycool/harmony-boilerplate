@@ -33,33 +33,33 @@ class Register extends Component {
     handleSubmit(props) {
         this.props.createUser(props);
     }
-}
 
-function validate(values) {
-    const errors = {};
+    validate(values) {
+        const errors = {};
 
-    if (!values.email) {
-        errors.email = 'Enter a Email';
+        if (!values.email) {
+            errors.email = 'Enter a Email';
+        }
+
+        else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+            errors.email = 'Invalid email address'
+        }
+
+        if (!values.password) {
+            errors.password = 'Enter a Password';
+        }
+
+        if (!values.repassword){
+            errors.repassword = 'Enter a Password';
+        }
+
+        if (values.password !== values.repassword) {
+            errors.repassword = 'Repeat password not mach to password';
+        }
+
+
+        return errors;
     }
-
-    else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = 'Invalid email address'
-    }
-
-    if (!values.password) {
-        errors.password = 'Enter a Password';
-    }
-
-    if (!values.repassword){
-        errors.repassword = 'Enter a Password';
-    }
-
-    if (values.password !== values.repassword) {
-        errors.repassword = 'Repeat password not mach to password';
-    }
-
-
-    return errors;
 }
 
 
@@ -74,7 +74,6 @@ export default harmonyConnectForm(Register,
     },
     {
         form : 'RegisterForm',
-        fields: [],
-        validate
+        fields: ['email', 'password', 'repassword']
     }
 );

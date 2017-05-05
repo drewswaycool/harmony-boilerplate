@@ -34,24 +34,24 @@ class PostsNew extends Component {
     handleSubmit(props) {
         this.props.createPost(props);
     }
-}
 
-function validate(values) {
-    const errors = {};
+    validate(values) {
+        const errors = {};
 
-    if (!values.title) {
-        errors.title = 'Enter a title';
+        if (!values.title) {
+            errors.title = 'Enter a title';
+        }
+
+        if (!values.categories) {
+            errors.categories = 'Enter categories';
+        }
+
+        if (!values.content) {
+            errors.content = 'Enter some content';
+        }
+
+        return errors;
     }
-
-    if (!values.categories) {
-        errors.categories = 'Enter categories';
-    }
-
-    if (!values.content) {
-        errors.content = 'Enter some content';
-    }
-
-    return errors;
 }
 
 
@@ -67,7 +67,6 @@ export default harmonyConnectForm(PostsNew,
     },
     {
         form : 'PostsNewForm',
-        fields: ['title', 'categories', 'content'],
-        validate
+        fields: ['title', 'categories', 'content']
     }
 );

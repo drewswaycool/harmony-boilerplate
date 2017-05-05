@@ -18,7 +18,8 @@ const component = ({ meta: { touched, error, warning, invalid }, input, type, la
 
 export default createField(component, {
     type: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired
+    label: PropTypes.string.isRequired,
+    T: PropTypes.func.isRequired
 });
 
 
