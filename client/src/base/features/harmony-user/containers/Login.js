@@ -14,8 +14,8 @@ class Login extends Component {
 
                 <h1>{this.T('login')}</h1>
 
-                <Cor_Input name="email" type="email" label={this.T('email')} />
-                <Cor_Input name="password" type="password" label={this.T('password')} />
+                <Cor_Input name="email" type="email" label={this.T('email')} T={this.T.bind(this)} />
+                <Cor_Input name="password" type="password" label={this.T('password')} T={this.T.bind(this)} />
 
                 {this.props.loginError || ""}
                 <br/>
@@ -32,21 +32,21 @@ class Login extends Component {
         this.props.login(props);
     }
 
-}
+    validate(values, props) {
+        const errors = {};
 
+        if (!values.email) {
+            errors.email = 'emailError';
+        }
 
-function validate(values) {
-    const errors = {};
+        if (!values.password) {
+            errors.password = 'Enter a password';
+        }
 
-    if (!values.email) {
-        //errors.email = this.T('emailError');
+        return errors;
     }
 
-    if (!values.password) {
-        errors.password = 'Enter a password';
-    }
 
-    return errors;
 }
 
 
@@ -61,7 +61,6 @@ export default harmonyConnectForm(Login,
     },
     {
         form : 'LoginForm',
-        fields: [],
-        validate
+        fields: ['email', 'password']
     }
 );

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
+import { Field } from 'redux-form';
 import { injectIntl } from 'react-intl';
 
-export function connectWithReduxForm (component, mapStateToProps, mapDispatchToProps, reduxFormConfig) {
-    return connect(mapStateToProps, mapDispatchToProps)(injectIntl(reduxForm(reduxFormConfig)(component)));
-}
+
 
 export function createField(component, requiredProps) {
 
