@@ -12,16 +12,16 @@ class Login extends Component {
         return (
             <form onSubmit={this.props.handleSubmit(this.handleSubmit.bind(this))} >
 
-                <h1>{this.T("userLoginHeader")}</h1>
+                <h1>{this.T('login')}</h1>
 
-                <Cor_Input name="email" type="email" label="Email" />
-                <Cor_Input name="password" type="password" label="Password" />
+                <Cor_Input name="email" type="email" label={this.T('email')} />
+                <Cor_Input name="password" type="password" label={this.T('password')} />
 
                 {this.props.loginError || ""}
                 <br/>
 
-                <button type="submit" className="btn btn-success">Login</button>
-                <Link to={REGISTER} style={{float:'right'}} className="btn btn-default">Register</Link>
+                <button type="submit" className="btn btn-success">{this.T('login')}</button>
+                <Link to={REGISTER} style={{float:'right'}} className="btn btn-default">{this.T('register')}</Link>
 
             </form>
         );
@@ -31,13 +31,15 @@ class Login extends Component {
     handleSubmit(props) {
         this.props.login(props);
     }
+
 }
+
 
 function validate(values) {
     const errors = {};
 
     if (!values.email) {
-        errors.email = 'Enter a email';
+        //errors.email = this.T('emailError');
     }
 
     if (!values.password) {

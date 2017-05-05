@@ -1,16 +1,32 @@
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
-    userLoginHeader: {
-        id: 'user.loginHeader',
+    login: {
+        id: 'user.login',
         defaultMessage: "S'identifier",
-        description: 'Login Page Header',
+        description: 'Login title',
     },
-	addPost: {
-        id: 'posts.addPostHeader',
-        defaultMessage: 'Ajouter une publication',
-        description: 'add post button header',
+    register: {
+        id: 'user.register',
+        defaultMessage: "Register",
+        description: 'Register title',
+    },
+    email: {
+        id: 'user.email',
+        defaultMessage: 'Email',
+        description: 'Email title',
+    },
+    emailError: {
+        id: 'user.emailError',
+        defaultMessage: 'Entrez un email',
+        description: 'Email error message',
+    },
+    password: {
+        id: 'user.password',
+        defaultMessage: 'Mot de passe',
+        description: 'Password title',
     }
+
 });
 
 export default messages;
