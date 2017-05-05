@@ -18,15 +18,15 @@ class PostsShow extends Component {
     render () {
         const { post } = this.props;
         if (!post) {
-            return <div>Loading..</div>
+            return <div>{this.T('loading')}</div>
         }
 
         return (
             <div>
-                <Link to={PORTAL}>Back To Index</Link>
+                <Link to={PORTAL}>{this.T('backToIndex')}</Link>
                 <button className="btn btn-danger pull-xs-right"
                         onClick={this.onDeleteClick.bind(this)}>
-                    Delete Post
+                    {this.T('deletePost')}
                 </button>
                 <h3>{post.title}</h3>
                 <h6>Categories: {post.categories}</h6>

@@ -2,6 +2,7 @@ import { call, put } from 'redux-saga/effects';
 import * as ActionTypes from '../../../../actions';
 import { ROOT, PORTAL } from '../../../../routes';
 import request from '../../../api/requests';
+import { browserHistory } from 'react-router';
 
 export function* login(api, action) {
 
@@ -16,7 +17,7 @@ export function* login(api, action) {
             sessionStorage.setItem('user', JSON.stringify(response.data));
 
             yield put({type: ActionTypes.LOGIN_SUCCESS, details: response.data});
-            yield put({type: ActionTypes.NAVIGATE_TO, path: PORTAL});
+            browserHistory.push(PORTAL);
         }
 
         else {
@@ -33,7 +34,7 @@ export function* createUser(api, action) {
 
     try {
         yield call(api.createUser, action.payload);
-        yield put({type: ActionTypes.NAVIGATE_TO, path: ROOT});
+        browserHistory.push(ROOT);
     } catch (e) {
         yield put({type: ActionTypes.CREATE_USER_ERROR, response: e.data.message});
     }

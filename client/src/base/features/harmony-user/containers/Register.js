@@ -12,17 +12,17 @@ class Register extends Component {
         return (
             <form onSubmit={this.props.handleSubmit(this.handleSubmit.bind(this))} >
 
-                <h1>Register</h1>
+                <h1>{this.T('register')}</h1>
 
-                <Cor_Input name="email" type="email" label="Email" />
-                <Cor_Input name="password" type="password" label="Password" />
-                <Cor_Input name="repassword" type="password" label="Repeat Password" />
+                <Cor_Input name="email" type="email" label={this.T('email')} T={this.T.bind(this)} />
+                <Cor_Input name="password" type="password" label={this.T('password')} T={this.T.bind(this)}  />
+                <Cor_Input name="repassword" type="password" label={this.T('repeatPassword')} T={this.T.bind(this)}  />
 
                 <br/>
                 <div>{this.props.registerError}</div>
 
-                <button type="submit" className="btn btn-success">Register</button>
-                <Link to={ROOT} style={{float:'right'}} className="btn btn-default">Back to Login</Link>
+                <button type="submit" className="btn btn-success">{this.T('register')}</button>
+                <Link to={ROOT} style={{float:'right'}} className="btn btn-default">{this.T('backToLogin')}</Link>
 
 
             </form>
@@ -38,23 +38,23 @@ class Register extends Component {
         const errors = {};
 
         if (!values.email) {
-            errors.email = 'Enter a Email';
+            errors.email = 'emailError';
         }
 
         else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-            errors.email = 'Invalid email address'
+            errors.email = 'invalidEmail'
         }
 
         if (!values.password) {
-            errors.password = 'Enter a Password';
+            errors.password = 'passwordError';
         }
 
         if (!values.repassword){
-            errors.repassword = 'Enter a Password';
+            errors.repassword = 'passwordError';
         }
 
         if (values.password !== values.repassword) {
-            errors.repassword = 'Repeat password not mach to password';
+            errors.repassword = 'repeatPasswordError';
         }
 
 
