@@ -310,6 +310,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#server-folder-structure" title="Server Folder Structure" class="md-nav__link">
+    Server Folder Structure
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -467,18 +474,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../customization/" title="Customization" class="md-nav__link">
-      Customization
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../release-notes/" title="Release notes" class="md-nav__link">
       Release notes
     </a>
@@ -505,6 +500,18 @@
   <li class="md-nav__item">
     <a href="../../../license/" title="License" class="md-nav__link">
       License
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../team/" title="Harmony Team" class="md-nav__link">
+      Harmony Team
     </a>
   </li>
 
@@ -548,6 +555,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#server-folder-structure" title="Server Folder Structure" class="md-nav__link">
+    Server Folder Structure
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -564,11 +578,34 @@
                 
                 
                 <h1 id="server">Server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h1>
-<h3 id="based-technologies">Based Technologies<a class="headerlink" href="#based-technologies" title="Permanent link">&para;</a></h3>
-<p>We recommended to be knowledge with the following libraries : <br/>
-    1. <a href="https://github.com/expressjs/express">ExpressJS</a> <br/> 
-    2. <a href="https://github.com/apidoc/apidoc">APIDoc</a> <br/> 
-    3. <a href="https://github.com/mongo-express/mongo-express">Mongo-Express</a> <br/> </p>
+<h2 id="based-technologies">Based Technologies<a class="headerlink" href="#based-technologies" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/expressjs/express" target="_blank">Express</a></li>
+<li><a href="https://github.com/apidoc/apidoc" target="_blank">APIDoc</a></li>
+<li><a href="http://mongoosejs.com/" target="_blank">Mongoose</a></li>
+<li><a href="http://docs.sequelizejs.com/en/v3/" target="_blank">Sequelize</a></li>
+</ul>
+<h2 id="server-folder-structure">Server Folder Structure<a class="headerlink" href="#server-folder-structure" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>.
+├── server    
+|     ├── docs
+|     ├── src       
+|           ├── api
+|               ├── authentication
+|               ├── global
+|                   ├── responses
+|               ├── posts
+|                   ├── model
+|                   ├── responses
+|                   ├── index.js
+|                   ├── posts.controller.js
+|           ├── middleware
+|               ├── authenticate.js
+|               ├── authenticate-sequelize.js
+|           ├── config.js
+|     ├── apidoc.json  
+|     ├── server.js
+</pre></div>
                 
                   
                 

@@ -43,20 +43,22 @@
 .col .promo-description {
 	text-align:center;
 }
-
+.col .contributors{
+	margin-left:30%;
+}
 /* INDEX PAGE */
 .pull-logo-top{
 	margin-top:-140px;
 }
 
-.start .quickheader {
-	text-align:center;
+.start {
+
 }
 /** Features & Tools headers **/
 .lines-aside h2 {
     position: relative;
     font-size: 30px;
-    z-index: 1;
+    
     overflow: hidden;
     text-align: center;
 	

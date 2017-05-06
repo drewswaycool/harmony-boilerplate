@@ -488,18 +488,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../customization/" title="Customization" class="md-nav__link">
-      Customization
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../release-notes/" title="Release notes" class="md-nav__link">
       Release notes
     </a>
@@ -526,6 +514,18 @@
   <li class="md-nav__item">
     <a href="../../../license/" title="License" class="md-nav__link">
       License
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../team/" title="Harmony Team" class="md-nav__link">
+      Harmony Team
     </a>
   </li>
 
@@ -638,65 +638,65 @@ otherwise it will use mongodb</p>
 <h2 id="templating">Templating<a class="headerlink" href="#templating" title="Permanent link">&para;</a></h2>
 <p>If you want to create your own templates you will need to add the template file under <code>generator/templates/server</code>
 and under <code>createApi</code> task in the <code>gulpfile.js</code> on the root folder do the following :</p>
-<div class="codehilite"><pre><span></span>gulp.task(&#39;createApi&#39;, () =&gt; {
-    let apiName = getArg(&#39;name&#39;);
-    if(!validateName(apiName, &#39;--name&#39;, false)) return;
-    var UPPERCASE_MODEL_NAME = apiName.toString().toUpperCase();
-    var CapitalLetterModelName = capitalize(apiName);
-    createTemplate(
-        &#39;./generator/templates/server/api-controller-template&#39;,
-        &#39;server/src/api/&#39;+apiName+&#39;/&#39;+apiName+&#39;.controller.js&#39;,
-        {
-         name: apiName,
-         upperCaseModelName : UPPERCASE_MODEL_NAME,
-         capitalLetterModelName: CapitalLetterModelName
-        }
-    );
+<div class="codehilite"><pre><span></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;createApi&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">apiName</span> <span class="o">=</span> <span class="nx">getArg</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">validateName</span><span class="p">(</span><span class="nx">apiName</span><span class="p">,</span> <span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">UPPERCASE_MODEL_NAME</span> <span class="o">=</span> <span class="nx">apiName</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">toUpperCase</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">CapitalLetterModelName</span> <span class="o">=</span> <span class="nx">capitalize</span><span class="p">(</span><span class="nx">apiName</span><span class="p">);</span>
+    <span class="nx">createTemplate</span><span class="p">(</span>
+        <span class="s1">&#39;./generator/templates/server/api-controller-template&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;.controller.js&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+         <span class="nx">name</span><span class="o">:</span> <span class="nx">apiName</span><span class="p">,</span>
+         <span class="nx">upperCaseModelName</span> <span class="o">:</span> <span class="nx">UPPERCASE_MODEL_NAME</span><span class="p">,</span>
+         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
 
-    createTemplate(
-        &#39;./generator/templates/server/model-template&#39;,
-        &#39;server/src/api/&#39;+apiName+&#39;/model/&#39;+apiName+&#39;.js&#39;,
-        {
-            capitalLetterModelName: CapitalLetterModelName
-        }
-    );
+    <span class="nx">createTemplate</span><span class="p">(</span>
+        <span class="s1">&#39;./generator/templates/server/model-template&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/model/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;.js&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
 
-    createTemplate(
-        &#39;./generator/templates/server/responses-template&#39;,
-        &#39;server/src/api/&#39;+apiName+&#39;/responses/index.js&#39;,
-        {
-         capitalLetterModelName: CapitalLetterModelName,
-         upperCaseModelName : UPPERCASE_MODEL_NAME
-        }
-    );
+    <span class="nx">createTemplate</span><span class="p">(</span>
+        <span class="s1">&#39;./generator/templates/server/responses-template&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/responses/index.js&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span><span class="p">,</span>
+         <span class="nx">upperCaseModelName</span> <span class="o">:</span> <span class="nx">UPPERCASE_MODEL_NAME</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
 
-    createTemplate(
-        &#39;./generator/templates/server/index-template&#39;,
-        &#39;server/src/api/&#39;+apiName+&#39;/index.js&#39;,
-        {
-         name: apiName,
-         capitalLetterModelName: CapitalLetterModelName
-        }
-    );
+    <span class="nx">createTemplate</span><span class="p">(</span>
+        <span class="s1">&#39;./generator/templates/server/index-template&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/index.js&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+         <span class="nx">name</span><span class="o">:</span> <span class="nx">apiName</span><span class="p">,</span>
+         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
 
-    /***** YOUR ADDITIONS *****/
-    createTemplate(
-        &#39;./generator/templates/server/YOUR_TEMPLATE_FILE_NAME&#39;,
-        &#39;server/src/api/&#39;+apiName+&#39;/DESTINATION_FILE_NAME&#39;,
-        {
-         name: apiName,
-         capitalLetterModelName: CapitalLetterModelName
-        }
-    );
+    <span class="cm">/***** YOUR ADDITIONS *****/</span>
+    <span class="nx">createTemplate</span><span class="p">(</span>
+        <span class="s1">&#39;./generator/templates/server/YOUR_TEMPLATE_FILE_NAME&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/DESTINATION_FILE_NAME&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+         <span class="nx">name</span><span class="o">:</span> <span class="nx">apiName</span><span class="p">,</span>
+         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
 
-    replaceText(
-        &#39;./server/src/routes/index.js&#39;,
-        &#39;./server/src/routes/&#39;,
-        &quot;// LASTLINE&quot;,
-        &quot;app.use(&#39;/&quot;+apiName+&quot;&#39;, require(&#39;../api/&quot;+apiName+&quot;&#39;));\r\n// LASTLINE&quot;
-    );
+    <span class="nx">replaceText</span><span class="p">(</span>
+        <span class="s1">&#39;./server/src/routes/index.js&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;./server/src/routes/&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;// LASTLINE&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;app.use(&#39;/&quot;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s2">&quot;&#39;, require(&#39;../api/&quot;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s2">&quot;&#39;));\r\n// LASTLINE&quot;</span>
+    <span class="p">);</span>
 
-});
+<span class="p">});</span>
 </pre></div>
                 
                   

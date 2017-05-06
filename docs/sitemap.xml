@@ -43,14 +43,6 @@
 
     
     <url>
-     <loc>https://harmony-framework.github.io/harmony-boilerplate//customization/</loc>
-     <lastmod>2017-05-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
      <loc>https://harmony-framework.github.io/harmony-boilerplate//release-notes/</loc>
      <lastmod>2017-05-06</lastmod>
      <changefreq>daily</changefreq>
@@ -68,6 +60,14 @@
     
     <url>
      <loc>https://harmony-framework.github.io/harmony-boilerplate//license/</loc>
+     <lastmod>2017-05-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>https://harmony-framework.github.io/harmony-boilerplate//team/</loc>
      <lastmod>2017-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
