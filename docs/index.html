@@ -44,7 +44,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="./styles.css">
+      <link rel="stylesheet" href="./css/styles.css">
     
     
   </head>
@@ -196,42 +196,12 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Harmony
-      </label>
     
     <a href="." title="Harmony" class="md-nav__link md-nav__link--active">
       Harmony
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#harmony-documentation" title="Harmony documentation" class="md-nav__link">
-    Harmony documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" title="Quick start" class="md-nav__link">
-    Quick start
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -253,28 +223,35 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="base/" title="Base" class="md-nav__link">
-      Base
-    </a>
-  </li>
-
+  <li class="md-nav__item md-nav__item--nested">
     
-      
-      
-      
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      API & Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API & Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
 
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
     
-    <label class="md-nav__link" for="nav-4">
-      API
+    <label class="md-nav__link" for="nav-3-1">
+      Server
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        API
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Server
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -285,8 +262,8 @@
 
 
   <li class="md-nav__item">
-    <a href="extensions/server/server/" title="Server" class="md-nav__link">
-      Server
+    <a href="extensions/server/server/" title="Introduction" class="md-nav__link">
+      Introduction
     </a>
   </li>
 
@@ -309,18 +286,6 @@
 
 
   <li class="md-nav__item">
-    <a href="extensions/server/generate_new_api/" title="Generate New API" class="md-nav__link">
-      Generate New API
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="extensions/server/websocket/" title="Websocket" class="md-nav__link">
       Websocket
     </a>
@@ -333,8 +298,68 @@
 
 
   <li class="md-nav__item">
-    <a href="extensions/client/client/" title="Client" class="md-nav__link">
+    <a href="extensions/server/generate_new_api/" title="Generate New API" class="md-nav__link">
+      Generate New API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
       Client
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Client
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/client/client/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/client/config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="base/" title="Base" class="md-nav__link">
+      Base
     </a>
   </li>
 
@@ -360,6 +385,11 @@
     <a href="extensions/client/generate_new_container/" title="Generate Container" class="md-nav__link">
       Generate Container
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -416,6 +446,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="material-getting-started/" title="Example Getting Started (remove)" class="md-nav__link">
+      Example Getting Started (remove)
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -430,27 +472,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#harmony-documentation" title="Harmony documentation" class="md-nav__link">
-    Harmony documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" title="Quick start" class="md-nav__link">
-    Quick start
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
   
 </nav>
                   </div>
@@ -463,13 +486,12 @@
               
                 
                 
-                  <h1>Harmony</h1>
-                
-                <h2 id="harmony-documentation">Harmony documentation<a class="headerlink" href="#harmony-documentation" title="Permanent link">&para;</a></h2>
-<p>Harmony Boilerplate is based on Multi Model Layer, MongoDB, Express, React and NodeJS 
-<center>
-<a href="./images/harmony-logo.png"><img alt="Harmony Logo" src="./images/harmony-logo.png" /></a>
-</center></p>
+                <h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><center>
+    <a href="./images/harmony-logo.png"><img alt="Harmony Logo" src="./images/harmony-logo.png" /></a>
+    <br/>
+    Harmony Boilerplate is based on Multi Model Layer, MongoDB, Express, React and NodeJS</p>
+<p><br/></p>
 <h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <p>Install the last version of <a href="http://yeoman.io/">Yeoman</a></p>
 <div class="codehilite"><pre><span></span>npm install yo -g
@@ -484,7 +506,58 @@
 <p>Generate your project
 <div class="codehilite"><pre><span></span>yo generator-harmony-boilerplate
 </pre></div>
-</p>
+
+</center></p>
+<p><br/>
+<!-- Services Section -->
+<center><h2> Features </h2></center>
+<div class="section group">
+    <div class="col span_1_of_3">
+        <div class="center promo ">
+            <i class="material-icons">flash_on</i>
+            <p class="promo-caption">Speeds up development</p>
+            <p class="promo-description">We did most of the heavy lifting for you to provide a </p>
+        </div>
+    </div>
+    <div class="col span_1_of_3">
+        <div class="center promo ">
+            <i class="material-icons">trending_up</i>
+            <p class="promo-caption">Performance</p>
+            <p class="promo-description"></p>
+        </div>
+    </div>
+    <div class="col span_1_of_3">
+        <div class="center promo ">
+            <i class="material-icons">storage</i>
+            <p class="promo-caption">Flexible Databse Modeling</p>
+            <p class="promo-description"></p>
+        </div>
+    </div></p>
+<p></div>
+<br/>
+<div class="section group">
+    <div class="col span_1_of_3">
+        <div class="center promo ">
+            <i class="material-icons">group</i>
+            <p class="promo-caption">Redux Real-Time Dispatching</p>
+            <p class="promo-description"></p>
+        </div>
+    </div>
+    <div class="col span_1_of_3">
+        <div class="center promo ">
+            <i class="material-icons">security</i>
+            <p class="promo-caption">User Authentication</p>
+            <p class="promo-description"></p>
+        </div>
+    </div>
+    <div class="col span_1_of_3">
+        <div class="center promo">
+            <i class="material-icons">language</i>
+            <p class="promo-caption">Multilingual Support</p>
+            <p class="promo-description"></p>
+        </div>
+    </div>
+</div></p>
                 
                   
                 

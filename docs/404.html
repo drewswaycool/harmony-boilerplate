@@ -42,7 +42,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="/harmony-boilerplate/styles.css">
+      <link rel="stylesheet" href="/harmony-boilerplate/css/styles.css">
     
     
   </head>
@@ -210,28 +210,35 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="/harmony-boilerplate/base/" title="Base" class="md-nav__link">
-      Base
-    </a>
-  </li>
-
+  <li class="md-nav__item md-nav__item--nested">
     
-      
-      
-      
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      API & Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API & Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
 
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
     
-    <label class="md-nav__link" for="nav-4">
-      API
+    <label class="md-nav__link" for="nav-3-1">
+      Server
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        API
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Server
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -242,8 +249,8 @@
 
 
   <li class="md-nav__item">
-    <a href="/harmony-boilerplate/extensions/server/server/" title="Server" class="md-nav__link">
-      Server
+    <a href="/harmony-boilerplate/extensions/server/server/" title="Introduction" class="md-nav__link">
+      Introduction
     </a>
   </li>
 
@@ -266,18 +273,6 @@
 
 
   <li class="md-nav__item">
-    <a href="/harmony-boilerplate/extensions/server/generate_new_api/" title="Generate New API" class="md-nav__link">
-      Generate New API
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="/harmony-boilerplate/extensions/server/websocket/" title="Websocket" class="md-nav__link">
       Websocket
     </a>
@@ -290,8 +285,68 @@
 
 
   <li class="md-nav__item">
-    <a href="/harmony-boilerplate/extensions/client/client/" title="Client" class="md-nav__link">
+    <a href="/harmony-boilerplate/extensions/server/generate_new_api/" title="Generate New API" class="md-nav__link">
+      Generate New API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
       Client
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Client
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/harmony-boilerplate/extensions/client/client/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/harmony-boilerplate/extensions/client/config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/harmony-boilerplate/base/" title="Base" class="md-nav__link">
+      Base
     </a>
   </li>
 
@@ -317,6 +372,11 @@
     <a href="/harmony-boilerplate/extensions/client/generate_new_container/" title="Generate Container" class="md-nav__link">
       Generate Container
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -369,6 +429,18 @@
   <li class="md-nav__item">
     <a href="/harmony-boilerplate/license/" title="License" class="md-nav__link">
       License
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="/harmony-boilerplate/material-getting-started/" title="Example Getting Started (remove)" class="md-nav__link">
+      Example Getting Started (remove)
     </a>
   </li>
 

@@ -44,7 +44,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../styles.css">
+      <link rel="stylesheet" href="../css/styles.css">
     
     
   </head>
@@ -214,28 +214,35 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../base/" title="Base" class="md-nav__link">
-      Base
-    </a>
-  </li>
-
+  <li class="md-nav__item md-nav__item--nested">
     
-      
-      
-      
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      API & Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API & Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
 
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
     
-    <label class="md-nav__link" for="nav-4">
-      API
+    <label class="md-nav__link" for="nav-3-1">
+      Server
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        API
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Server
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -246,8 +253,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../extensions/server/server/" title="Server" class="md-nav__link">
-      Server
+    <a href="../extensions/server/server/" title="Introduction" class="md-nav__link">
+      Introduction
     </a>
   </li>
 
@@ -270,18 +277,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../extensions/server/generate_new_api/" title="Generate New API" class="md-nav__link">
-      Generate New API
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../extensions/server/websocket/" title="Websocket" class="md-nav__link">
       Websocket
     </a>
@@ -294,8 +289,68 @@
 
 
   <li class="md-nav__item">
-    <a href="../extensions/client/client/" title="Client" class="md-nav__link">
+    <a href="../extensions/server/generate_new_api/" title="Generate New API" class="md-nav__link">
+      Generate New API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
       Client
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Client
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/client/client/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/client/config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../base/" title="Base" class="md-nav__link">
+      Base
     </a>
   </li>
 
@@ -321,6 +376,11 @@
     <a href="../extensions/client/generate_new_container/" title="Generate Container" class="md-nav__link">
       Generate Container
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -383,6 +443,18 @@
       License
     </a>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../material-getting-started/" title="Example Getting Started (remove)" class="md-nav__link">
+      Example Getting Started (remove)
+    </a>
   </li>
 
     
@@ -467,6 +539,20 @@ IN THE SOFTWARE.</p>
             </div>
           </a>
         
+        
+          <a href="../material-getting-started/" title="Example Getting Started (remove)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Example Getting Started (remove)
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
