@@ -62,7 +62,7 @@
         }, 
         {
             "location": "/extensions/server/server/", 
-            "text": "Server\n\n\nBased Libraries\n\n\nWe recommended to be knowledge with the following libraries : \n\n    1. \nExpressJS\n \n \n    2. \nAPIDoc\n \n \n    3. \nMongo-Express", 
+            "text": "Server\n\n\nBased Technologies\n\n\nWe recommended to be knowledge with the following libraries : \n\n    1. \nExpressJS\n \n \n    2. \nAPIDoc\n \n \n    3. \nMongo-Express", 
             "title": "Server Introduction"
         }, 
         {
@@ -71,9 +71,9 @@
             "title": "Server"
         }, 
         {
-            "location": "/extensions/server/server/#based-libraries", 
+            "location": "/extensions/server/server/#based-technologies", 
             "text": "We recommended to be knowledge with the following libraries :  \n    1.  ExpressJS    \n    2.  APIDoc    \n    3.  Mongo-Express", 
-            "title": "Based Libraries"
+            "title": "Based Technologies"
         }, 
         {
             "location": "/extensions/server/config/", 
@@ -132,7 +132,7 @@
         }, 
         {
             "location": "/extensions/client/client/", 
-            "text": "Client\n\n\nClient Folder include all the code for the client side.\nFor Client we using \nreeact\n and \nredux\n architecture. \n\n\nBased Technological\n\n\nReact\n\n\n\n\nreact\n\n\nreact-router\n\n\n\n\nRedux\n\n\n\n\nredux\n\n\nredux-saga\n\n\nredux-promise\n\n\nredux-form\n\n\nredux-form-field\n\n\n\n\nWebsocket\n\n\n\n\nreact-websocket\n\n\nws-reconnect-js\n\n\n\n\nUtils\n\n\n\n\nimmutableJS\n\n\naxios\n\n\n\n\nClient Folder Structure\n\n\n.\n\u251c\u2500\u2500 client    \n|     \u251c\u2500\u2500 dist\n|     \u251c\u2500\u2500 src       \n|           \u251c\u2500\u2500 actions\n|           \u251c\u2500\u2500 base\n|               \u251c\u2500\u2500 api\n|               \u251c\u2500\u2500 features\n|               \u251c\u2500\u2500 utils\n|           \u251c\u2500\u2500 components\n|           \u251c\u2500\u2500 containers\n|           \u251c\u2500\u2500 reducers\n|           \u251c\u2500\u2500 requests\n|           \u251c\u2500\u2500 sagas\n|           \u251c\u2500\u2500 config.js\n|           \u251c\u2500\u2500 index.js\n|           \u251c\u2500\u2500 routes.js\n|     \u251c\u2500\u2500 style  \n|     \u251c\u2500\u2500 test   \n|     \u251c\u2500\u2500 index.js", 
+            "text": "Client\n\n\nClient Folder include all the code for the client side.\nFor Client we using \nreeact\n and \nredux\n architecture. \n\n\nBased Technologies\n\n\nReact\n\n\n\n\nreact\n\n\nreact-router\n\n\n\n\nRedux\n\n\n\n\nredux\n\n\nredux-saga\n\n\nredux-promise\n\n\nredux-form\n\n\nredux-form-field\n\n\n\n\nWebsocket\n\n\n\n\nreact-websocket\n\n\nws-reconnect-js\n\n\n\n\nUtils\n\n\n\n\nimmutableJS\n\n\naxios\n\n\n\n\nClient Folder Structure\n\n\n.\n\u251c\u2500\u2500 client    \n|     \u251c\u2500\u2500 dist\n|     \u251c\u2500\u2500 src       \n|           \u251c\u2500\u2500 actions\n|           \u251c\u2500\u2500 base\n|               \u251c\u2500\u2500 api\n|               \u251c\u2500\u2500 features\n|               \u251c\u2500\u2500 utils\n|           \u251c\u2500\u2500 components\n|           \u251c\u2500\u2500 containers\n|           \u251c\u2500\u2500 reducers\n|           \u251c\u2500\u2500 requests\n|           \u251c\u2500\u2500 sagas\n|           \u251c\u2500\u2500 config.js\n|           \u251c\u2500\u2500 index.js\n|           \u251c\u2500\u2500 routes.js\n|     \u251c\u2500\u2500 style  \n|     \u251c\u2500\u2500 test   \n|     \u251c\u2500\u2500 index.js", 
             "title": "Client Introduction"
         }, 
         {
@@ -141,9 +141,9 @@
             "title": "Client"
         }, 
         {
-            "location": "/extensions/client/client/#based-technological", 
+            "location": "/extensions/client/client/#based-technologies", 
             "text": "", 
-            "title": "Based Technological"
+            "title": "Based Technologies"
         }, 
         {
             "location": "/extensions/client/client/#react", 
