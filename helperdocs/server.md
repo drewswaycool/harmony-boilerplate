@@ -174,6 +174,8 @@ with the this payload :
 {type: ActionTypes.FETCH_POSTS, payload: null}
 ```
 the websocket instance will broadcast to all users this action.
+In addition, there is option to invoke the broadcasting service from each API.
+
 ## Websocket 
 You can use the websocket service to pass messages between the clients or from server to clients by invoking:
 ```js
@@ -184,6 +186,5 @@ exports.create = function(req, res) {
 
 ```
 
-In addition, there is option to invoke the broadcasting service from each API.
 > For more information go to: [Client](https://github.com/harmony-framework/harmony-boilerplate/blob/master/helperdocs/client.md#websocketactions)
 
