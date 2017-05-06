@@ -52,7 +52,7 @@
   
   
   
-    <body data-md-color-primary="cyan" data-md-color-accent="cyan">
+    <body data-md-color-primary="cyan" data-md-color-accent="orange">
   
     <svg class="md-svg">
       <defs>
@@ -223,15 +223,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="develop-with-harmony/" title="Harmony Architecture" class="md-nav__link">
+      Harmony Architecture
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-4">
       API & Examples
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-4">
         API & Examples
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -244,13 +256,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
     
-    <label class="md-nav__link" for="nav-3-1">
+    <label class="md-nav__link" for="nav-4-1">
       Server
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-1">
+      <label class="md-nav__title" for="nav-4-1">
         Server
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -262,8 +274,8 @@
 
 
   <li class="md-nav__item">
-    <a href="extensions/server/server/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="extensions/server/server/" title="Server Introduction" class="md-nav__link">
+      Server Introduction
     </a>
   </li>
 
@@ -316,13 +328,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
     
-    <label class="md-nav__link" for="nav-3-2">
+    <label class="md-nav__link" for="nav-4-2">
       Client
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
+      <label class="md-nav__title" for="nav-4-2">
         Client
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -334,8 +346,8 @@
 
 
   <li class="md-nav__item">
-    <a href="extensions/client/client/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="extensions/client/client/" title="Client Introduction" class="md-nav__link">
+      Client Introduction
     </a>
   </li>
 
@@ -358,8 +370,20 @@
 
 
   <li class="md-nav__item">
-    <a href="base/" title="Base" class="md-nav__link">
-      Base
+    <a href="extensions/client/websocket/" title="Websocket" class="md-nav__link">
+      Websocket
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="base/" title="Base Folder" class="md-nav__link">
+      Base Folder
     </a>
   </li>
 
@@ -487,81 +511,101 @@
                 
                 
                 <h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p><center>
+<p><div class="pull-logo-top">
+<center>
     <a href="./images/harmony-logo.png"><img alt="Harmony Logo" src="./images/harmony-logo.png" /></a>
     <br/>
     Harmony Boilerplate is based on Multi Model Layer, MongoDB, Express, React and NodeJS
 </center>
+</div>
 <br/>
 <div class="start">
 <div class="quickheader"></p>
 <h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <p></div>
 Install the last version of <a href="http://yeoman.io/">Yeoman</a></p>
-<div class="codehilite"><pre><span></span>npm install yo -g
+<div class="codehilite"><pre><span></span>$ npm install yo -g
 </pre></div>
 
 
 <p>Install the last version of our smashing generator <a href="https://github.com/harmony-framework/generator-harmony-boilerplate">generator-harmony-boilerplate</a></p>
-<div class="codehilite"><pre><span></span>npm install generator-harmony-boilerplate -g
+<div class="codehilite"><pre><span></span>$ npm install generator-harmony-boilerplate -g
 </pre></div>
 
 
 <p>Generate your project
-<div class="codehilite"><pre><span></span>yo generator-harmony-boilerplate
+<div class="codehilite"><pre><span></span>$ yo generator-harmony-boilerplate
 </pre></div>
-
+</p>
+<p><center><span class="color-orange">Now you can go to</span> <span class="color-gray"><a href="localhost:8080" target="blank">localhost:8080</a></span> <span class="color-orange">and see your app!</span></center>
 </div></p>
 <p><br/>
-<!-- Services Section -->
-<center><h2> Features </h2></center>
+<!-- Services Section --></p>
+<p><center><div class="lines-aside"><h2>Features</h2></div></center></p>
 <div class="section group">
     <div class="col span_1_of_3">
         <div class="center promo ">
             <i class="material-icons">flash_on</i>
-            <p class="promo-caption">Speeds up development</p>
+            <p class="promo-caption"><center><h3>Speeds up development</h3></center></p>
             <p class="promo-description">We did most of the heavy lifting for you to provide a </p>
         </div>
     </div>
     <div class="col span_1_of_3">
         <div class="center promo ">
             <i class="material-icons">trending_up</i>
-            <p class="promo-caption">Performance</p>
-            <p class="promo-description"></p>
+            <p class="promo-caption"><center><h3>Performance</h3></center></p>
+            <p class="promo-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
     </div>
     <div class="col span_1_of_3">
         <div class="center promo ">
             <i class="material-icons">storage</i>
-            <p class="promo-caption">Flexible Databse Modeling</p>
-            <p class="promo-description"></p>
+            <p class="promo-caption"><center><h3>Flexible Databse</h3></center></p>
+            <p class="promo-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-    </div></p>
-<p></div>
-<br/>
+    </div>
+
+</div>
+
+<p><br/>
 <div class="section group">
     <div class="col span_1_of_3">
         <div class="center promo ">
-            <i class="material-icons">group</i>
-            <p class="promo-caption">Redux Real-Time Dispatching</p>
-            <p class="promo-description"></p>
+            <i class="material-icons color-blue">group</i>
+            <p class="promo-caption"><center><h3 class="color-orange">Real-Time Dispatching</h3></center></p>
+            <p class="promo-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
     </div>
     <div class="col span_1_of_3">
         <div class="center promo ">
-            <i class="material-icons">security</i>
-            <p class="promo-caption">User Authentication</p>
-            <p class="promo-description"></p>
+                <i class="material-icons">security</i>
+                <p class="promo-caption"><center><h3>User Authentication</h3></center></p>
+                <p class="promo-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
     </div>
     <div class="col span_1_of_3">
         <div class="center promo">
             <i class="material-icons">language</i>
-            <p class="promo-caption">Multilingual Support</p>
-            <p class="promo-description"></p>
+            <p class="promo-caption"><center><h3>Multilingual Support</h3></center></p>
+            <p class="promo-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
     </div>
 </div></p>
+<p><center><div class="lines-aside"><h2>Tools</h2></div></center></p>
+<p><center></p>
+<div style="width: calc(100% / 6);margin: 50px;display:inline-block"><a href="https://www.mongodb.com/" target="_blank"><img class="mongodb-img" src="http://res.cloudinary.com/hashnode/image/upload/w_500,e_grayscale/v1466456749/static_imgs/mern/v2/mongodb.jpg"></a></div>
+
+<div style="width: calc(100% / 6);margin: 50px;display:inline-block"><a href="http://expressjs.com" target="_blank"><img class="express-img" src="http://res.cloudinary.com/hashnode/image/upload/w_500,e_grayscale/v1466456747/static_imgs/mern/v2/express.jpg"></a></div>
+
+<div style="width: calc(100% / 6);margin: 50px;display:inline-block"><a href="https://facebook.github.io/react/" target="_blank"><img class="react-img" src="http://res.cloudinary.com/hashnode/image/upload/w_500,e_grayscale/v1466456747/static_imgs/mern/v2/react.png"></a></div>
+
+<div style="width: calc(100% / 6);margin: 50px;display:inline-block"><a href="https://nodejs.org/en/" target="_blank"><img class="nodejs-img" src="http://res.cloudinary.com/hashnode/image/upload/w_500,e_grayscale/v1466456747/static_imgs/mern/v2/nodejs.png"></a></div>
+
+<div style="width: calc(100% / 6);margin: 50px;display:inline-block"><a href="http://redux.js.org/" target="_blank"><img class="redux-img" src="http://res.cloudinary.com/hashnode/image/upload/w_500,e_grayscale/v1466456747/static_imgs/mern/v2/redux-logo.png"></a></div>
+
+<div style="width: calc(100% / 6);margin: 50px;display:inline-block"><a href="https://webpack.github.io/" target="_blank"><img class="webpack-img" src="http://res.cloudinary.com/hashnode/image/upload/w_500,e_grayscale/v1466456748/static_imgs/mern/v2/webpack.png"></a></div>
+
+<p></center></p>
                 
                   
                 

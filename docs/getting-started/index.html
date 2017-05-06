@@ -52,7 +52,7 @@
   
   
   
-    <body data-md-color-primary="cyan" data-md-color-accent="cyan">
+    <body data-md-color-primary="cyan" data-md-color-accent="orange">
   
     <svg class="md-svg">
       <defs>
@@ -294,15 +294,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../develop-with-harmony/" title="Harmony Architecture" class="md-nav__link">
+      Harmony Architecture
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-4">
       API & Examples
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-4">
         API & Examples
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -315,13 +327,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
     
-    <label class="md-nav__link" for="nav-3-1">
+    <label class="md-nav__link" for="nav-4-1">
       Server
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-1">
+      <label class="md-nav__title" for="nav-4-1">
         Server
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -333,8 +345,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../extensions/server/server/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../extensions/server/server/" title="Server Introduction" class="md-nav__link">
+      Server Introduction
     </a>
   </li>
 
@@ -387,13 +399,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
     
-    <label class="md-nav__link" for="nav-3-2">
+    <label class="md-nav__link" for="nav-4-2">
       Client
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
+      <label class="md-nav__title" for="nav-4-2">
         Client
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -405,8 +417,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../extensions/client/client/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../extensions/client/client/" title="Client Introduction" class="md-nav__link">
+      Client Introduction
     </a>
   </li>
 
@@ -429,8 +441,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../base/" title="Base" class="md-nav__link">
-      Base
+    <a href="../extensions/client/websocket/" title="Websocket" class="md-nav__link">
+      Websocket
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../base/" title="Base Folder" class="md-nav__link">
+      Base Folder
     </a>
   </li>
 
@@ -634,29 +658,33 @@ for example, you can easily change your database choice from mongoDB to SQL and 
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="generator">Generator<a class="headerlink" href="#generator" title="Permanent link">&para;</a></h3>
 <p>Generate your Project
-<div class="codehilite"><pre><span></span>npm install yo -g
-npm install generator-harmony-boilerplate -g
-yo generator-harmony-boilerplate
+<div class="codehilite"><pre><span></span>$ npm install yo -g
+
+$ npm install generator-harmony-boilerplate -g
+
+$ yo generator-harmony-boilerplate
 </pre></div>
 </p>
 <h3 id="npm">npm<a class="headerlink" href="#npm" title="Permanent link">&para;</a></h3>
 <p>Run for Development
-<div class="codehilite"><pre><span></span>npm run start:dev
+<div class="codehilite"><pre><span></span>$ npm run start:dev
 </pre></div>
 </p>
 <p>Run for Production
-<div class="codehilite"><pre><span></span>npm run start:prod
+<div class="codehilite"><pre><span></span>$ npm run start:prod
 </pre></div>
 </p>
 <h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p>Run for Development
-<div class="codehilite"><pre><span></span>docker-compose -f docker-compose-development.yml build
-docker-compose -f docker-compose-development.yml up
+<div class="codehilite"><pre><span></span>$ docker-compose -f docker-compose-development.yml build
+
+$ docker-compose -f docker-compose-development.yml up
 </pre></div>
 </p>
 <p>Run for Production
-<div class="codehilite"><pre><span></span>docker-compose build
-docker-compose up
+<div class="codehilite"><pre><span></span>$ docker-compose build
+
+$ docker-compose up
 </pre></div>
 </p>
 <div class="admonition tip">
@@ -668,17 +696,17 @@ Default ports:<br/>
 <code>websocket</code>: 3030</p>
 </div>
 <h2 id="harmony-posts-example">Harmony Posts Example<a class="headerlink" href="#harmony-posts-example" title="Permanent link">&para;</a></h2>
-<p>After Harmony installed you can watch the included Posts example.
-Posts Example introduce the most usage with Harmony feathers,
-including : websocket, translate and more ...
-Register and login, now you can add remove and watch posts on the wall :).</p>
 <div class="admonition warning">
 <p class="admonition-title">Posts Example Database</p>
 <p>Posts Example work only with mongoDB.
 If you don't use docker, don't forget turn on your mongoDB.</p>
 </div>
+<p>After Harmony installed you can watch the included Posts example.
+Posts Example introduce the most usage with Harmony feathers,
+including : websocket, translate and more ...
+Register and login, now you can add remove and watch posts on the wall :).</p>
 <h2 id="what-next">What next ?<a class="headerlink" href="#what-next" title="Permanent link">&para;</a></h2>
-<p>Congratulations, you start your first Harmony web app with Harmony.
+<p>Congratulations, you start your first Harmony web app.
 Now go on and explore how to develop your next web app easily with our feathers.</p>
                 
                   
@@ -713,13 +741,13 @@ Now go on and explore how to develop your next web app easily with our feathers.
           </a>
         
         
-          <a href="../extensions/server/server/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../develop-with-harmony/" title="Harmony Architecture" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Introduction
+                Harmony Architecture
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
