@@ -165,7 +165,15 @@ there is reference in the configuration file to the client actions.
 ```
 const actions = require('../../client/src/actions');
 ```
+## Websocket 
+You can use the websocket service to pass messages between the clients or from server to clients by invoking:
+```js
+exports.create = function(req, res) {
+    let ModelInstance = new MODEL_SERVICE();
+    ...
+    req.app.get('wss').broadcast(YOUR_MESSAGE);
 
+```
 harmony let the client to invoke actions on each client on the system by using the websocket instance on the server.
 for example: lets say User A delete item from the database and want that all the users will FETCH the items again.
 
