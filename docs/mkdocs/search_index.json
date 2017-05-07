@@ -2,8 +2,28 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Harmony Boilerplate is based on Multi Model Layer, MongoDB, Express, React and NodeJS\n\n\n\n\n\n\n\n\n\n\n\nQuick start\n\n\n\n\nInstall the last version of \nYeoman\n\n\n$ npm install yo -g\n\n\n\n\n\nInstall the last version of our smashing generator \ngenerator-harmony-boilerplate\n\n\n$ npm install generator-harmony-boilerplate -g\n\n\n\n\n\nGenerate and Start your project\n\n$ yo generator-harmony-boilerplate\n\n\n\n\n\nStart your project\n\n$ npm start\n\n\n\n\n\nNow you can go to\n \nlocalhost:8080\n \nand see your app!\n\n\n\n\n\n\n\nFeatures\n\n\n\n    \n\n        \n\n            \nflash_on\n\n            \nSpeeds up development\n\n            \nWe did most of the heavy lifting for you to provide a better experience with boilerplates \n\n        \n\n    \n\n    \n\n        \n\n            \ncode\n\n            \nBest Practice\n\n            \nPredefined scripts that let you deliver your app as fast as you can.\n\n        \n\n    \n\n    \n\n        \n\n            \nstorage\n\n            \nFlexible Databse\n\n            \nUsing multiple model layer for flexible access to databases such as MongoDB and MySQL\n\n        \n\n    \n\n\n\n\n\n\n\n\n\n    \n\n        \n\n            \ngroup\n\n            \nReal-Time Dispatching\n\n            \nAbility to dispatch actions on each client via Websockets.\n\n        \n\n    \n\n    \n\n        \n\n                \nsecurity\n\n                \nUser Authentication\n\n                \nReady-To-Use auth mechanism with high security.\n\n        \n\n    \n\n    \n\n        \n\n            \nlanguage\n\n            \nMultilingual Support\n\n            \nEasy to add and support multiple languages with \nreact-intl\n.\n\n        \n\n    \n\n\n\n\nTools", 
+            "text": "Harmony\n\n\n\n\n\n\n\n    \n\n    \n\n    Harmony Boilerplate is based on Multi Model Layer, MongoDB, Express, React and NodeJS\n\n\n\n\n\n\n\nQuick Start\n\n\n\n\n\n\nQuick start\n\n\n\n\nInstall the last version of \nYeoman\n\n\n$ npm install yo -g\n\n\n\n\n\nInstall the last version of our smashing generator \ngenerator-harmony-boilerplate\n\n\n$ npm install generator-harmony-boilerplate -g\n\n\n\n\n\nGenerate and Start your project\n\n$ yo generator-harmony-boilerplate\n\n\n\n\n\nStart your project\n\n$ npm start\n\n\n\n\n\nNow you can go to\n \nlocalhost:8080\n \nand see your app!\n\n\n\n\n\n\n\nFeatures\n\n\nFeatures\n\n\n\n    \n\n        \n\n            \nflash_on\n\n            \nSpeeds up development\n\n            \nWe did most of the heavy lifting for you to provide a better experience with boilerplates \n\n        \n\n    \n\n    \n\n        \n\n            \ncode\n\n            \nBest Practice\n\n            \nPredefined scripts that let you deliver your app as fast as you can.\n\n        \n\n    \n\n    \n\n        \n\n            \nstorage\n\n            \nFlexible Databse\n\n            \nUsing multiple model layer for flexible access to databases such as MongoDB and MySQL\n\n        \n\n    \n\n\n\n\n\n\n\n\n\n    \n\n        \n\n            \ngroup\n\n            \nReal-Time Dispatching\n\n            \nAbility to dispatch actions on each client via Websockets.\n\n        \n\n    \n\n    \n\n        \n\n                \nsecurity\n\n                \nUser Authentication\n\n                \nReady-To-Use auth mechanism with high security.\n\n        \n\n    \n\n    \n\n        \n\n            \nlanguage\n\n            \nMultilingual Support\n\n            \nEasy to add and support multiple languages with \nreact-intl\n.\n\n        \n\n    \n\n\n\n\nTools\n\n\nTools", 
             "title": "Harmony"
+        }, 
+        {
+            "location": "/#harmony", 
+            "text": "Harmony Boilerplate is based on Multi Model Layer, MongoDB, Express, React and NodeJS", 
+            "title": "Harmony"
+        }, 
+        {
+            "location": "/#quick-start", 
+            "text": "", 
+            "title": "Quick Start"
+        }, 
+        {
+            "location": "/#features", 
+            "text": "", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/#tools", 
+            "text": "", 
+            "title": "Tools"
         }, 
         {
             "location": "/getting-started/", 
