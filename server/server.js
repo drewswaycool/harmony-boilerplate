@@ -120,7 +120,7 @@ if(process.env.NODE_ENV === 'development') {
         online: false,
         logConnections: false,
         files: [
-            path.join(__dirname, '..', 'client')
+            path.join(__dirname, '..', 'client','dist')
         ],
         proxy: serverURL
     });
