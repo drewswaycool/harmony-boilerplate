@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { injectIntl } from 'react-intl';
+import { harmonyConnect } from '../../base/features/harmony-redux-react-connect';
 import { changeLocale } from '../../base/features/harmony-i18n/actions/actions_i18n';
 
 class Localization extends Component {
@@ -22,7 +21,7 @@ class Localization extends Component {
     }
 }
 
-export default connect(
+export default harmonyConnect(Localization,
     (state) => {
         return {
 
@@ -31,4 +30,4 @@ export default connect(
     {
         changeLocale: changeLocale
     }
-)(injectIntl(Localization));
+);
