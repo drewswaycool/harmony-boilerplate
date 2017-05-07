@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { harmonyConnect } from '../harmony-redux-react-connect';
-import { changeLocale } from '../harmony-i18n/actions/actions_i18n';
+import { harmonyConnect } from '../../base/features/harmony-redux-react-connect';
+import { changeLocale } from '../../base/features/harmony-i18n/actions/actions_i18n';
 
 class Localization extends Component {
 
