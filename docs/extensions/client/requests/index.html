@@ -9,7 +9,7 @@
         <meta name="description" content="Branding new web architecture.">
       
       
-        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/websocket/">
+        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/requests/">
       
       
         <meta name="author" content="Harmony Framework Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Websocket - Harmony Boilerplate</title>
+        <title>Requests - Harmony Boilerplate</title>
       
     
     
@@ -92,7 +92,7 @@
                 </span>
               
             
-            Websocket
+            Requests
           
         </span>
       </div>
@@ -383,6 +383,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../base/" title="Base Folder" class="md-nav__link">
+      Base Folder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -390,27 +402,71 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Websocket
+        Requests
       </label>
     
-    <a href="./" title="Websocket" class="md-nav__link md-nav__link--active">
-      Websocket
+    <a href="./" title="Requests" class="md-nav__link md-nav__link--active">
+      Requests
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#websocket-actions" title="Websocket Actions" class="md-nav__link">
-    Websocket Actions
+  <a href="#requests" title="Requests" class="md-nav__link">
+    Requests
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call" title="call" class="md-nav__link">
+    call
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastaction" title="broadcastAction" class="md-nav__link">
+    broadcastAction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requests-definitions-file" title="Requests Definitions File" class="md-nav__link">
+    Requests Definitions File
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code" title="Example Code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -429,8 +485,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../base/" title="Base Folder" class="md-nav__link">
-      Base Folder
+    <a href="../multilingual/" title="Generate Multilingual" class="md-nav__link">
+      Generate Multilingual
     </a>
   </li>
 
@@ -441,7 +497,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../generate_new_component/" title="Generate Component" class="md-nav__link">
+    <a href="../components/" title="Generate Component" class="md-nav__link">
       Generate Component
     </a>
   </li>
@@ -453,8 +509,68 @@
 
 
   <li class="md-nav__item">
-    <a href="../generate_new_container/" title="Generate Container" class="md-nav__link">
+    <a href="../core_components/" title="Generate Core Component" class="md-nav__link">
+      Generate Core Component
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../containers/" title="Generate Container" class="md-nav__link">
       Generate Container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../form_containers/" title="Generate Form Container" class="md-nav__link">
+      Generate Form Container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../actions/" title="Generate Actions" class="md-nav__link">
+      Generate Actions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sagas/" title="Generate Sagas" class="md-nav__link">
+      Generate Sagas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reducers/" title="Generate Reducers" class="md-nav__link">
+      Generate Reducers
     </a>
   </li>
 
@@ -531,14 +647,56 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#websocket-actions" title="Websocket Actions" class="md-nav__link">
-    Websocket Actions
+  <a href="#requests" title="Requests" class="md-nav__link">
+    Requests
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call" title="call" class="md-nav__link">
+    call
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastaction" title="broadcastAction" class="md-nav__link">
+    broadcastAction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requests-definitions-file" title="Requests Definitions File" class="md-nav__link">
+    Requests Definitions File
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code" title="Example Code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -557,9 +715,54 @@
               
                 
                 
-                  <h1>Websocket</h1>
-                
-                <h2 id="websocket-actions">Websocket Actions<a class="headerlink" href="#websocket-actions" title="Permanent link">&para;</a></h2>
+                <h1 id="requests-websocket">Requests &amp; Websocket<a class="headerlink" href="#requests-websocket" title="Permanent link">&para;</a></h1>
+<h2 id="requests">Requests<a class="headerlink" href="#requests" title="Permanent link">&para;</a></h2>
+<p><b>Location</b>: <code>client/base/api/requests.js</code> </p>
+<p>API Requests is one of the features coming from Harmony.<br/></p>
+<p>Requests class include the following methods:</p>
+<h3 id="call">call<a class="headerlink" href="#call" title="Permanent link">&para;</a></h3>
+<p>Call to API</p>
+<p><b>Parameters:</b></p>
+<p>config - axios config json.</p>
+<p><b>Usage</b></p>
+<p>import from <code>client/base/api/requests.js</code>
+<div class="codehilite"><pre><span></span><span class="nx">request</span><span class="p">.</span><span class="nx">call</span><span class="p">({</span>
+    <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span>
+    <span class="nx">baseURL</span><span class="o">:</span> <span class="nx">baseURL</span><span class="p">,</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;users/login&#39;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="nx">data</span>
+<span class="p">});</span>
+</pre></div>
+</p>
+<h3 id="broadcastaction">broadcastAction<a class="headerlink" href="#broadcastaction" title="Permanent link">&para;</a></h3>
+<p>Invoke action via websocket to every online client.</p>
+<p><b>Parameters:</b></p>
+<p>action - Action that you want to execute.</p>
+<p><b>Usage</b></p>
+<p>import from <code>client/base/api/requests.js</code>
+<div class="codehilite"><pre><span></span><span class="nx">requests</span><span class="p">.</span><span class="nx">broadcastAction</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span> <span class="nx">ActionTypes</span><span class="p">.</span><span class="nx">FETCH_POSTS</span><span class="p">,</span> <span class="nx">payload</span><span class="o">:</span> <span class="kc">null</span><span class="p">});</span>
+</pre></div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Secured Actions</p>
+<p>Harmony know about the risk to dispatch actions via client to aonther clients. <br/>
+Therefore, if you want to disptach action with websocket actions, you need to allow the action in server.</br>
+Read more about websocket in server docomentation.</p>
+</div>
+<h2 id="requests-definitions-file">Requests Definitions File<a class="headerlink" href="#requests-definitions-file" title="Permanent link">&para;</a></h2>
+<p><b>Location</b>: <code>client/requests/index.js</code></p>
+<p>In requests file we define all the requests calls and use it in sagas.
+Harmony prefer to use one file to export requests definitions for Best Practice.</p>
+<h3 id="example-code">Example Code<a class="headerlink" href="#example-code" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nx">createUser</span><span class="o">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">request</span><span class="p">.</span><span class="nx">call</span><span class="p">({</span>
+        <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span>
+        <span class="nx">baseURL</span><span class="o">:</span> <span class="nx">baseURL</span><span class="p">,</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/users&#39;</span><span class="p">,</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="nx">data</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
@@ -578,7 +781,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../config/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../base/" title="Base Folder" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -587,19 +790,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Configuration
+                Base Folder
               </span>
             </div>
           </a>
         
         
-          <a href="../../../base/" title="Base Folder" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../multilingual/" title="Generate Multilingual" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Base Folder
+                Generate Multilingual
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

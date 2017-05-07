@@ -9,7 +9,7 @@
         <meta name="description" content="Branding new web architecture.">
       
       
-        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/config/">
+        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/containers/">
       
       
         <meta name="author" content="Harmony Framework Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Configuration - Harmony Boilerplate</title>
+        <title>Generate Container - Harmony Boilerplate</title>
       
     
     
@@ -92,7 +92,7 @@
                 </span>
               
             
-            Configuration
+            Generate Container
           
         </span>
       </div>
@@ -371,20 +371,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="./" title="Configuration" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../config/" title="Configuration" class="md-nav__link">
       Configuration
     </a>
-    
   </li>
 
         
@@ -452,11 +443,68 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../containers/" title="Generate Container" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Generate Container
+      </label>
+    
+    <a href="./" title="Generate Container" class="md-nav__link md-nav__link--active">
       Generate Container
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-container-by-cli" title="Create Container by cli" class="md-nav__link">
+    Create Container by cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-only-container-by-cli" title="Create Only Container by cli" class="md-nav__link">
+    Create Only Container by cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-container-manually" title="Create your Container manually" class="md-nav__link">
+    Create your Container manually
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-code" title="Example Code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -583,6 +631,41 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-container-by-cli" title="Create Container by cli" class="md-nav__link">
+    Create Container by cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-only-container-by-cli" title="Create Only Container by cli" class="md-nav__link">
+    Create Only Container by cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-container-manually" title="Create your Container manually" class="md-nav__link">
+    Create your Container manually
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-code" title="Example Code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -594,42 +677,111 @@
               
                 
                 
-                <h1 id="config">Config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h1>
-<p>Client configuration located on <code>client/src/config.js</code></p>
-<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">initConfig</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="kd">let</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span> <span class="p">};</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">&#39;development&#39;</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="cm">/* ---------- Config Development --------- */</span>
-        <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="nx">ROOT_SERVRE_URL</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8080/api&#39;</span><span class="p">,</span>
-            <span class="nx">ROOT_WS_URL</span><span class="o">:</span> <span class="s1">&#39;ws://localhost:3030&#39;</span>
-        <span class="p">};</span>
-
-    <span class="p">}</span>
-
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">&#39;production&#39;</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="cm">/* ---------- Config Production --------- */</span>
-        <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="nx">ROOT_SERVRE_URL</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8080/api&#39;</span><span class="p">,</span>
-            <span class="nx">ROOT_WS_URL</span><span class="o">:</span> <span class="s1">&#39;ws://localhost:3030&#39;</span>
-        <span class="p">};</span>
-
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="nx">config</span><span class="p">;</span>
-
-<span class="p">}</span>
-
-<span class="kr">export</span> <span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">initConfig</span><span class="p">();</span>
+                <h1 id="generate-core-components">Generate Core Components<a class="headerlink" href="#generate-core-components" title="Permanent link">&para;</a></h1>
+<p><b>Location</b>: <code>client/containers/</code></p>
+<p>Containers is the components who is connected to redux. The flow data in the container is :</p>
+<p>without API call:</p>
+<div class="codehilite"><pre><span></span>Container -&gt; Action -&gt; Reducer -&gt; Container
 </pre></div>
 
 
-<p>Define your root server url and root websocket url.
-These variables are used in app.</p>
+<p>with API call :</p>
+<div class="codehilite"><pre><span></span>Container -&gt; Action -&gt; Saga -&gt; Reducer -&gt; Container
+</pre></div>
+
+
+<div class="admonition tip">
+<p class="admonition-title">Container </p>
+<p>Creating container with cli will create for you all the necessary files to reducers saga and actions.<br/>
+If --name exist it will create the container .js file inside the existing folder.</p>
+</div>
+<h2 id="create-container-by-cli">Create Container by cli<a class="headerlink" href="#create-container-by-cli" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>$ gulp createContainer --name myContainer --className myClassName --storeName myStoreName
+</pre></div>
+
+
+<h2 id="create-only-container-by-cli">Create Only Container by cli<a class="headerlink" href="#create-only-container-by-cli" title="Permanent link">&para;</a></h2>
+<p>Without action, saga and reducer</p>
+<div class="codehilite"><pre><span></span>$ gulp createContainerOnly --name myContainer --className myClassName
+</pre></div>
+
+
+<h2 id="create-your-container-manually">Create your Container manually<a class="headerlink" href="#create-your-container-manually" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>    1) Go to containers folder and add a new <span class="sb">`.js`</span> file and connect him to <span class="sb">`redux`</span> like in the example.
+</pre></div>
+
+
+<h2 id="example-code">Example Code<a class="headerlink" href="#example-code" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Harmony Connect</p>
+<p>Any Container connected to redux with <code>harmonyConnect</code> to enjoy all of Harmony features.<br/>
+Read more about <b>Harmony Connect</b> in <b>Base Folder</b> Section.</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">harmonyConnect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../base/features/harmony-redux-react-connect&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">fetchPosts</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../actions/posts/actions_posts&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Link</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-router&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">POSTS_NEW</span><span class="p">,</span> <span class="nx">POSTS_SHOW</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../routes&#39;</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">PostsIndex</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+
+    <span class="nx">componentWillMount</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">fetchPosts</span><span class="p">();</span>
+
+    <span class="p">}</span>
+
+    <span class="nx">renderPosts</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">posts</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">post</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="p">(</span>
+                    <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;list-group-item&quot;</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">_id</span><span class="p">}</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">to</span><span class="o">=</span><span class="p">{</span><span class="nx">POSTS_SHOW</span> <span class="o">+</span> <span class="nx">post</span><span class="p">.</span><span class="nx">_id</span><span class="p">}</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;pull-xs-right&quot;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">categories</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+                            <span class="o">&lt;</span><span class="nx">strong</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/strong&gt;</span>
+                        <span class="o">&lt;</span><span class="err">/Link&gt;</span>
+                    <span class="o">&lt;</span><span class="err">/li&gt;</span>
+                <span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;);</span>
+        <span class="p">}</span>
+
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;text-xs-right&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">to</span><span class="o">=</span><span class="p">{</span><span class="nx">POSTS_NEW</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="o">&gt;</span>
+                        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">T</span><span class="p">(</span><span class="s2">&quot;addPost&quot;</span><span class="p">)}</span>
+                    <span class="o">&lt;</span><span class="err">/Link&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+                <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">T</span><span class="p">(</span><span class="s2">&quot;postsTitle&quot;</span><span class="p">)}</span><span class="o">&lt;</span><span class="err">/h3&gt;</span>
+                <span class="o">&lt;</span><span class="nx">ul</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;list-group&quot;</span><span class="o">&gt;</span>
+                    <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">renderPosts</span><span class="p">()}</span>
+                <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">harmonyConnect</span><span class="p">(</span><span class="nx">PostsIndex</span><span class="p">,</span>
+    <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="nx">posts</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">),</span>
+            <span class="nx">message</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">fetchPosts</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
                 
                   
                 
@@ -648,7 +800,7 @@ These variables are used in app.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../client/" title="Client Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../core_components/" title="Generate Core Component" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -657,19 +809,19 @@ These variables are used in app.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Client Introduction
+                Generate Core Component
               </span>
             </div>
           </a>
         
         
-          <a href="../base/" title="Base Folder" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../form_containers/" title="Generate Form Container" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Base Folder
+                Generate Form Container
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
