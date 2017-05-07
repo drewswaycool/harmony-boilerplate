@@ -14,17 +14,17 @@ class PostsNew extends Component {
         return (
             <form onSubmit={this.props.handleSubmit(this.handleSubmit.bind(this))} >
 
-                <h3>Create A New Post</h3>
+                <h3>{this.T('createNewPost')}</h3>
 
-                <Cor_Input name="title" type="text" label="Title" />
-                <Cor_Input name="categories" type="text" label="Categories" />
-                <Cor_Textarea name="content" label="Content" />
+                <Cor_Input name="title" type="text" label={this.T('title')} T={this.T.bind(this)} />
+                <Cor_Input name="categories" type="text" label={this.T('categories')} T={this.T.bind(this)} />
+                <Cor_Textarea name="content" label={this.T('content')} T={this.T.bind(this)} />
 
                 {this.props.message || ""}
                 <br/>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
-                <Link to={PORTAL} className="btn btn-danger">Cancel</Link>
+                <button type="submit" className="btn btn-primary">{this.T('submit')}</button>
+                <Link to={PORTAL} className="btn btn-danger">{this.T('cancel')}</Link>
 
             </form>
         );
@@ -39,15 +39,15 @@ class PostsNew extends Component {
         const errors = {};
 
         if (!values.title) {
-            errors.title = 'Enter a title';
+            errors.title = 'titleError';
         }
 
         if (!values.categories) {
-            errors.categories = 'Enter categories';
+            errors.categories = 'categoriesError';
         }
 
         if (!values.content) {
-            errors.content = 'Enter some content';
+            errors.content = 'contentError';
         }
 
         return errors;

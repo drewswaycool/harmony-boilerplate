@@ -9,7 +9,7 @@
         <meta name="description" content="Branding new web architecture.">
       
       
-        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/generate_new_component/">
+        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/config/">
       
       
         <meta name="author" content="Harmony Framework Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Generate Component - Harmony Boilerplate</title>
+        <title>Configuration - Harmony Boilerplate</title>
       
     
     
@@ -92,7 +92,7 @@
                 </span>
               
             
-            Generate Component
+            Configuration
           
         </span>
       </div>
@@ -371,11 +371,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../config/" title="Configuration" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Configuration" class="md-nav__link md-nav__link--active">
       Configuration
     </a>
+    
   </li>
 
         
@@ -407,20 +416,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="./" title="Generate Component" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../generate_new_component/" title="Generate Component" class="md-nav__link">
       Generate Component
     </a>
-    
   </li>
 
         
@@ -522,7 +522,42 @@
               
                 
                 
-                <h1 id="generate-new-component">Generate New Component<a class="headerlink" href="#generate-new-component" title="Permanent link">&para;</a></h1>
+                <h1 id="config">Config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h1>
+<p>Client configuration located on <code>client/src/config.js</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">initConfig</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">let</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span> <span class="p">};</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">&#39;development&#39;</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="cm">/* ---------- Config Development --------- */</span>
+        <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">ROOT_SERVRE_URL</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8080/api&#39;</span><span class="p">,</span>
+            <span class="nx">ROOT_WS_URL</span><span class="o">:</span> <span class="s1">&#39;ws://localhost:3030&#39;</span>
+        <span class="p">};</span>
+
+    <span class="p">}</span>
+
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">&#39;production&#39;</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="cm">/* ---------- Config Production --------- */</span>
+        <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">ROOT_SERVRE_URL</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8080/api&#39;</span><span class="p">,</span>
+            <span class="nx">ROOT_WS_URL</span><span class="o">:</span> <span class="s1">&#39;ws://localhost:3030&#39;</span>
+        <span class="p">};</span>
+
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">config</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">initConfig</span><span class="p">();</span>
+</pre></div>
+
+
+<p>Define your root server url and root websocket url.
+These variables are used in app.</p>
                 
                   
                 
@@ -541,7 +576,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../../base/" title="Base Folder" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../client/" title="Client Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -550,19 +585,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Base Folder
+                Client Introduction
               </span>
             </div>
           </a>
         
         
-          <a href="../generate_new_container/" title="Generate Container" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../websocket/" title="Websocket" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Generate Container
+                Websocket
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

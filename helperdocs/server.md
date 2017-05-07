@@ -1,9 +1,34 @@
 ## Server Documentation
-### Based Libraries
-We recommended to be knowledge with the following libraries :
-* <a href="https://github.com/expressjs/express" target="_blank">express</a>
-* <a href="https://github.com/apidoc/apidoc" target="_blank">APIDoc</a>
-* <a href="https://github.com/mongo-express/mongo-express" target="_blank">MongoExpress</a>
+## Based Technologies
+
+- <a href="https://github.com/expressjs/express" target="_blank">Express</a>
+- <a href="https://github.com/apidoc/apidoc" target="_blank">APIDoc</a>
+- <a href="http://mongoosejs.com/" target="_blank">Mongoose</a>
+- <a href="http://docs.sequelizejs.com/en/v3/" target="_blank">Sequelize</a>
+
+  
+  
+## Server Folder Structure
+
+    .
+    ├── server    
+    |     ├── docs
+    |     ├── src       
+    |           ├── api
+	|               ├── authentication
+    |               ├── global
+	|               	├── responses
+	|               ├── posts
+	|           		├── model
+	|           		├── responses
+	|           		├── index.js
+	|           		├── posts.controller.js
+	|           ├── middleware
+    |               ├── authenticate.js
+    |               ├── authenticate-sequelize.js
+    |           ├── config.js
+    |     ├── apidoc.json  
+    |     ├── server.js 
 
 
 
@@ -165,7 +190,6 @@ there is reference in the configuration file to the client actions.
 ```
 const actions = require('../../client/src/actions');
 ```
-
 harmony let the client to invoke actions on each client on the system by using the websocket instance on the server.
 for example: lets say User A delete item from the database and want that all the users will FETCH the items again.
 
@@ -176,5 +200,16 @@ with the this payload :
 ```
 the websocket instance will broadcast to all users this action.
 In addition, there is option to invoke the broadcasting service from each API.
+
+## Websocket 
+You can use the websocket service to pass messages between the clients or from server to clients by invoking:
+```js
+exports.create = function(req, res) {
+    let ModelInstance = new MODEL_SERVICE();
+    ...
+    req.app.get('wss').broadcast(YOUR_MESSAGE);
+
+```
+
 > For more information go to: [Client](https://github.com/harmony-framework/harmony-boilerplate/blob/master/helperdocs/client.md#websocketactions)
 

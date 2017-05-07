@@ -9,7 +9,7 @@
         <meta name="description" content="Branding new web architecture.">
       
       
-        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/generate_new_component/">
+        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/server/config/">
       
       
         <meta name="author" content="Harmony Framework Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Generate Component - Harmony Boilerplate</title>
+        <title>Configuration - Harmony Boilerplate</title>
       
     
     
@@ -88,11 +88,11 @@
                 </span>
               
                 <span class="md-header-nav__parent">
-                  Client
+                  Server
                 </span>
               
             
-            Generate Component
+            Configuration
           
         </span>
       </div>
@@ -254,10 +254,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1" checked>
     
     <label class="md-nav__link" for="nav-4-1">
       Server
@@ -275,62 +277,9 @@
 
 
   <li class="md-nav__item">
-    <a href="../../server/server/" title="Server Introduction" class="md-nav__link">
+    <a href="../server/" title="Server Introduction" class="md-nav__link">
       Server Introduction
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../server/config/" title="Configuration" class="md-nav__link">
-      Configuration
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../server/authentication/" title="Authentication" class="md-nav__link">
-      Authentication
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../server/websocket/" title="Websocket" class="md-nav__link">
-      Websocket
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../server/generate_new_api/" title="Generate New API" class="md-nav__link">
-      Generate New API
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -341,29 +290,17 @@
   
 
 
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--active">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
-    <label class="md-nav__link" for="nav-4-2">
-      Client
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-2">
-        Client
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../client/" title="Client Introduction" class="md-nav__link">
-      Client Introduction
+      
+    
+    
+    <a href="./" title="Configuration" class="md-nav__link md-nav__link--active">
+      Configuration
     </a>
+    
   </li>
 
         
@@ -373,8 +310,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../config/" title="Configuration" class="md-nav__link">
-      Configuration
+    <a href="../authentication/" title="Authentication" class="md-nav__link">
+      Authentication
     </a>
   </li>
 
@@ -397,6 +334,78 @@
 
 
   <li class="md-nav__item">
+    <a href="../generate_new_api/" title="Generate New API" class="md-nav__link">
+      Generate New API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Client
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Client
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/client/" title="Client Introduction" class="md-nav__link">
+      Client Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/websocket/" title="Websocket" class="md-nav__link">
+      Websocket
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../base/" title="Base Folder" class="md-nav__link">
       Base Folder
     </a>
@@ -407,20 +416,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="./" title="Generate Component" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../client/generate_new_component/" title="Generate Component" class="md-nav__link">
       Generate Component
     </a>
-    
   </li>
 
         
@@ -430,7 +430,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../generate_new_container/" title="Generate Container" class="md-nav__link">
+    <a href="../../client/generate_new_container/" title="Generate Container" class="md-nav__link">
       Generate Container
     </a>
   </li>
@@ -522,7 +522,42 @@
               
                 
                 
-                <h1 id="generate-new-component">Generate New Component<a class="headerlink" href="#generate-new-component" title="Permanent link">&para;</a></h1>
+                <h1 id="config">Config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h1>
+<p>Server configuration located on <code>server/src/config.js</code></p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">sql</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">db</span><span class="o">:</span><span class="s1">&#39;seq&#39;</span><span class="p">,</span>
+        <span class="nx">user</span><span class="o">:</span><span class="s1">&#39;root&#39;</span><span class="p">,</span>
+        <span class="nx">pass</span><span class="o">:</span><span class="s1">&#39;&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">mongo</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">dbUrl</span><span class="o">:</span>  <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">MONGO_URL</span> <span class="o">||</span> <span class="s1">&#39;mongodb://127.0.0.1:27017/db&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">useMongo</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+    <span class="nx">useSql</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">JWT_SECRET</span><span class="o">:</span><span class="s2">&quot;YOUR_SMASHING_JWT_SECRET&quot;</span><span class="p">,</span>
+    <span class="nx">server</span><span class="o">:</span><span class="p">{</span>
+      <span class="nx">port</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">8080</span>
+    <span class="p">},</span>
+    <span class="nx">websocket</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">port</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">WS_PORT</span> <span class="o">||</span> <span class="mi">3030</span>
+    <span class="p">},</span>
+
+    <span class="nx">allowedActions</span><span class="o">:</span> <span class="p">[</span>
+        <span class="nx">actions</span><span class="p">.</span><span class="nx">FETCH_POSTS</span>
+    <span class="p">]</span>
+
+
+<span class="p">};</span>
+</pre></div>
+
+
+<ol>
+<li>You can choose whether to use Relational DB or Non Relational such as MongoDB, change <code>useMongo</code>  <code>useSql</code> according to your decisions.</li>
+<li><code>JWT_SECRET</code> used for Authorization Token generation.</li>
+<li><code>websocket</code> contain your websocket server configuration, we are using it for broadcasting actions on client side. amazing no?</li>
+<li><code>allowedActions</code> comes with the websocket, its contain what are the actions that the websocket is allowed to broadcast to the client.</li>
+</ol>
                 
                   
                 
@@ -541,7 +576,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../../base/" title="Base Folder" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../server/" title="Server Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -550,19 +585,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Base Folder
+                Server Introduction
               </span>
             </div>
           </a>
         
         
-          <a href="../generate_new_container/" title="Generate Container" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../authentication/" title="Authentication" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Generate Container
+                Authentication
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

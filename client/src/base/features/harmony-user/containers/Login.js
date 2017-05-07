@@ -32,7 +32,7 @@ class Login extends Component {
         this.props.login(props);
     }
 
-    validate(values, props) {
+    validate(values) {
         const errors = {};
 
         if (!values.email) {
@@ -40,7 +40,7 @@ class Login extends Component {
         }
 
         if (!values.password) {
-            errors.password = 'Enter a password';
+            errors.password = 'passwordError';
         }
 
         return errors;
