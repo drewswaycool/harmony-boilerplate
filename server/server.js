@@ -10,7 +10,7 @@ var routes     = require('./src/routes');
 var config     = require('./src/config');
 var path 	   = require('path');
 var WebSocket  = require('ws');
-var bs = require("browser-sync");
+var browserSync = require("browser-sync");
 var _ = require ('lodash');
 // configure app
 app.use(morgan('dev')); // log requests to the console
@@ -112,17 +112,17 @@ app.listen(port);
 
 if(process.env.NODE_ENV === 'development') {
     var serverURL = "http://localhost:" + port;
-    bs.create();
-    bs.init({
+    browserSync.create();
+    browserSync.init({
         port: 8080,
+        files: [
+            path.join(__dirname, '..', 'client','dist')
+        ],
+        proxy: serverURL,
         browser: "chrome",
         notify: false,
         online: false,
         logConnections: false,
-        files: [
-            path.join(__dirname, '..', 'client','dist')
-        ],
-        proxy: serverURL
     });
 }
 console.log('Magic happens on port ' + port);
