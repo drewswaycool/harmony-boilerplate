@@ -21,7 +21,7 @@
     
     
       
-        <title>Server - Harmony Boilerplate</title>
+        <title>Server Introduction - Harmony Boilerplate</title>
       
     
     
@@ -44,7 +44,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../../styles.css">
+      <link rel="stylesheet" href="../../../css/styles.css">
     
     
   </head>
@@ -52,7 +52,7 @@
   
   
   
-    <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body data-md-color-primary="cyan" data-md-color-accent="orange">
   
     <svg class="md-svg">
       <defs>
@@ -84,11 +84,15 @@
             
               
                 <span class="md-header-nav__parent">
-                  Scripts
+                  API & Examples
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  Server
                 </span>
               
             
-            Server
+            Server Introduction
           
         </span>
       </div>
@@ -219,8 +223,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../base/" title="Base" class="md-nav__link">
-      Base
+    <a href="../../../develop-with-harmony/" title="Harmony Architecture" class="md-nav__link">
+      Harmony Architecture
     </a>
   </li>
 
@@ -237,11 +241,32 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      Scripts
+      API & Examples
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Scripts
+        API & Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1" checked>
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Server
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        Server
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -260,10 +285,80 @@
       
     
     
-    <a href="./" title="Server" class="md-nav__link md-nav__link--active">
-      Server
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Server Introduction
+      </label>
+    
+    <a href="./" title="Server Introduction" class="md-nav__link md-nav__link--active">
+      Server Introduction
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#based-technologies" title="Based Technologies" class="md-nav__link">
+    Based Technologies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-folder-structure" title="Server Folder Structure" class="md-nav__link">
+    Server Folder Structure
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication/" title="Authentication" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../websocket/" title="Websocket" class="md-nav__link">
+      Websocket
+    </a>
   </li>
 
         
@@ -279,14 +374,74 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Client
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Client
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../../client/client/" title="Client" class="md-nav__link">
-      Client
+    <a href="../../client/client/" title="Client Introduction" class="md-nav__link">
+      Client Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/websocket/" title="Websocket" class="md-nav__link">
+      Websocket
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../base/" title="Base Folder" class="md-nav__link">
+      Base Folder
     </a>
   </li>
 
@@ -319,16 +474,9 @@
     </nav>
   </li>
 
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../customization/" title="Customization" class="md-nav__link">
-      Customization
-    </a>
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -368,6 +516,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../team/" title="Harmony Team" class="md-nav__link">
+      Harmony Team
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -385,6 +545,27 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#based-technologies" title="Based Technologies" class="md-nav__link">
+    Based Technologies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-folder-structure" title="Server Folder Structure" class="md-nav__link">
+    Server Folder Structure
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -397,6 +578,34 @@
                 
                 
                 <h1 id="server">Server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h1>
+<h2 id="based-technologies">Based Technologies<a class="headerlink" href="#based-technologies" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/expressjs/express" target="_blank">Express</a></li>
+<li><a href="https://github.com/apidoc/apidoc" target="_blank">APIDoc</a></li>
+<li><a href="http://mongoosejs.com/" target="_blank">Mongoose</a></li>
+<li><a href="http://docs.sequelizejs.com/en/v3/" target="_blank">Sequelize</a></li>
+</ul>
+<h2 id="server-folder-structure">Server Folder Structure<a class="headerlink" href="#server-folder-structure" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>.
+├── server    
+|     ├── docs
+|     ├── src       
+|           ├── api
+|               ├── authentication
+|               ├── global
+|                   ├── responses
+|               ├── posts
+|                   ├── model
+|                   ├── responses
+|                   ├── index.js
+|                   ├── posts.controller.js
+|           ├── middleware
+|               ├── authenticate.js
+|               ├── authenticate-sequelize.js
+|           ├── config.js
+|     ├── apidoc.json  
+|     ├── server.js
+</pre></div>
                 
                   
                 
@@ -415,7 +624,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../../base/" title="Base" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../../develop-with-harmony/" title="Harmony Architecture" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -424,19 +633,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Base
+                Harmony Architecture
               </span>
             </div>
           </a>
         
         
-          <a href="../generate_new_api/" title="Generate New API" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../config/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Generate New API
+                Configuration
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

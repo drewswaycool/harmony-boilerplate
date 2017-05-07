@@ -12,8 +12,11 @@ const config = {
     useMongo:true,
     useSql: false,
     JWT_SECRET:"OFIRISTHEBEST",
+	server:{
+      port: process.env.PORT || 8080
+    },
 	websocket:{
-		port:3030
+		port: process.env.WS_PORT || 3030
 	},
 
     allowedActions: [

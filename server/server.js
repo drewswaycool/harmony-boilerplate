@@ -10,15 +10,32 @@ var routes     = require('./src/routes');
 var config     = require('./src/config');
 var path 	   = require('path');
 var WebSocket  = require('ws');
+var browserSync = require("browser-sync");
 var _ = require ('lodash');
 // configure app
 app.use(morgan('dev')); // log requests to the console
+// apply headers
+app.use((req, res, next) => {
+        if(process.env.NODE_ENV == "development"){
+            res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+            res.header('Expires', '-1');
+            res.header('Pragma', 'no-cache');
+        }
+        res.header('Access-Control-Allow-METHODS', 'GET,PUT,POST,DELETE,HEAD,OPTIONS');
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Headers', "X-ACCESS_TOKEN, Access-Control-Allow-Origin, Authorization, Origin, x-requested-with, Content-Type, Content-Range, Content-Disposition, Content-Description");
+        next();
+});
 
 // configure body parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+var port = 8080;
+console.log(process.env.NODE_ENV);
 
-var port     = process.env.PORT || 8080; // set our port
+if(process.env.NODE_ENV === 'development') {
+    port = 7000; // set our port
+}
 
 if(config.useMongo){
   var mongoose   = require('mongoose');
@@ -92,6 +109,22 @@ app.set('etag', false);
 // START THE SERVER
 // =============================================================================
 app.listen(port);
+
+if(process.env.NODE_ENV === 'development') {
+    var serverURL = "http://localhost:" + port;
+    browserSync.create();
+    browserSync.init({
+        port: 8080,
+        files: [
+            path.join(__dirname, '..', 'client','dist')
+        ],
+        proxy: serverURL,
+        browser: "chrome",
+        notify: false,
+        online: false,
+        logConnections: false,
+    });
+}
 console.log('Magic happens on port ' + port);
 
 // uncaughtException

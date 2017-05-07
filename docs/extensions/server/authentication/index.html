@@ -9,7 +9,7 @@
         <meta name="description" content="Branding new web architecture.">
       
       
-        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/server/generate_new_api/">
+        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/server/authentication/">
       
       
         <meta name="author" content="Harmony Framework Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Generate New API - Harmony Boilerplate</title>
+        <title>Authentication - Harmony Boilerplate</title>
       
     
     
@@ -92,7 +92,7 @@
                 </span>
               
             
-            Generate New API
+            Authentication
           
         </span>
       </div>
@@ -299,11 +299,61 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../authentication/" title="Authentication" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Authentication
+      </label>
+    
+    <a href="./" title="Authentication" class="md-nav__link md-nav__link--active">
       Authentication
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authenticate-your-api" title="Authenticate Your API" class="md-nav__link">
+    Authenticate Your API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -323,68 +373,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Generate New API
-      </label>
-    
-    <a href="./" title="Generate New API" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../generate_new_api/" title="Generate New API" class="md-nav__link">
       Generate New API
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creating-api" title="Creating API" class="md-nav__link">
-    Creating API
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" title="Usage" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#result" title="Result" class="md-nav__link">
-    Result
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#templating" title="Templating" class="md-nav__link">
-    Templating
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -563,8 +556,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-api" title="Creating API" class="md-nav__link">
-    Creating API
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authenticate-your-api" title="Authenticate Your API" class="md-nav__link">
+    Authenticate Your API
   </a>
   
 </li>
@@ -572,20 +572,6 @@
         <li class="md-nav__item">
   <a href="#usage" title="Usage" class="md-nav__link">
     Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#result" title="Result" class="md-nav__link">
-    Result
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#templating" title="Templating" class="md-nav__link">
-    Templating
   </a>
   
 </li>
@@ -605,98 +591,137 @@
               
                 
                 
-                <h1 id="generate-new-api">Generate New API<a class="headerlink" href="#generate-new-api" title="Permanent link">&para;</a></h1>
-<p>A proper API consist the following:</p>
-<ul>
-<li>Model ( Using Mongoose )</li>
-<li>Controller ( Holding the main functions like create, update, delete, get, etc..)</li>
-<li>Responses ( JS file that contain responses relate to the current API )</li>
-<li>routes ( Mapping the routes to the Controller )</li>
-</ul>
-<h3 id="creating-api">Creating API<a class="headerlink" href="#creating-api" title="Permanent link">&para;</a></h3>
-<p>Inorder to create your API, We suggest to use our CLI script<br/></p>
-<p><code>gulp createApi --name &quot;YOUR_API_NAME&quot;</code></p>
-<p>Note - 
-If you are going to use MySQL  SQL  PostgreSQL  MSSQL you should add this:
-<code>--apiType sql</code> 
-otherwise it will use mongodb</p>
-<p>It will generate under <code>server/src/api</code> folder with the files of your api :</p>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p><code>gulp createApi --name post</code></p>
-<h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>.
-├── post         
-|     ├── post.controller.js                    
-|     ├── index.js   
-|     ├── model   
-|           ├── post.js 
-|     ├── responses
-|           ├── index.js
+                <h1 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Authentication</p>
+<p>We created a predefined authentication mechanism for your convenience.
+<br/>
+ - POST    /users                   -&gt;  create <br/>
+ - GET     /users/me                -&gt;  me      <br/>
+ - DELETE  /users/me/logout         -&gt;  logout  <br/>
+ - POST    /users/login             -&gt;  login   <br/>
+ - POST    /users/broadcastAction   -&gt;  broadcastAction <br/></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Configuration</p>
+<p>when you are changing the config to work with MySQL, <code>useSql</code> flag in Configuration
+your authentication will work with your SQL db instance.
+@see <code>server/src/api/authentication/users-sequelize</code></p>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span><span class="nx">Router</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">controller</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./user.controller&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="p">{</span><span class="nx">authenticate</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./../../../middleware/authenticate&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">();</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @api {post} authentication/users/ Create User</span>
+<span class="cm"> * @apiName CreateUserToken</span>
+<span class="cm"> * @apiGroup User</span>
+<span class="cm"> *</span>
+<span class="cm"> * @apiParam {String} email .</span>
+<span class="cm"> * @apiParam {String} password .</span>
+<span class="cm"> *</span>
+<span class="cm"> * @apiSuccess {Object} - set header x-auth with generated token.</span>
+<span class="cm"> */</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">controller</span><span class="p">.</span><span class="nx">create</span><span class="p">);</span>
+<span class="cm">/**</span>
+<span class="cm"> * @api {get} /authentication/users/me Get User</span>
+<span class="cm"> * @apiName GetUser</span>
+<span class="cm"> * @apiGroup User</span>
+<span class="cm"> *</span>
+<span class="cm"> * @apiSuccess {Object} - get current user.</span>
+<span class="cm"> */</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/me&#39;</span><span class="p">,</span> <span class="nx">authenticate</span><span class="p">,</span> <span class="nx">controller</span><span class="p">.</span><span class="nx">me</span><span class="p">);</span>
+<span class="cm">/**</span>
+<span class="cm"> * @api {delete} /authentication/users/me/token Logout</span>
+<span class="cm"> * @apiName LogoutUser</span>
+<span class="cm"> * @apiGroup User</span>
+<span class="cm"> *</span>
+<span class="cm"> * @apiSuccess {Object} - status 200.</span>
+<span class="cm"> */</span>
+<span class="nx">router</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s1">&#39;/me/token&#39;</span><span class="p">,</span> <span class="nx">authenticate</span><span class="p">,</span> <span class="nx">controller</span><span class="p">.</span><span class="nx">logout</span><span class="p">);</span>
+<span class="cm">/**</span>
+<span class="cm"> * @api {post} /authentication/users/login Login</span>
+<span class="cm"> * @apiName LoginUser</span>
+<span class="cm"> * @apiGroup User</span>
+
+<span class="cm"> * @apiParam {String} email .</span>
+<span class="cm"> * @apiParam {String} password .</span>
+
+<span class="cm"> * @apiSuccess {Object} - set header x-auth with generated token.</span>
+<span class="cm"> */</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">,</span> <span class="nx">controller</span><span class="p">.</span><span class="nx">login</span><span class="p">);</span>
+<span class="cm">/**</span>
+<span class="cm"> * @api {post} /authentication/users/broadcastAction Broadcast Action</span>
+<span class="cm"> * @apiName BroadcastAction</span>
+<span class="cm"> * @apiGroup User</span>
+
+<span class="cm"> * @apiParam {Object} action with type and payload.</span>
+
+<span class="cm"> * @apiSuccess {Object} - broadcast to thethe action to all.</span>
+<span class="cm"> */</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/broadcastAction&#39;</span><span class="p">,</span> <span class="nx">controller</span><span class="p">.</span><span class="nx">broadcastAction</span><span class="p">);</span>
+
+
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span><span class="p">;</span>
 </pre></div>
 
 
-<h2 id="templating">Templating<a class="headerlink" href="#templating" title="Permanent link">&para;</a></h2>
-<p>If you want to create your own templates you will need to add the template file under <code>generator/templates/server</code>
-and under <code>createApi</code> task in the <code>gulpfile.js</code> on the root folder do the following :</p>
-<div class="codehilite"><pre><span></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;createApi&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">apiName</span> <span class="o">=</span> <span class="nx">getArg</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
-    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">validateName</span><span class="p">(</span><span class="nx">apiName</span><span class="p">,</span> <span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">UPPERCASE_MODEL_NAME</span> <span class="o">=</span> <span class="nx">apiName</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">toUpperCase</span><span class="p">();</span>
-    <span class="kd">var</span> <span class="nx">CapitalLetterModelName</span> <span class="o">=</span> <span class="nx">capitalize</span><span class="p">(</span><span class="nx">apiName</span><span class="p">);</span>
-    <span class="nx">createTemplate</span><span class="p">(</span>
-        <span class="s1">&#39;./generator/templates/server/api-controller-template&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;.controller.js&#39;</span><span class="p">,</span>
-        <span class="p">{</span>
-         <span class="nx">name</span><span class="o">:</span> <span class="nx">apiName</span><span class="p">,</span>
-         <span class="nx">upperCaseModelName</span> <span class="o">:</span> <span class="nx">UPPERCASE_MODEL_NAME</span><span class="p">,</span>
-         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
+<h2 id="authenticate-your-api">Authenticate Your API<a class="headerlink" href="#authenticate-your-api" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Middleware</p>
+<p>You can use our <code>authenticate</code> middleware to your API by importing it from <code>middleware</code> folder.</p>
+<p>The middleware contain a function that deal with the current <code>Model</code> according to your configuration ( Sequelize  Mongoose )<br/></p>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">User</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./../api/authentication/users-mongo/user-model&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">authenticate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Authorization&#39;</span><span class="p">);</span>
+    <span class="nx">User</span><span class="p">.</span><span class="nx">findByToken</span><span class="p">(</span><span class="nx">token</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="nx">reject</span><span class="p">();</span>
+            <span class="p">});</span>
         <span class="p">}</span>
-    <span class="p">);</span>
 
-    <span class="nx">createTemplate</span><span class="p">(</span>
-        <span class="s1">&#39;./generator/templates/server/model-template&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/model/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;.js&#39;</span><span class="p">,</span>
-        <span class="p">{</span>
-            <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
-        <span class="p">}</span>
-    <span class="p">);</span>
+        <span class="nx">req</span><span class="p">.</span><span class="nx">user</span> <span class="o">=</span> <span class="nx">user</span><span class="p">;</span>
+        <span class="nx">req</span><span class="p">.</span><span class="nx">token</span> <span class="o">=</span> <span class="nx">token</span><span class="p">;</span>
+        <span class="nx">next</span><span class="p">();</span>
 
-    <span class="nx">createTemplate</span><span class="p">(</span>
-        <span class="s1">&#39;./generator/templates/server/responses-template&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/responses/index.js&#39;</span><span class="p">,</span>
-        <span class="p">{</span>
-         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span><span class="p">,</span>
-         <span class="nx">upperCaseModelName</span> <span class="o">:</span> <span class="nx">UPPERCASE_MODEL_NAME</span>
-        <span class="p">}</span>
-    <span class="p">);</span>
+    <span class="p">}).</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">401</span><span class="p">).</span><span class="nx">send</span><span class="p">();</span>
 
-    <span class="nx">createTemplate</span><span class="p">(</span>
-        <span class="s1">&#39;./generator/templates/server/index-template&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/index.js&#39;</span><span class="p">,</span>
-        <span class="p">{</span>
-         <span class="nx">name</span><span class="o">:</span> <span class="nx">apiName</span><span class="p">,</span>
-         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
-        <span class="p">}</span>
-    <span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">};</span>
 
-    <span class="cm">/***** YOUR ADDITIONS *****/</span>
-    <span class="nx">createTemplate</span><span class="p">(</span>
-        <span class="s1">&#39;./generator/templates/server/YOUR_TEMPLATE_FILE_NAME&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/DESTINATION_FILE_NAME&#39;</span><span class="p">,</span>
-        <span class="p">{</span>
-         <span class="nx">name</span><span class="o">:</span> <span class="nx">apiName</span><span class="p">,</span>
-         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
-        <span class="p">}</span>
-    <span class="p">);</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span><span class="nx">authenticate</span><span class="p">}</span>
+</pre></div>
 
-    <span class="nx">replaceText</span><span class="p">(</span>
-        <span class="s1">&#39;./server/src/routes/index.js&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;./server/src/routes/&#39;</span><span class="p">,</span>
-        <span class="s2">&quot;// LASTLINE&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;app.use(&#39;/&quot;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s2">&quot;&#39;, require(&#39;../api/&quot;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s2">&quot;&#39;));\r\n// LASTLINE&quot;</span>
-    <span class="p">);</span>
 
-<span class="p">});</span>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span><span class="nx">Router</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="p">{</span><span class="nx">authenticate</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./../../middleware/authenticate&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">controller</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./posts.controller&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">();</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @api {post} /posts Create Post</span>
+<span class="cm"> * @apiName CreatePosts</span>
+<span class="cm"> * @apiGroup Posts</span>
+<span class="cm"> *</span>
+<span class="cm"> * @apiParam {String} name .</span>
+<span class="cm"> *</span>
+<span class="cm"> * @apiSuccess {Object} - contain message and resource id.</span>
+<span class="cm"> */</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">authenticate</span><span class="p">,</span><span class="nx">controller</span><span class="p">.</span><span class="nx">create</span><span class="p">);</span>
 </pre></div>
                 
                   
@@ -716,7 +741,7 @@ and under <code>createApi</code> task in the <code>gulpfile.js</code> on the roo
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../websocket/" title="Websocket" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../config/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -725,19 +750,19 @@ and under <code>createApi</code> task in the <code>gulpfile.js</code> on the roo
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Websocket
+                Configuration
               </span>
             </div>
           </a>
         
         
-          <a href="../../client/client/" title="Client Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../websocket/" title="Websocket" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Client Introduction
+                Websocket
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -21,7 +21,7 @@
     
     
       
-        <title>Client - Harmony Boilerplate</title>
+        <title>Client Introduction - Harmony Boilerplate</title>
       
     
     
@@ -44,7 +44,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../../styles.css">
+      <link rel="stylesheet" href="../../../css/styles.css">
     
     
   </head>
@@ -52,7 +52,7 @@
   
   
   
-    <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body data-md-color-primary="cyan" data-md-color-accent="orange">
   
     <svg class="md-svg">
       <defs>
@@ -84,11 +84,15 @@
             
               
                 <span class="md-header-nav__parent">
-                  Scripts
+                  API & Examples
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  Client
                 </span>
               
             
-            Client
+            Client Introduction
           
         </span>
       </div>
@@ -219,8 +223,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../base/" title="Base" class="md-nav__link">
-      Base
+    <a href="../../../develop-with-harmony/" title="Harmony Architecture" class="md-nav__link">
+      Harmony Architecture
     </a>
   </li>
 
@@ -237,11 +241,30 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      Scripts
+      API & Examples
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Scripts
+        API & Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Server
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        Server
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -252,8 +275,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../server/server/" title="Server" class="md-nav__link">
-      Server
+    <a href="../../server/server/" title="Server Introduction" class="md-nav__link">
+      Server Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../server/config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../server/authentication/" title="Authentication" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../server/websocket/" title="Websocket" class="md-nav__link">
+      Websocket
     </a>
   </li>
 
@@ -270,6 +329,32 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Client
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Client
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
           
           
@@ -284,10 +369,114 @@
       
     
     
-    <a href="./" title="Client" class="md-nav__link md-nav__link--active">
-      Client
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Client Introduction
+      </label>
+    
+    <a href="./" title="Client Introduction" class="md-nav__link md-nav__link--active">
+      Client Introduction
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#based-technologies" title="Based Technologies" class="md-nav__link">
+    Based Technologies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#react" title="React" class="md-nav__link">
+    React
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redux" title="Redux" class="md-nav__link">
+    Redux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websocket" title="Websocket" class="md-nav__link">
+    Websocket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utils" title="Utils" class="md-nav__link">
+    Utils
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-folder-structure" title="Client Folder Structure" class="md-nav__link">
+    Client Folder Structure
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../websocket/" title="Websocket" class="md-nav__link">
+      Websocket
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../base/" title="Base Folder" class="md-nav__link">
+      Base Folder
+    </a>
   </li>
 
         
@@ -319,16 +508,9 @@
     </nav>
   </li>
 
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../customization/" title="Customization" class="md-nav__link">
-      Customization
-    </a>
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -368,6 +550,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../team/" title="Harmony Team" class="md-nav__link">
+      Harmony Team
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -385,6 +579,61 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#based-technologies" title="Based Technologies" class="md-nav__link">
+    Based Technologies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#react" title="React" class="md-nav__link">
+    React
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redux" title="Redux" class="md-nav__link">
+    Redux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websocket" title="Websocket" class="md-nav__link">
+    Websocket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utils" title="Utils" class="md-nav__link">
+    Utils
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-folder-structure" title="Client Folder Structure" class="md-nav__link">
+    Client Folder Structure
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -397,6 +646,54 @@
                 
                 
                 <h1 id="client">Client<a class="headerlink" href="#client" title="Permanent link">&para;</a></h1>
+<p>Client Folder include all the code for the client side.
+For Client we using <code>reeact</code> and <code>redux</code> architecture. </p>
+<h2 id="based-technologies">Based Technologies<a class="headerlink" href="#based-technologies" title="Permanent link">&para;</a></h2>
+<h4 id="react">React<a class="headerlink" href="#react" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://facebook.github.io/react/" target="_blank">react</a></li>
+<li><a href="https://github.com/ReactTraining/react-router" target="_blank">react-router</a></li>
+</ul>
+<h4 id="redux">Redux<a class="headerlink" href="#redux" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="http://redux.js.org/docs/introduction/" target="_blank">redux</a></li>
+<li><a href="https://github.com/redux-saga/redux-saga" target="_blank">redux-saga</a></li>
+<li><a href="https://github.com/acdlite/redux-promise" target="_blank">redux-promise</a></li>
+<li><a href="http://redux-form.com/6.6.3/" target="_blank">redux-form</a></li>
+<li><a href="https://www.npmjs.com/package/redux-form-field" target="_blank">redux-form-field</a></li>
+</ul>
+<h4 id="websocket">Websocket<a class="headerlink" href="#websocket" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://github.com/mehmetkose/react-websocket" target="_blank">react-websocket</a></li>
+<li><a href="https://www.npmjs.com/package/ws-reconnect-js" target="_blank">ws-reconnect-js</a></li>
+</ul>
+<h4 id="utils">Utils<a class="headerlink" href="#utils" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://facebook.github.io/immutable-js/" target="_blank">immutableJS</a></li>
+<li><a href="https://github.com/mzabriskie/axios" target="_blank">axios</a></li>
+</ul>
+<h2 id="client-folder-structure">Client Folder Structure<a class="headerlink" href="#client-folder-structure" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>.
+├── client    
+|     ├── dist
+|     ├── src       
+|           ├── actions
+|           ├── base
+|               ├── api
+|               ├── features
+|               ├── utils
+|           ├── components
+|           ├── containers
+|           ├── reducers
+|           ├── requests
+|           ├── sagas
+|           ├── config.js
+|           ├── index.js
+|           ├── routes.js
+|     ├── style  
+|     ├── test   
+|     ├── index.js
+</pre></div>
                 
                   
                 
@@ -430,13 +727,13 @@
           </a>
         
         
-          <a href="../generate_new_component/" title="Generate Component" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../config/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Generate Component
+                Configuration
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
