@@ -16,8 +16,3 @@
 <div align="center">
 <b>http://harmony-boilerplate.com/</b>
 </div>
-
-## Documentation
-
-- [**Client**](helperdocs/client.md): An introduction how to develop your own application on client side.
-- [**Server**](helperdocs/server.md): An introduction how to develop your own application on server side.
