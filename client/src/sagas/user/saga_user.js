@@ -1,7 +1,7 @@
 import { call, put } from 'redux-saga/effects';
-import * as ActionTypes from '../../../../actions';
-import { ROOT, PORTAL } from '../../../../routes';
-import request from '../../../api/requests';
+import * as ActionTypes from '../../actions';
+import { ROOT, PORTAL } from '../../routes';
+import request from '../../base/api/requests';
 import { browserHistory } from 'react-router';
 
 export function* login(api, action) {

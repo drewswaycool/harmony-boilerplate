@@ -12,6 +12,10 @@
 <div align="center">
   <sub>Created to do great things.</sub>
 </div>
+<br/>
+<div align="center">
+<b>http://harmony-boilerplate.com/</b>
+</div>
 
 ## Documentation
 

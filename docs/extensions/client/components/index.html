@@ -9,7 +9,7 @@
         <meta name="description" content="Branding new web architecture.">
       
       
-        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/websocket/">
+        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/components/">
       
       
         <meta name="author" content="Harmony Framework Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Websocket - Harmony Boilerplate</title>
+        <title>Generate Component - Harmony Boilerplate</title>
       
     
     
@@ -92,7 +92,7 @@
                 </span>
               
             
-            Websocket
+            Generate Component
           
         </span>
       </div>
@@ -383,6 +383,42 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../base/" title="Base Folder" class="md-nav__link">
+      Base Folder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests/" title="Requests" class="md-nav__link">
+      Requests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../multilingual/" title="Generate Multilingual" class="md-nav__link">
+      Generate Multilingual
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -390,26 +426,37 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Websocket
+        Generate Component
       </label>
     
-    <a href="./" title="Websocket" class="md-nav__link md-nav__link--active">
-      Websocket
+    <a href="./" title="Generate Component" class="md-nav__link md-nav__link--active">
+      Generate Component
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#websocket-actions" title="Websocket Actions" class="md-nav__link">
-    Websocket Actions
+  <a href="#create-component-by-cli" title="Create Component by cli" class="md-nav__link">
+    Create Component by cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-component-manually" title="Create Component manually" class="md-nav__link">
+    Create Component manually
   </a>
   
 </li>
@@ -429,8 +476,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../base/" title="Base Folder" class="md-nav__link">
-      Base Folder
+    <a href="../core_components/" title="Generate Core Component" class="md-nav__link">
+      Generate Core Component
     </a>
   </li>
 
@@ -441,20 +488,56 @@
 
 
   <li class="md-nav__item">
-    <a href="../generate_new_component/" title="Generate Component" class="md-nav__link">
-      Generate Component
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../generate_new_container/" title="Generate Container" class="md-nav__link">
+    <a href="../containers/" title="Generate Container" class="md-nav__link">
       Generate Container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../form_containers/" title="Generate Form Container" class="md-nav__link">
+      Generate Form Container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../actions/" title="Generate Actions" class="md-nav__link">
+      Generate Actions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sagas/" title="Generate Sagas" class="md-nav__link">
+      Generate Sagas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reducers/" title="Generate Reducers" class="md-nav__link">
+      Generate Reducers
     </a>
   </li>
 
@@ -531,13 +614,22 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#websocket-actions" title="Websocket Actions" class="md-nav__link">
-    Websocket Actions
+  <a href="#create-component-by-cli" title="Create Component by cli" class="md-nav__link">
+    Create Component by cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-component-manually" title="Create Component manually" class="md-nav__link">
+    Create Component manually
   </a>
   
 </li>
@@ -557,9 +649,22 @@
               
                 
                 
-                  <h1>Websocket</h1>
-                
-                <h2 id="websocket-actions">Websocket Actions<a class="headerlink" href="#websocket-actions" title="Permanent link">&para;</a></h2>
+                <h1 id="generate-components">Generate Components<a class="headerlink" href="#generate-components" title="Permanent link">&para;</a></h1>
+<p><b>Location</b>: <code>client/components/</code></p>
+<p>Components, not much to say, here your components <code>( components/ )</code> or in other words dump components, it means that the component is not connect to redux and relay only on props.</p>
+<p>We recommended to use arrow function for better performance, But you can also use React Component.</p>
+<div class="admonition tip">
+<p class="admonition-title">Component Name</p>
+<p>CLI automatically inject Dmb_ prefix to your component. this best practice to use prefix name to components to recognize them inside containers.</p>
+</div>
+<h2 id="create-component-by-cli">Create Component by cli<a class="headerlink" href="#create-component-by-cli" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>$ gulp createComponent --name MyComponent
+</pre></div>
+
+
+<h2 id="create-component-manually">Create Component manually<a class="headerlink" href="#create-component-manually" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>    1) Go to <span class="sb">`component/`</span> folder and add your own component. add <span class="sb">`Dmb_`</span> prefix to the component name.
+</pre></div>
                 
                   
                 
@@ -578,7 +683,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../config/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../multilingual/" title="Generate Multilingual" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -587,19 +692,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Configuration
+                Generate Multilingual
               </span>
             </div>
           </a>
         
         
-          <a href="../../../base/" title="Base Folder" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../core_components/" title="Generate Core Component" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Base Folder
+                Generate Core Component
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -634,6 +739,8 @@
       
     
     
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-33876059-14","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
       
     
   </body>

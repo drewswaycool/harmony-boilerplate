@@ -6,10 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 /** i18n **/
 var CHANGE_LOCALE = exports.CHANGE_LOCALE = 'CHANGE_LOCALE';
 
-/** Navigation **/
-var NAVIGATE_TO = exports.NAVIGATE_TO = 'NAVIGATE_TO';
-var RESET_NAVIGATE_TO = exports.RESET_NAVIGATE_TO = 'RESET_NAVIGATE_TO';
-
 /** Login **/
 var LOGIN = exports.LOGIN = 'LOGIN';
 var LOGIN_SUCCESS = exports.LOGIN_SUCCESS = 'LOGIN_SUCCESS';

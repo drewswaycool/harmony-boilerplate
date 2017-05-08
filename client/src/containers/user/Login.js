@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { harmonyConnectForm } from '../../harmony-redux-react-connect';
+import { harmonyConnectForm } from '../../base/features/harmony-redux-react-connect';
 import { Link } from 'react-router';
-import * as actions from '../actions/actions_user';
-import { REGISTER } from '../../../../routes';
-import { Cor_Input } from '../../../../components/core';
+import * as actions from '../../actions/user/actions_user';
+import { REGISTER } from '../../routes';
+import { Cor_Input } from '../../components/core';
 
 
 class Login extends Component {

@@ -7,8 +7,8 @@ import App from './components/app';
 import PostsIndex from './containers/posts/PostsIndex';
 import PostsNew from './containers/posts/PostsNew';
 import PostsShow from './containers/posts/PostsShow';
-import Login from './base/features/harmony-user/containers/Login';
-import Register from './base/features/harmony-user/containers/Register';
+import Login from './containers/user/Login';
+import Register from './containers/user/Register';
 
 /* -------------- Routes Paths --------------- */
 export const ROOT = "/";
