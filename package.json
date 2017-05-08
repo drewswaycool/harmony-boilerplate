@@ -1,7 +1,7 @@
 {
   "name": "harmony-boilerplate",
   "version": "1.0.0",
-  "description": "Simple starter package for MERN and Babel support",
+  "description": "Harmony Boilerplate is based on Multi Model Layer, MongoDB, Express, React and NodeJS",
   "main": "index.js",
   "repository": "https://github.com/MaxToyberman/awesome-react-boilerplate",
   "scripts": {
