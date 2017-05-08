@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { createField } from '../../../base/features/harmony-redux-form-field';
 
