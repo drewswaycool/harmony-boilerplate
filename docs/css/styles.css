@@ -56,15 +56,19 @@
 }
 #harmony{
     opacity:0;
+   
 }
 #features {
     opacity:0;
+    font-size:0;
 }
 #tools {
     opacity:0;
+    font-size:0;
 }
 #quick-start{
     opacity:0;
+    font-size:0;
 }
 /** Features & Tools headers **/
 .lines-aside h2 {
