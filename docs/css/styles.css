@@ -99,6 +99,11 @@
 	
 }
 
+.md-typeset iframe, .md-typeset img, .md-typeset svg {
+    max-width: 80%;
+    margin: 6%;
+}
+
 .color-blue {
     color: #00bcd4;
 }
