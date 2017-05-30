@@ -227,7 +227,7 @@ gulp.task('createReducer', () => {
     injectAfter(
         './client/src/reducers/index.js',
         './client/src/reducers/',
-        "import { reducer as formReducer } from 'redux-form';",
+        "import { reducer as form } from 'redux-form';",
         '\nimport ' + reducerName + ' from ' + "'./" + reducerName + '/' + 'reducer_' + reducerName + "';"
     ).on('end', () => {
         injectAfter(

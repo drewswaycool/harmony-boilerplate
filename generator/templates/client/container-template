@@ -13,7 +13,7 @@ class <%= className %> extends Component {
     }
 }
 
-export default connect(<%= className %>,
+export default harmonyConnect (<%= className %>,
     (state) => {
         return {
 
