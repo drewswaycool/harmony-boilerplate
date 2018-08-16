@@ -20,7 +20,7 @@ exports.create = function(req, res) {
         password : req.body.password
     });
     
-    UserInstance.sync({force: false}).then(function () {
+    return UserInstance.sync({force: false}).then(function () {
       // Table created
       return user.preSave(() => {
         user.save({
@@ -46,8 +46,8 @@ exports.login = function(req, res) {
 
 	var body = _.pick(req.body, ['email', 'password']);
     
-	User.findByCredentials(body.email, body.password).then((user) => {
-		user.generateAuthToken().then((token) => {
+	return User.findByCredentials(body.email, body.password).then((user) => {
+		return user.generateAuthToken().then((token) => {
             
 			res.header('x-auth', token).send(user);
 		});
@@ -60,7 +60,7 @@ exports.login = function(req, res) {
 
 
 exports.logout = function(req, res) {
-    req.user.removeTokenLogout(req.token).then((result) => {
+    return req.user.removeTokenLogout(req.token).then((result) => {
         res.status(200).send();
 	}).catch((e) => {
         
