@@ -1,10 +1,10 @@
-// import { renderComponent , expect } from '../test_helper';
-// import App from '../../src/components/app';
-var expect = require('chai').expect;
+import { renderComponent , expect, $ } from '../test_helper';
+import App from '../../src/components/app';
+import React from 'react';
 
-
-describe('simple tests', function () {
-    it('should pass', function () {
-        expect(true).to.be.true;
+describe('App defined', function () {
+    it('should be rendered', function () {
+        let component = renderComponent(App);
+        expect(component).to.be.defined;
     });
 });
