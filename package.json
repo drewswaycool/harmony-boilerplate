@@ -15,6 +15,7 @@
     "startserver:dev": "cross-env NODE_ENV=development node server/server.js",
     "apidocs": "cd server && apidoc -i src/api -o docs",
     "build:prod": "cross-env NODE_ENV=production  webpack --watch --config ./webpack.config.prod.js",
+    "build:prod:client": "cross-env NODE_ENV=production  webpack --config ./webpack.config.prod.js",
     "start:prod": "npm run clear && npm-run-all --parallel sass build:prod startserver:prod test:watch  sass:watch",
     "build:dev": "cross-env NODE_ENV=development  webpack --progress --watch --config ./webpack.config.dev.js",
     "start:dev": "npm run clear && npm-run-all --parallel sass  startserver:dev build:dev  test sass:watch",
