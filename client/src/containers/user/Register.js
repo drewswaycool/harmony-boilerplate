@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { harmonyConnectForm } from '../../base/features/harmony-redux-react-connect';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import * as actions from '../../actions/user/actions_user';
 
 import { ROOT } from '../../routes';

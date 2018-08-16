@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { harmonyConnect } from '../../base/features/harmony-redux-react-connect';
 import { fetchPosts } from '../../actions/posts/actions_posts';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { POSTS_NEW, POSTS_SHOW } from '../../routes';
 
 class PostsIndex extends Component {

@@ -1,7 +1,10 @@
-import "babel-polyfill";
+import "@babel/polyfill";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, browserHistory } from 'react-router';
+import {
+    HashRouter,
+    Route
+} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
@@ -21,7 +24,7 @@ const sagaMiddleware = createSagaMiddleware();
 const createStoreWithMiddleware = applyMiddleware(
     sagaMiddleware
 )(createStore);
- 
+
 const store = createStoreWithMiddleware(reducers);
 
 /* -------- run root saga ---------- */
@@ -29,7 +32,7 @@ sagaMiddleware.run(rootSaga);
 
 /* -------- turn on WS actions ---------- */
 const wsAction = new WSAction(store, config.ROOT_WS_URL, {
-    retryCount:3,
+    retryCount: 3,
     reconnectInterval: 3
 });
 
@@ -37,11 +40,11 @@ wsAction.start();
 
 /* -------- render application ---------- */
 ReactDOM.render(
-	<Provider store={store}>
-		<ConnectedIntlProvider>
-			<Router history={browserHistory} >
-				{routes}
-            </Router>
+    <Provider store={store}>
+        <ConnectedIntlProvider>
+            <HashRouter>
+                {routes}
+            </HashRouter>
         </ConnectedIntlProvider>
-	</Provider>
-, document.querySelector('.container'));
+    </Provider>
+    , document.querySelector('.container'));

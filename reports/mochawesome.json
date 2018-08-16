@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2017-04-28T07:08:23.602Z",
-    "end": "2017-04-28T07:08:23.608Z",
-    "duration": 6,
+    "start": "2018-08-16T12:55:37.345Z",
+    "end": "2018-08-16T12:55:37.364Z",
+    "duration": 19,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -19,135 +19,61 @@
     "pendingPercentClass": "danger"
   },
   "suites": {
+    "uuid": "98779c8a-290d-405b-943d-53a99389b7b7",
     "title": "",
-    "suites": [
-      {
-        "title": "App",
-        "suites": [],
-        "tests": [
-          {
-            "title": "renders something",
-            "fullTitle": "App renders something",
-            "timedOut": false,
-            "duration": 0,
-            "state": "passed",
-            "speed": "fast",
-            "pass": true,
-            "fail": false,
-            "pending": false,
-            "code": "(0, _test_helper.expect)(component).to.exist;",
-            "err": {},
-            "isRoot": false,
-            "uuid": "f5bd3bd9-0e52-443d-9857-af12cd774923",
-            "parentUUID": "8a437f86-4e64-41f7-86c1-d62f18a47b95",
-            "skipped": false
-          }
-        ],
-        "pending": [],
-        "root": false,
-        "_timeout": 2000,
-        "file": "\\client\\test\\components\\app_test.js",
-        "uuid": "8a437f86-4e64-41f7-86c1-d62f18a47b95",
-        "fullFile": "D:\\Work\\ATTIA\\Github\\harmony-boilerplate\\client\\test\\components\\app_test.js",
-        "passes": [
-          {
-            "title": "renders something",
-            "fullTitle": "App renders something",
-            "timedOut": false,
-            "duration": 0,
-            "state": "passed",
-            "speed": "fast",
-            "pass": true,
-            "fail": false,
-            "pending": false,
-            "code": "(0, _test_helper.expect)(component).to.exist;",
-            "err": {},
-            "isRoot": false,
-            "uuid": "f5bd3bd9-0e52-443d-9857-af12cd774923",
-            "parentUUID": "8a437f86-4e64-41f7-86c1-d62f18a47b95",
-            "skipped": false
-          }
-        ],
-        "failures": [],
-        "skipped": [],
-        "hasTests": true,
-        "hasSuites": false,
-        "totalTests": 1,
-        "totalPasses": 1,
-        "totalFailures": 0,
-        "totalPending": 0,
-        "totalSkipped": 0,
-        "hasPasses": true,
-        "hasFailures": false,
-        "hasPending": false,
-        "hasSkipped": false,
-        "duration": 0,
-        "rootEmpty": false
-      }
-    ],
-    "tests": [],
-    "pending": [],
-    "root": true,
-    "_timeout": 2000,
-    "uuid": "696d8bc5-bf89-4c2d-8ea5-2bdd49bb5e50",
     "fullFile": "",
     "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "f81d1b50-02ab-4c38-8890-78d9fbea4021",
+        "title": "simple tests",
+        "fullFile": "C:\\Github\\tests\\app-one\\client\\test\\components\\app.test.js",
+        "file": "\\client\\test\\components\\app.test.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "should pass",
+            "fullTitle": "simple tests should pass",
+            "timedOut": false,
+            "duration": 15,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "expect(true).to.be.true;",
+            "err": {},
+            "isRoot": false,
+            "uuid": "e81b8642-b1f6-4c20-8aee-46ec821a02a9",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "e81b8642-b1f6-4c20-8aee-46ec821a02a9"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 15,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      }
+    ],
     "passes": [],
     "failures": [],
+    "pending": [],
     "skipped": [],
-    "hasTests": false,
-    "hasSuites": true,
-    "totalTests": 0,
-    "totalPasses": 0,
-    "totalFailures": 0,
-    "totalPending": 0,
-    "totalSkipped": 0,
-    "hasPasses": false,
-    "hasFailures": false,
-    "hasPending": false,
-    "hasSkipped": false,
     "duration": 0,
-    "rootEmpty": true
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
   },
-  "allTests": [
-    {
-      "title": "renders something",
-      "fullTitle": "App renders something",
-      "timedOut": false,
-      "duration": 0,
-      "state": "passed",
-      "speed": "fast",
-      "pass": true,
-      "fail": false,
-      "pending": false,
-      "code": "(0, _test_helper.expect)(component).to.exist;",
-      "err": {},
-      "isRoot": false,
-      "uuid": "f5bd3bd9-0e52-443d-9857-af12cd774923",
-      "parentUUID": "8a437f86-4e64-41f7-86c1-d62f18a47b95",
-      "skipped": false
-    }
-  ],
-  "allPending": [],
-  "allPasses": [
-    {
-      "title": "renders something",
-      "fullTitle": "App renders something",
-      "timedOut": false,
-      "duration": 0,
-      "state": "passed",
-      "speed": "fast",
-      "pass": true,
-      "fail": false,
-      "pending": false,
-      "code": "(0, _test_helper.expect)(component).to.exist;",
-      "err": {},
-      "isRoot": false,
-      "uuid": "f5bd3bd9-0e52-443d-9857-af12cd774923",
-      "parentUUID": "8a437f86-4e64-41f7-86c1-d62f18a47b95",
-      "skipped": false
-    }
-  ],
-  "allFailures": [],
-  "copyrightYear": 2017
+  "copyrightYear": 2018
 }
