@@ -7,7 +7,7 @@ class Localization extends Component {
     render () {
         return (
             <div style={{width:'100%',padding:'10px',textAlign:'center'}}>
-                Language:&nbsp;&nbsp;
+                Language:
                 <select onChange={this.onSelect.bind(this)}>
                     <option value="en">en</option>
                     <option value="fr">fr</option>
