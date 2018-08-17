@@ -34,7 +34,7 @@ const events = (function () {
 
 
 const globalStoreListener = events;
-window.getGlobalStoreListener = (listener) => {
+window.addGlobalStoreListener = (listener) => {
     return globalStoreListener.subscribe(STORE_ACTION_LISTENERS, listener);
 };
 
