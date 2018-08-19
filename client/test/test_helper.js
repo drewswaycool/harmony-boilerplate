@@ -9,26 +9,43 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../src/reducers';
 import ConnectedIntlProvider from '../src/base/features/harmony-i18n/IntlProvider';
+import {
+  HashRouter,
+  Route,
+  BrowserRouter as Router
+} from 'react-router-dom';
+import Enzyme, { mount, shallow } from 'enzyme';
+import { MemoryRouter } from 'react-router';
 
-global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
+global.document = jsdom.jsdom('<!doctype html><html><body><div id="root"></div></body></html>');
 global.window = global.document.defaultView;
 global.navigator = global.window.navigator;
 const $ = _$(window);
 
 chaiJquery(chai, chai.util, $);
 
-function renderComponent(ComponentClass, props = {}, state = {}) {
-  const componentInstance = TestUtils.renderIntoDocument(
-    <Provider store={createStore(reducers, state)}>
+function getWrapper(ComponentClass, props = {}, state = {}) {
+  const wrapper = mount(
+    <Provider store={createStore(reducers, {})}>
       <ConnectedIntlProvider>
-        <ComponentClass {...props} />
+        <ComponentClass />
       </ConnectedIntlProvider>
     </Provider>
   );
-
-  return $(ReactDOM.findDOMNode(componentInstance));
+  return wrapper;
 }
-
+function getRouteWrapper(ComponentClass, props = {}, state = {}) {
+  const wrapper = mount(
+    <Provider store={createStore(reducers, {})}>
+      <ConnectedIntlProvider>
+        <MemoryRouter initialEntries={['/']}>
+          <ComponentClass />
+        </MemoryRouter>
+      </ConnectedIntlProvider>
+    </Provider>
+  );
+  return wrapper;
+}
 $.fn.simulate = function (eventName, value) {
   if (value) {
     this.val(value);
@@ -36,4 +53,4 @@ $.fn.simulate = function (eventName, value) {
   TestUtils.Simulate[eventName](this[0]);
 };
 
-export { renderComponent, expect, $ };
+export { getRouteWrapper, getWrapper, expect, $ };
