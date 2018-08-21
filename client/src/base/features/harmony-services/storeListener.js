@@ -1,4 +1,5 @@
 import { STORE_ACTION_LISTENERS } from './serviceTags';
+
 /* --------- custom event listeners ------- */
 const events = (function () {
     let topics = {};
@@ -33,9 +34,12 @@ const events = (function () {
 
 
 
-const globalStoreListener = events;
-window.addGlobalStoreListener = (listener) => {
-    return globalStoreListener.subscribe(STORE_ACTION_LISTENERS, listener);
-};
+export const globalStoreListener = events;
+
+if (typeof (window) !== 'undefined') {
+    window.addGlobalStoreListener = (listener) => {
+        return globalStoreListener.subscribe(STORE_ACTION_LISTENERS, listener);
+    };
+}
 
 export default globalStoreListener;

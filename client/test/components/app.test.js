@@ -45,4 +45,19 @@ describe('App defined', function () {
         let errorLength = errorPasswordConfirm.text().length;
         expect(errorLength).to.greaterThan(1);
     });
+    it('Should Register - Passed', () => {
+        let wrapper = getRouteWrapper(Register);
+        const emailInput = wrapper.find('input[name="email"]').first();
+        const passInput = wrapper.find('input[name="password"]').first();
+        const confirmPassInput = wrapper.find('input[name="repassword"]').first();
+        const submitButton = wrapper.find('button').first();
+        const errorPasswordConfirm = wrapper.find('.error-label').at(2);
+        const form = wrapper.find('form').first();
+        emailInput.simulate('change', { target: { value: 'john@gmail.com' } });
+        passInput.simulate('change', { target: { value: '1' } });
+        confirmPassInput.simulate('change', { target: { value: '1' } });
+        form.simulate('submit');
+        let errorLength = errorPasswordConfirm.text().length;
+        expect(errorLength).to.equal(0);
+    });
 });

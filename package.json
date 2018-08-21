@@ -6,8 +6,8 @@
   "repository": "",
   "scripts": {
     "test": "mocha --require @babel/register --require ./client/test/test_helper.js --recursive ./client/test/components ",
-    "test:watch": "npm run test --  --watch ",
-    "test:report": "mocha --require @babel/register --require ./client/test/test_helper.js --recursive ./client/test/components --reporter mochawesome --reporter-options reportDir=./client/test/reports",
+    "test:watch": "cross-env NODE_ENV=development  npm run test --  --watch ",
+    "test:report": "cross-env NODE_ENV=development mocha --require @babel/register --require ./client/test/test_helper.js --recursive ./client/test/components --reporter mochawesome --reporter-options reportDir=./client/test/reports",
     "clear": "rimraf ./client/dist",
     "sass": "gulp sass",
     "sass:watch": "gulp sass:watch",

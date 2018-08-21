@@ -4,9 +4,11 @@ import reducers from '../../../reducers';
 import rootSaga from '../../../sagas';
 import { globalStoreListener, STORE_ACTION_LISTENERS } from '../harmony-services';
 
+
+
 /* --------- define middlewares ---------- */
 
-const globalActionListener = store => next => action => {
+export const globalActionListener = store => next => action => {
     let result = next(action);
     globalStoreListener.publish(STORE_ACTION_LISTENERS, action);
     return result
@@ -21,12 +23,10 @@ const createStoreWithMiddleware = applyMiddleware(
 
 const store = createStoreWithMiddleware(reducers);
 
-window.globalStore = store;
 
 /* -------- run root saga ---------- */
 sagaMiddleware.run(rootSaga);
 
 
 /* -------- expose store functionality to page level ------------- */
-
-export default window.globalStore;
+export default store;
