@@ -4,8 +4,6 @@ import reducers from '../../../reducers';
 import rootSaga from '../../../sagas';
 import { globalStoreListener, STORE_ACTION_LISTENERS } from '../harmony-services';
 
-console.log(globalStoreListener);
-
 /* --------- define middlewares ---------- */
 
 const globalActionListener = store => next => action => {
