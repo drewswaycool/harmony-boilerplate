@@ -2,8 +2,7 @@
 
 function initConfig() {
 
-    let config = { };
-
+    let config = {};
     if (process.env.NODE_ENV === 'development') {
 
         /* ---------- Config Development --------- */
