@@ -84,6 +84,10 @@ module.exports = {
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: CLIENT_PATH + '/index.html', to: 'index.html' },
+      { from: 'client/assets', to: 'assets' }
+    ])
   ]
 };

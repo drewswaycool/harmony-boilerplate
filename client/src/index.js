@@ -13,7 +13,8 @@ import { config } from './config';
 import WSAction from './base/features/harmony-redux-websocket-actions';
 import ConnectedIntlProvider from './base/features/harmony-i18n/IntlProvider';
 import Store from './base/features/harmony-store';
-
+/* -------- Mocks Configuration --------- */
+import './mocks';
 
 /* -------- turn on WS actions ---------- */
 const wsAction = new WSAction(Store, config.ROOT_WS_URL, {
