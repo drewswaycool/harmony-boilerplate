@@ -1,6 +1,8 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
-
+import {
+    Route,
+    Switch
+} from 'react-router-dom';
 
 /* -------------- Components --------------- */
 import App from './components/app';
@@ -14,17 +16,19 @@ import Register from './containers/user/Register';
 export const ROOT = "/";
 export const REGISTER = "/register";
 export const PORTAL = "/portal";
-export const POSTS_NEW = "posts/new";
+export const POSTS_NEW = "/posts/new";
 export const POSTS_SHOW = "posts/";
 
 export default (
-    <Route path={ROOT} component={App} >
-        <IndexRoute component={Login} />
-        <Route path={REGISTER} component={Register} />
-        <Route path={PORTAL} component={PostsIndex} />
-        <Route path={POSTS_NEW} component={PostsNew} />
-        <Route path={POSTS_SHOW + ":id"} component={PostsShow} />
-    </Route>
+
+    <App>
+        <Route exact path={ROOT} component={Login} />
+        <Route exact path={REGISTER} component={Register} />
+        <Route exact path={PORTAL} component={PostsIndex} />
+        <Route exact path={POSTS_NEW} component={PostsNew} />
+        <Route exact path={POSTS_SHOW + ":id"} component={PostsShow} />
+    </App>
+
 );
 
 

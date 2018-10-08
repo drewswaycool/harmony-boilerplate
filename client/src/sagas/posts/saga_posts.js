@@ -33,11 +33,11 @@ export function* fetchPost(api, action) {
 
 }
 
-export function* createPost(api, action) {
+export function* createPost(api, action) { 
 
     try {
         const response = yield call(api.createPost, action.payload);
-
+        debugger;
         if (response.data.message === "Resource created") {
             requests.broadcastAction({type: ActionTypes.FETCH_POSTS, payload: null});
             browserHistory.push(PORTAL);

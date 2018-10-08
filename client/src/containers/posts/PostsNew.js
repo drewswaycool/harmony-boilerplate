@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { harmonyConnectForm } from '../../base/features/harmony-redux-react-connect';
 import * as actions from '../../actions/posts/actions_posts';
 
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { PORTAL } from '../../routes';
 
 import { Cor_Input, Cor_Textarea } from '../../components/core';

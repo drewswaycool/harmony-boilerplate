@@ -4,10 +4,12 @@ import { config } from '../../config';
 class Request {
 
     constructor() {
-        let user = JSON.parse(sessionStorage.getItem('user'));
-        let AUTH_TOKEN = user ? user.Authorization : null;
+        if (typeof (sessionStorage) !== 'undefined') {
+            let user = JSON.parse(sessionStorage.getItem('user'));
+            let AUTH_TOKEN = user ? user.Authorization : null;
 
-        this.setCommonHeader('Authorization', AUTH_TOKEN);
+            this.setCommonHeader('Authorization', AUTH_TOKEN);
+        }
     }
 
     setCommonHeader(key, value) {
@@ -16,14 +18,14 @@ class Request {
 
     broadcastAction(action) {
 
-        if(!action) return;
+        if (!action) return;
 
         const callConfig = {
-                method: 'post',
-                baseURL: config.ROOT_SERVRE_URL,
-                url: '/users/broadcastAction',
-                data: { action: action, token: sessionStorage.getItem('wsa_token') }
-            };
+            method: 'post',
+            baseURL: config.ROOT_SERVRE_URL,
+            url: '/users/broadcastAction',
+            data: { action: action, token: typeof (sessionStorage) !== 'undefined' ? sessionStorage.getItem('wsa_token') : {} }
+        };
 
         return this.call(callConfig);
 
@@ -41,7 +43,7 @@ class Request {
                 resolve(response);
 
             }
-            catch(e) {
+            catch (e) {
                 response = e.response;
                 response.error = true;
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { harmonyConnectForm } from '../../base/features/harmony-redux-react-connect';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import * as actions from '../../actions/user/actions_user';
 import { REGISTER } from '../../routes';
 import { Cor_Input } from '../../components/core';
@@ -10,20 +10,22 @@ class Login extends Component {
     render() {
 
         return (
-            <form onSubmit={this.props.handleSubmit(this.handleSubmit.bind(this))} >
+            <div>
+                <form onSubmit={this.props.handleSubmit(this.handleSubmit.bind(this))} >
 
-                <h1>{this.T('login')}</h1>
+                    <h1>{this.T('login')}</h1>
 
-                <Cor_Input name="email" type="email" label={this.T('email')} T={this.T.bind(this)} />
-                <Cor_Input name="password" type="password" label={this.T('password')} T={this.T.bind(this)} />
+                    <Cor_Input name="email" type="email" label={this.T('email')} T={this.T.bind(this)} />
+                    <Cor_Input name="password" type="password" label={this.T('password')} T={this.T.bind(this)} />
 
-                {this.props.loginError || ""}
-                <br/>
+                    {this.props.loginError || ""}
+                    <br />
 
-                <button type="submit" className="btn btn-success">{this.T('login')}</button>
-                <Link to={REGISTER} style={{float:'right'}} className="btn btn-default">{this.T('register')}</Link>
+                    <button type="submit" className="btn btn-success">{this.T('login')}</button>
+                    <Link to={REGISTER} style={{ float: 'right' }} className="btn btn-default">{this.T('register')}</Link>
 
-            </form>
+                </form>
+            </div>
         );
 
     }
@@ -60,7 +62,7 @@ export default harmonyConnectForm(Login,
         login: actions.login
     },
     {
-        form : 'LoginForm',
+        form: 'LoginForm',
         fields: ['email', 'password']
     }
 );

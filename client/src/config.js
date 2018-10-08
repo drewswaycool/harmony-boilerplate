@@ -2,14 +2,14 @@
 
 function initConfig() {
 
-    let config = { };
-
+    let config = {};
     if (process.env.NODE_ENV === 'development') {
 
         /* ---------- Config Development --------- */
         config = {
             ROOT_SERVRE_URL: 'http://localhost:8080/api',
-            ROOT_WS_URL: 'ws://localhost:3030'
+            ROOT_WS_URL: 'ws://localhost:3030',
+            isMock: true
         };
 
     }
@@ -19,7 +19,8 @@ function initConfig() {
         /* ---------- Config Production --------- */
         config = {
             ROOT_SERVRE_URL: 'http://localhost:8080/api',
-            ROOT_WS_URL: 'ws://localhost:3030'
+            ROOT_WS_URL: 'ws://localhost:3030',
+            isMock: false
         };
 
     }
