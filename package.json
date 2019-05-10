@@ -81,7 +81,7 @@
     "mysql": "^2.13.0",
     "nodemon": "latest",
     "prop-types": "^15.5.8",
-    "react": "^16.5.0",
+    "react": "16.8.0",
     "react-dom": "^16.4.2",
     "react-intl": "^2.4.0",
     "react-redux": "^5.0.7",
