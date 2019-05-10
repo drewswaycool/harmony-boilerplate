@@ -6,12 +6,12 @@ import { POSTS_NEW, POSTS_SHOW } from '../../routes';
 
 class PostsIndex extends Component {
 
-    componentWillMount() {
+    componentDidMount() {
 		
         this.props.fetchPosts();
 		
     }
-    
+
     renderPosts() {
         if(this.props.posts) {
             return this.props.posts.map((post) => {

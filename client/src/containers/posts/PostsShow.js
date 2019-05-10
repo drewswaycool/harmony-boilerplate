@@ -7,7 +7,7 @@ import { PORTAL } from '../../routes';
 
 class PostsShow extends Component {
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchPost(this.props.match.params.id);
     }
     
