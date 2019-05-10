@@ -14,5 +14,5 @@
 </div>
 <br/>
 <div align="center">
-<b>http://harmony-boilerplate.com/</b>
+<b>https://harmony-framework.github.io/harmony-boilerplate/</b>
 </div>
