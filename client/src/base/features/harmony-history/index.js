@@ -1,4 +1,3 @@
-import createHistory from 'history/createBrowserHistory';
 
 const history = {
     push: (path) => {

@@ -9,7 +9,7 @@ function initConfig() {
         config = {
             ROOT_SERVRE_URL: 'http://localhost:8080/api',
             ROOT_WS_URL: 'ws://localhost:3030',
-            isMock: true
+            isMock: false
         };
 
     }

@@ -2,7 +2,7 @@ import { call, put } from 'redux-saga/effects';
 import * as ActionTypes from '../../actions';
 import requests from '../../base/api/requests';
 import { PORTAL } from '../../routes';
-import { browserHistory } from 'react-router';
+import history from '../../base/features/harmony-history';
 
 export function* fetchPosts(api, action) {
 
@@ -40,7 +40,7 @@ export function* createPost(api, action) {
         debugger;
         if (response.data.message === "Resource created") {
             requests.broadcastAction({type: ActionTypes.FETCH_POSTS, payload: null});
-            browserHistory.push(PORTAL);
+            history.push(PORTAL);
         }
         else {
             yield put({type: ActionTypes.CREATE_POST_ERROR, message: response.data.message});
