@@ -17,7 +17,7 @@ export const ROOT = "/";
 export const REGISTER = "/register";
 export const PORTAL = "/portal";
 export const POSTS_NEW = "/posts/new";
-export const POSTS_SHOW = "posts/";
+export const POSTS_SHOW = "/view-post/";
 
 export default (
 

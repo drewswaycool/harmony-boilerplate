@@ -56,7 +56,7 @@ export function* deletePost(api, action) {
     try {
         yield call(api.deletePost, action.payload);
         requests.broadcastAction({type: ActionTypes.FETCH_POSTS, payload: null});
-        browserHistory.push(PORTAL);
+        history.push(PORTAL);
     } catch (e) {
         yield put({type: ActionTypes.DELETE_POST_ERROR, payload: null});
     }

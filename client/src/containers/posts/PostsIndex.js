@@ -11,7 +11,7 @@ class PostsIndex extends Component {
         this.props.fetchPosts();
 		
     }
-
+    
     renderPosts() {
         if(this.props.posts) {
             return this.props.posts.map((post) => {

@@ -8,11 +8,11 @@ import { PORTAL } from '../../routes';
 class PostsShow extends Component {
 
     componentWillMount() {
-        this.props.fetchPost(this.props.params.id);
+        this.props.fetchPost(this.props.match.params.id);
     }
-
+    
     onDeleteClick() {
-        this.props.deletePost(this.props.params.id);
+        this.props.deletePost(this.props.match.params.id);
     }
 
     render () {

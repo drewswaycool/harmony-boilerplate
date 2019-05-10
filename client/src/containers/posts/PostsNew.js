@@ -20,7 +20,7 @@ class PostsNew extends Component {
                 <Cor_Input name="categories" type="text" label={this.T('categories')} T={this.T.bind(this)} />
                 <Cor_Textarea name="content" label={this.T('content')} T={this.T.bind(this)} />
 
-                {this.props.message || ""}
+                
                 <br/>
 
                 <button type="submit" className="btn btn-primary">{this.T('submit')}</button>
