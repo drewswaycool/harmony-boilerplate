@@ -18,7 +18,7 @@
     "build:prod:client": "npm run sass && cross-env NODE_ENV=production webpack --config ./webpack.config.prod.js",
     "start:prod": "npm run clear && npm-run-all --parallel sass build:prod startserver:prod test:watch  sass:watch",
     "build:dev": "cross-env NODE_ENV=development  webpack --progress --watch --config ./webpack.config.dev.js",
-    "start:dev": "npm run clear && npm-run-all --parallel sass  startserver:dev build:dev sass:watch",
+    "start:dev": "npm run clear && npm-run-all --parallel sass  startserver:dev build:dev test sass:watch",
     "start": "npm run start:dev"
   },
   "author": "",
