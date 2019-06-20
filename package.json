@@ -1,6 +1,6 @@
 {
   "name": "harmony-boilerplate",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Harmony Boilerplate is based on Multi Model Layer, MongoDB, Express, React and NodeJS",
   "main": "index.js",
   "repository": "",
