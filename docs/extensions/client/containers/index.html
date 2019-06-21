@@ -526,18 +526,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../actions/" title="Generate Actions" class="md-nav__link">
-      Generate Actions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../sagas/" title="Generate Sagas" class="md-nav__link">
       Generate Sagas
     </a>
@@ -714,11 +702,11 @@ If --name exist it will create the container .js file inside the existing folder
 <h2 id="example-code">Example Code<a class="headerlink" href="#example-code" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Harmony Connect</p>
-<p>Any Container connected to redux with <code>baseConnect</code> to enjoy all of Harmony features.<br/>
+<p>Any Container connected to redux with <code>harmonyConnect</code> to enjoy all of Harmony features.<br/>
 Read more about <b>Harmony Connect</b> in <b>Base Folder</b> Section.</p>
 </div>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">baseConnect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../base/features/base-redux-react-connect&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">harmonyConnect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../base/features/harmony-redux-react-connect&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">fetchPosts</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../actions/posts/actions_posts&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Link</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-router&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">POSTS_NEW</span><span class="p">,</span> <span class="nx">POSTS_SHOW</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../routes&#39;</span><span class="p">;</span>
@@ -770,7 +758,7 @@ Read more about <b>Harmony Connect</b> in <b>Base Folder</b> Section.</p>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">baseConnect</span><span class="p">(</span><span class="nx">PostsIndex</span><span class="p">,</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">harmonyConnect</span><span class="p">(</span><span class="nx">PostsIndex</span><span class="p">,</span>
     <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="nx">posts</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">),</span>

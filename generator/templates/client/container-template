@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { baseConnect } from '../../base/features/base-redux-react-connect';
-import * as actions from '../../actions/<%= name %>/actions_<%= name %>';
+// import <%= className %>Actions from '../../redux/<%= name %>';
+
 
 class <%= className %> extends Component {
 
@@ -14,10 +15,10 @@ class <%= className %> extends Component {
 }
 
 export default baseConnect(<%= className %>,
-    (state) => {
+    (/* state */) => {
         return {
 
-        }
+        };
     },
     {
 

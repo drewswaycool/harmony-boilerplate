@@ -545,18 +545,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../actions/" title="Generate Actions" class="md-nav__link">
-      Generate Actions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../sagas/" title="Generate Sagas" class="md-nav__link">
       Generate Sagas
     </a>
@@ -740,7 +728,8 @@
 <p>action - Action that you want to execute.</p>
 <p><b>Usage</b></p>
 <p>import from <code>client/base/api/requests.js</code>
-<div class="codehilite"><pre><span></span><span class="nx">requests</span><span class="p">.</span><span class="nx">broadcastAction</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span> <span class="nx">ActionTypes</span><span class="p">.</span><span class="nx">FETCH_POSTS</span><span class="p">,</span> <span class="nx">payload</span><span class="o">:</span> <span class="kc">null</span><span class="p">});</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span><span class="nx">UserTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../redux/user&#39;</span><span class="p">;</span>
+<span class="nx">requests</span><span class="p">.</span><span class="nx">broadcastAction</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span> <span class="nx">UserTypes</span><span class="p">.</span><span class="nx">FETCH_POSTS</span><span class="p">,</span> <span class="nx">payload</span><span class="o">:</span> <span class="kc">null</span><span class="p">});</span>
 </pre></div>
 </p>
 <div class="admonition warning">
